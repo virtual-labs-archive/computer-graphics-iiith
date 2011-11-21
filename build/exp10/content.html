@@ -131,19 +131,19 @@ We have 2 data structures: Edge Table (ET) and Active Edge Table (AET)
 <ul>
 <li>Eliminate horizontal edges</li>
 <li>Add edge to linked-list for the scan line corresponding to the lower vertex.
-Store the following:</li>
+Store the following:
 <ol type=a>
 <li>y_upper : last scanline to consider</li>
 <li>x_lower : starting x coordinate for edge</li>
 <li>1/m : to compute for incrementing x
-</ol>
+</ol></li>
 </ul>
-<li>Construct Active Edge Table during scan conversion. AEL is a linked list of active edges on the current scanline, y. Each active edge line has the following information<li>
+<li>Construct Active Edge Table during scan conversion. AEL is a linked list of active edges on the current scanline, y. Each active edge line has the following information
 <ol type=a>
 <li>y_upper : last scanline to consider</li>
 <li>x_lower : edge’s intersection with current y</li>
 <li>1/m : x increment</li>
-</ol>
+</ol><li>
 </ol>
 The active edges are kept sorted by x.
 <fieldset>
