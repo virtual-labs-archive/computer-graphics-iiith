@@ -123,7 +123,26 @@
 				<div id="experiment-article-section-2-content" 
 					 class="content">
 					<p>
-					<!-- Theory to be put here -->
+					<h2>Sutherland Hodgeman's Polygon Clipping Algorithm</h2>
+					<h4>Pseudo Code of the algorithm</h4>
+					Input : Vertices of the polygon, (x<sub>i</sub>, y<sub>i</sub>) &forall;i = {1, 2, ..., n} for n vertices in the polygon and the coordinates of the opposite corners of the clipped window.
+					<fieldset>
+					<legend><u>Steps of the Algorithm</u></legend>
+					<pre>
+for each of the four boundaries of the clipped window
+	for each edge e<sub>i</sub>in the polygon
+		P<sub>i</sub> = (x<sub>i</sub>, y<sub>i</sub>) &amp; P<sub>i+1</sub> = (x<sub>i+1</sub>, y<sub>i+1</sub>) represent the two vertices of edge e<eub>i</sub>.
+		if P<sub>i</sub> &amp; P<sub>i+1</sub> both lie outside the clipping area
+			then no point is written
+		else if P<sub>i</sub> &amp; P<sub>i+1</sub> both lie inside the clipping area
+			then P<sub>i</sub> is written into the points of clipped polygon
+		else if P<sub>i</sub> is inside and P<sub>i+1</sub> is outside
+			then P<sub>i</sub> is written into the points of clipped polygon and we calculate the intersection of e<sub>i</sub> with the concerned boundary and the point of intersection is written into the points of clipped polygon.
+		else
+			then P<sub>i+1</sub> is written into the points of clipped polygon and we calculate the intersection of e<sub>i</sub> with the concerned boundary and the point of intersection is written into the points of clipped polygon.
+</pre>
+					</fieldset>
+					<br />
 					</p>
 				</div>
 			</section>

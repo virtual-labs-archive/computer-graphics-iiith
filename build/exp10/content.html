@@ -151,14 +151,14 @@ The active edges are kept sorted by x.
 <ol>
 <li>Set y to the smallest y coordinate that has an entry in the ET; i.e, y for the first nonempty bucket.</li>
 <li>Initialize the AET to be empty.</li>
-<li>Repeat until the AET and ET are empty:</li>
+<li>Repeat until the AET and ET are empty:
 <ul>
 <li>Move from ET bucket y to the AET those edges whose y_min = y (entering edges).</li>
 <li>Remove from the AET those entries for which y = y_max (edges not involved in the next scanline), the sort the AET on x (made easier because ET is presorted).</li>
 <li>Fill in desired pixel values on scanline y by using pairs of x coordinates from AET.</li>
 <li>Increment y by 1 (to the coordinate of the next scanline).</li>
 <li>For each nonvertical edge remaining in the AET, update x for the new y.</li>
-</ul>
+</ul></li>
 </ol>
 					</fieldset>
 </pre>
