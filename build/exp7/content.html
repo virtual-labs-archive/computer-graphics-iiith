@@ -124,7 +124,24 @@
 				<div id="experiment-article-section-2-content" 
 					 class="content">
 					<p>
-					<!-- Theory to be put here -->
+					<h2>Cohen Sutherland's Line Clipping Algorithm</h2>
+					<h4>Pseudo Code of the algorithm</h4>
+					Input : Two Endpoints of the line, (x<sub>0</sub>, y<sub>0</sub>) &amp; (x<sub>1</sub>, y<sub>1</sub>).<br />Two opposite corner points of the frame buffer.<br />
+					<fieldset>
+					<legend><u>Steps of the Algorithm</u></legend>
+					<pre>
+<ol>
+<li>P<sub>0</sub> = (x<sub>0</sub>, y<sub>0</sub>) &amp; P<sub>1</sub>(x<sub>1</sub>, y<sub>1</sub>).</li>
+<li>Compute the 4-bit codes for each endpoint.
+If both codes are 0000,(bitwise OR of the codes yields 0000 ) line lies completely inside the window: pass the endpoints to the draw routine.
+If both codes have a 1 in the same bit position (bitwise AND of the codes is not 0000), the line lies outside the window. It can be trivially rejected.</li>
+<li>If a line cannot be trivially accepted or rejected, at least one of the two endpoints must lie outside the window and the line segment crosses a window edge. This line must be clipped at the window edge before being passed to the drawing routine.</li>
+<li>Examine one of the endpoints, say P<sub>0</sub> and read  P<sub>0</sub>'s 4-bit code in order: Left-to-Right, Bottom-to-Top.</li>
+<li>When a set bit (1) is found, compute the intersection I of the corresponding window edge with the line from P<sub>0</sub> to P<sub>1</sub>. Replace P<sub>0</sub> with I and repeat the algorithm.</li>
+&Delta;x = x<sub>1</sub> - x<sub>0</sub>
+</pre>
+					</fieldset>
+					<br />
 					</p>
 				</div>
 			</section>
