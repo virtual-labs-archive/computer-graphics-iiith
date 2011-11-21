@@ -121,7 +121,48 @@
 				<div id="experiment-article-section-2-content" 
 					 class="content">
 					<p>
-					<!-- Theory to be put here -->
+					<h2>Scan Line Polygon FillAlgorithm</h2>
+					<h4>Pseudo Code of the algorithm</h4>
+					Input : Vertices of the polygon, (x<sub>i</sub>, y<sub>i</sub>) &forall;i = {1, 2, ..., n} for n vertices in the polygon.
+<pre>
+We have 2 data structures: Edge Table (ET) and Active Edge Table (AET)
+<ol type=i>
+<li>Traverse Edges to construct an Edge Table</li>
+<ul>
+<li>Eliminate horizontal edges</li>
+<li>Add edge to linked-list for the scan line corresponding to the lower vertex.
+Store the following:</li>
+<ol type=a>
+<li>y_upper : last scanline to consider</li>
+<li>x_lower : starting x coordinate for edge</li>
+<li>1/m : to compute for incrementing x
+</ol>
+</ul>
+<li>Construct Active Edge Table during scan conversion. AEL is a linked list of active edges on the current scanline, y. Each active edge line has the following information<li>
+<ol type=a>
+<li>y_upper : last scanline to consider</li>
+<li>x_lower : edge’s intersection with current y</li>
+<li>1/m : x increment</li>
+</ol>
+</ol>
+The active edges are kept sorted by x.
+<fieldset>
+<legend><u>Steps of the Algorithm</u></legend>
+<ol>
+<li>Set y to the smallest y coordinate that has an entry in the ET; i.e, y for the first nonempty bucket.</li>
+<li>Initialize the AET to be empty.</li>
+<li>Repeat until the AET and ET are empty:</li>
+<ul>
+<li>Move from ET bucket y to the AET those edges whose y_min = y (entering edges).</li>
+<li>Remove from the AET those entries for which y = y_max (edges not involved in the next scanline), the sort the AET on x (made easier because ET is presorted).</li>
+<li>Fill in desired pixel values on scanline y by using pairs of x coordinates from AET.</li>
+<li>Increment y by 1 (to the coordinate of the next scanline).</li>
+<li>For each nonvertical edge remaining in the AET, update x for the new y.</li>
+</ul>
+</ol>
+					</fieldset>
+</pre>
+					<br />
 					</p>
 				</div>
 			</section>
