@@ -47,7 +47,7 @@
 		<header id="experiment-article-heading" class="heading">
 			<!-- You can add a welcome message or title of the experiment
 				 here -->
-			Clipping : Line
+				 Rasterization : Line
 			<!-- Add any additional element if required with proper 
 				 enclosing -->
 		</header>
@@ -86,18 +86,17 @@
 				<div id="experiment-article-section-1-content" 
 					 class="content">	
 					<p>
-						When a 2D image is displayed onto a display screen, often the display area occupies a fraction of the amount of space that covers the entire image area.
-						Thus the unnecessary parts of the image that are located outside the display area can be removed to reduce the exorbitant amount of computations involved to render them.
-						This technique to remove such inessential parts of a scene lying outside the display area is called <b>clipping</b>.
-						The display area is also called the <b>clipped window</b>.<br /><br />
-						The technique used to cut/clip the parts of the line belonging in the region, outside of the clipped window, is called <b>line clipping</b>.<br /><br />
-						Some common algorithms to perform line clipping are as follows:
-						<ol style="list-style-type:lower-latin">
-							<li>Cohen-Sutherland algorithm</li>
-							<li>Liang-Barsky algorithm</li>
-							<li>Nicholl-Lee-Nicholl algorithm</li>
-						</ol><br />
-						Here we have discussed only the Cohen-Sutherland Line Clipping algorithm.
+					In digital display systems, everything that is displayed, is displayed in terms of a smallest unit of display, which is called a pixel. Thus the space occupied by any image is measured as the number of pixels required to display the image.
+					Thus the continuous space in the natural world, is transformed into a discrete space in the digital displays. This transformation is called <b>rasterization</b>. This is also called <b>scan conversion</b><br /><br />
+					When a line is transformed from a continous form of <i>y = mx + c</i> into a set of pixels occupied by it, this transformation is called <b>line rasterization</b>.
+					Thus when we apply line rasterization technique on a line, &nbsp;&nbsp;<i>y = mx + c</i>, we obtain the set of pixels that are required to be filled in order to fit the given continuous line in the best possible manner.
+					Some common algorithms to perform line rasterization are as follows:
+					<ol style="list-style-type:lower-latin">
+						<li>Bresenham's line algorithm</li>
+						<li>Digital Differential Analyzer(DDA) algorithm</li>
+						<li>Xiaolin Wu's algorithm</li>
+					</ol>
+					Here we have discussed only the Bresenham's Line Rasterization algorithm.
 					</p>
 				</div>
 
@@ -124,7 +123,35 @@
 				<div id="experiment-article-section-2-content" 
 					 class="content">
 					<p>
-					<!-- Theory to be put here -->
+					<h2>Bresenham's Line Rasterization Algorithm</h2>
+					Bresenham's algorithm is a very popular algorithm due to its simplicity and speed.
+					It helps to avoid floating point calculations, which was particulary useful in the days when floating point operations could not be handled by the computers.<br />
+					<h4>Pseudo Code of the algorithm</h4>
+					Input : Two Endpoints of the line, (x<sub>0</sub>, y<sub>0</sub>) &amp; (x<sub>1</sub>, y<sub>1</sub>)<br />
+					Assumption : Slope of the line(m) has the constraint, 0 &lt; m &lt; 1<br />
+					<fieldset>
+					<legend><u>Steps of the Algorithm</u></legend>
+					<pre>
+<ol>
+<li>if x<sub>0</sub> &gt; x<sub>1</sub>
+    swap the endpoints
+<li>&Delta;y = y<sub>1</sub> - y<sub>0</sub>
+&Delta;x = x<sub>1</sub> - x<sub>0</sub>
+p<sub>0</sub> = 2*&Delta;y - &Delta;x</li>
+<li>for i = 1 to &Delta;x
+do
+    if p<sub>i-1</sub> &lt; 0
+        //the next point is (x<sub>i-1</sub> + 1, y<sub>i-1</sub>)
+	p<sub>i</sub> = p<sub>i-1</sub> + 2*&Delta;y
+    else
+        //the next point is (x<sub>i-1</sub> + 1, y<sub>i-1</sub> + 1)
+	p<sub>i</sub> = p<sub>i-1</sub> + 2*&Delta;y - 2*&Delta;x;
+done	
+</pre>
+					</fieldset>
+					<br />
+					Similarly the steps are computed for other values of the slope.<br /><br />
+					<h4>Explanation of the algorithm</h4>
 					</p>
 				</div>
 			</section>
@@ -164,8 +191,7 @@
 
 				<div id="experiment-article-section-4-content" 
 					 class="content">
-					<applet code='clipping.DrawClipLine' archive='../Vlabs.jar' width="1200" height="1000">
-					<param name="file_name" value="inputline">
+					<applet code='rasterization.ScanLineMain' archive='../Vlabs.jar' width="1200" height="1000">
 					</applet>
 				</div>
 
