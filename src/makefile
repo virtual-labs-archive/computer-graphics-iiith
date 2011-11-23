@@ -2,8 +2,8 @@ build-dir=../build
 lib-dir=lib
 build-js-dir=${build-dir}/js
 
-#theme=blue-icon
-theme=maroon-grid
+theme=blue-icon
+#theme=maroon-grid
 
 all:  help-dir 
 
