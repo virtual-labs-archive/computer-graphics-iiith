@@ -121,9 +121,9 @@
 				<div id="experiment-article-section-2-content" 
 					 class="content">
 					<p>
-					<h2>Scan Line Polygon FillAlgorithm</h2>
+					<h2>Scan Line Polygon Fill Algorithm</h2>
 					<h4>Pseudo Code of the algorithm</h4>
-					Input : Vertices of the polygon, (x<sub>i</sub>, y<sub>i</sub>) &forall;i = {1, 2, ..., n} for n vertices in the polygon.
+					Input : Vertices of the polygon, (x<sub>i</sub>, y<sub>i</sub>) &forall;i = {1, 2, ..., n}, n = #vertices in the polygon.
 <pre>
 We have 2 data structures: Edge Table (ET) and Active Edge Table (AET)
 <ol type=i>
@@ -182,7 +182,7 @@ The active edges are kept sorted by x.
 				<div id="experiment-article-section-3-content" 
 					 class="content">
 					<p>
-					<!-- Objective to be put here -->
+					Objective of this experiment is to understand the steps of <u>filling</u> a polygon in a 2D frame buffer. Given the vertices of the polygon, the experiment outputs a filled polygon. Here we have demonstrated the steps of Scan Line Poylgon Fill algorithm.
 					</p>
 				</div>
 
@@ -222,7 +222,13 @@ The active edges are kept sorted by x.
 
 				<div id="experiment-article-section-5-content" 
 					 class="content">
-					 <!-- Manual to be put here -->
+					 <ol>
+					 <li> The experiment contains a frame buffer which represents the scre    en to which the graphics primitives (polygon in this case) are rendered to.</li>
+					 <li> The experiment allows the user to change the size of the frame b    uffer.</li>
+					 <li> The experiment allows the user to choose the vertices of the polygon. In this experiment we can fill both convex and concave polygons.</li>
+					 <li> The user can move forward and backward through the steps of the experiment.</li>
+					 </ol>
+
 				</div>
 
 			</section>
@@ -273,7 +279,16 @@ The active edges are kept sorted by x.
 
 				<div id="experiment-article-section-7-content" 
 					 class="content">
-					 <!-- Procedure to be put here -->
+					 <ol>
+					 <li> Fix the size of the frame buffer (the default parameters are already filled in the input boxes) and then click on <b>Enter</b>.<br />
+					 You can also proceed directly to the experiment using the default parameters of the size of frame buffer and the vertices of a polygon, by clicking on <b>Start Experiment with default values</b>.</li>
+					 <li> Enter the vertices of the polygon in the input box.<br />
+					 For example,
+					 (x<sub>1</sub>, y<sub>1</sub>), (x<sub>2</sub>, y<sub>2</sub>), (x<sub>3</sub>, y<sub>3</sub>), (x<sub>4</sub>, y<sub>4</sub>), (x<sub>5</sub>, y<sub>5</sub>)<br />
+					 If (x<sub>i</sub>, y<sub>i</sub>) represent i<sup>th</sup> vertex, then 1<sup>st</sup> vertex is connected to the 2<sup>nd</sup> and 2<sup>nd</sup> to the 3<sub>rd</sub> and so one till the last vertex is connected to the 1st again.
+					 The default vertices are already filled in the input boxes. Once you have finalized the coordinates, you can click on <b>Start Experiment</b> to begin with the experiment.</li>
+					 <li> Throughout the experiment, you can click on <b>Next</b> to go tothe next step of the algorithm and <b>Back</b> to go to the previous step.</li>
+					 </ol>
 				</div>
 					
 			</section>
