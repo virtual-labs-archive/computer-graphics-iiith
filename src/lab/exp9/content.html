@@ -86,16 +86,18 @@
 				<div id="experiment-article-section-1-content" 
 					 class="content">	
 					<p>
-					In digital display systems, everything that is displayed, is displayed in terms of a smallest unit of display, which is called a pixel. Thus the space occupied by any image is measured as the number of pixels required to display the image.
-					Thus the continuous space in the natural world, is transformed into a discrete space in the digital displays. This transformation is called <b>rasterization</b>. This is also called <b>scan conversion</b><br /><br />
-					When a line is transformed from a continous form of <i>y = mx + c</i> into a set of pixels occupied by it, this transformation is called <b>line rasterization</b>.
+					In digital display systems, everything that is displayed, is displayed in terms of a smallest unit of display, which is called a pixel.
+					This is in contrast to what we perceive the world to be as continuous.
+					The space occupied by any image in digital display system is measured in terms of pixels.
+					Thus we require to transform the continuous space in which we define he geometry of any figure to a discrete space for display in digital displays. This transformation is called <b>rasterization</b> or <b>scan conversion</b><br /><br />
+					When a line is transformed from its continous form of <i>y = mx + c</i> into a discrete form of a set of pixels, this transformation is called <b>line rasterization</b>.
 					Thus when we apply line rasterization technique on a line, &nbsp;&nbsp;<i>y = mx + c</i>, we obtain the set of pixels that are required to be filled in order to fit the given continuous line in the best possible manner.
 					Some common algorithms to perform line rasterization are as follows:
 					<ol style="list-style-type:lower-latin">
 						<li>Bresenham's line algorithm</li>
 						<li>Digital Differential Analyzer(DDA) algorithm</li>
 						<li>Xiaolin Wu's algorithm</li>
-					</ol><br />
+					</ol>
 					Here we have discussed only the Bresenham's Line Rasterization algorithm.
 					</p>
 				</div>
@@ -209,10 +211,11 @@ done
 				<div id="experiment-article-section-5-content" 
 					 class="content">
 					 <ol>
-					 <li> The experiment contains a frame buffer which represents the screen to which the graphics primitives (line in this case) are rendered to.</li>
-					 <li> The experiment allows the user to change the size of the frame buffer.</li>
-					 <li> The experiment allows the user to choose the starting and ending coordinates of his own choice.</li>
-					 <li> The user can move forward and backward through the steps of the experiment.</li>
+					 <li>The experiment contains a frame buffer which represents the screen to which the graphics primitives (line in this case) are rendered to.</li>
+					 <li>The experiment allows the user to change the size of the frame buffer.</li>
+					 <li>The experiment allows the user to choose the starting and ending coordinates of his own choice.</li>
+					 <li>The user can move forward and backward through the steps of the experiment.</li>
+					 <li>At each step of the algorithm, the important computations that took place in that step are also given for better understanding of the algorithm.</li>
 					 </ol>
 				</div>
 
@@ -266,9 +269,11 @@ done
 					 class="content">
 					<ol>
 					<li> Fix the size of the frame buffer (the default parameters are already filled in the input boxes) and then click on <b>Enter</b>.<br />
-					You can also proceed directly to the experiment using the default parameters of the size of frame buffer and the starting and ending coordinates, by clicking on <b>Start Experiment with default values</b>.</li>
-					<li> Fix the starting and ending coordinates. The default values are already filled in the input boxes. Once you have finalized the coordinates, you can click on <b>Start Experiment</b> to begin with the experiment.</li>
+					You can also proceed directly to the experiment using the default parameters of the size of frame buffer and the starting and ending coordinates, by clicking on <b>Start Experiment with Default values</b>.</li>
+					<li> Fix the starting and ending coordinates. The default values are already filled in the input boxes. Once you have finalized the coordinates, you can click on <b>Start Experiment</b> to begin with the experiment.<br />
+					 You can also go <b>Back</b> to change the values of the frame buffer.</li>
 					<li> Throughout the experiment, you can click on <b>Next</b> to go to the next step of the algorithm and <b>Back</b> to go to the previous step.</li>
+					<li>Once the experiment ends, you can again experiment with a new line.</li>
 					</ol>
 				</div>
 					

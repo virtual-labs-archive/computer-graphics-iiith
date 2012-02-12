@@ -86,13 +86,16 @@
 				<div id="experiment-article-section-1-content" 
 					 class="content">	
 					<p>
-					In digital display systems, everything that is displayed, is displayed in terms of a smallest unit of display, which is called a pixel. Thus the space occupied by any image is measured as the number of pixels required to display the image.
-					Thus the continuous space in the natural world, is transformed into a discrete space in the digital displays. This transformation is called <b>rasterization</b>. This is also called <b>scan conversion</b><br /><br />
+					In digital display systems, everything that is displayed, is displayed in terms of a smallest unit of display, which is called a pixel.
+					This is in contrast to what we perceive the world to be as continuous.
+					The space occupied by any image in digital display system is measured in terms of pixels.
+					Thus we require to transform the continuous space in which we define he geometry of any figure to a discrete space for display in digital displays. This transformation is called <b>rasterization</b> or <b>scan conversion</b><br /><br />
 					When a polygon is transformed from a set of edges in the continous form of <i>y = mx + c</i> into a set of pixels occupied by the interior of the polygon, this transformation is called <b>polygon rasterization</b>.
 					Thus when we apply polygon rasterization technique on a polygon, we obtain the set of pixels that are required to be filled in order to fill the entire interior area bounded by the edges of the polygon in the best possible manner.
 					Some common algorithms to perform polygon rasterization are as follows:
 					<ol style="list-style-type:lower-latin">
 						<li>Scan-Line Polygon Fill algorithm</li>
+						<li>Seed Fill or Boundary Fill algorithm</li>
 					</ol>
 					Here we have discussed only the Scan-Line Polygon Fill algorithm.
 					</p>
@@ -125,7 +128,11 @@
 					<h4>Pseudo Code of the algorithm</h4>
 					Input : Vertices of the polygon, (x<sub>i</sub>, y<sub>i</sub>) &forall;i = {1, 2, ..., n}, n = #vertices in the polygon.
 <pre>
-We have 2 data structures: Edge Table (ET) and Active Edge Table (AET)
+We have the following data structures to maintain data:
+<ul>
+<li><u>Edge Table</u> (ET) : Contains all the edges (except horizontal edges) of the polygon sorted by their smaller y-coordinates. All the edges having equal smaller y-coordinates are kept in the same bucket, where they are sorted by the corresponding x-coordinate.</li>
+<li><u>Active Edge Table</u> (AET) : Contains the edges that intersect with the current scan line. For each scan line, the edges are sorted in an increasing order of the x coordinate of the point of intersection.</li>
+</ul>
 <ol type=i>
 <li>Traverse Edges to construct an Edge Table</li>
 <ul>
@@ -223,10 +230,11 @@ The active edges are kept sorted by x.
 				<div id="experiment-article-section-5-content" 
 					 class="content">
 					 <ol>
-					 <li> The experiment contains a frame buffer which represents the scre    en to which the graphics primitives (polygon in this case) are rendered to.</li>
-					 <li> The experiment allows the user to change the size of the frame b    uffer.</li>
-					 <li> The experiment allows the user to choose the vertices of the polygon. In this experiment we can fill both convex and concave polygons.</li>
+					 <li> The experiment contains a frame buffer which represents the screen to which the graphics primitives (polygon in this case) are rendered to.</li>
+					 <li> The experiment allows the user to change the size of the frame buffer.</li>
+					 <li> The experiment allows the user to choose the vertices of the polygon. In this experiment we can fill different kinds of polygon like convex, concave, self intersecting polygons.</li>
 					 <li> The user can move forward and backward through the steps of the experiment.</li>
+					 <li>At each step of the algorithm, the important computations that took place in that step are also given for better understanding of the algorithm.</li>
 					 </ol>
 
 				</div>
@@ -281,13 +289,13 @@ The active edges are kept sorted by x.
 					 class="content">
 					 <ol>
 					 <li> Fix the size of the frame buffer (the default parameters are already filled in the input boxes) and then click on <b>Enter</b>.<br />
-					 You can also proceed directly to the experiment using the default parameters of the size of frame buffer and the vertices of a polygon, by clicking on <b>Start Experiment with default values</b>.</li>
+					 You can also proceed directly to the experiment using the default parameters of the size of frame buffer and the vertices of a polygon, by clicking on <b>Start Experiment with Default Values</b>.</li>
 					 <li> Enter the vertices of the polygon in the input box.<br />
-					 For example,
-					 (x<sub>1</sub>, y<sub>1</sub>), (x<sub>2</sub>, y<sub>2</sub>), (x<sub>3</sub>, y<sub>3</sub>), (x<sub>4</sub>, y<sub>4</sub>), (x<sub>5</sub>, y<sub>5</sub>)<br />
-					 If (x<sub>i</sub>, y<sub>i</sub>) represent i<sup>th</sup> vertex, then 1<sup>st</sup> vertex is connected to the 2<sup>nd</sup> and 2<sup>nd</sup> to the 3<sub>rd</sub> and so one till the last vertex is connected to the 1st again.
-					 The default vertices are already filled in the input boxes. Once you have finalized the coordinates, you can click on <b>Start Experiment</b> to begin with the experiment.</li>
+					 Let, (x<sub>1</sub>, y<sub>1</sub>), (x<sub>2</sub>, y<sub>2</sub>), (x<sub>3</sub>, y<sub>3</sub>), (x<sub>4</sub>, y<sub>4</sub>), (x<sub>5</sub>, y<sub>5</sub>)<br /> represent the vertices of the polygon in order, i.e., the 1<sup>st</sup> vertex is connected to the 2<sup>nd</sup> and 2<sup>nd</sup> to the 3<sup>rd</sup> and so on. The last vertex is connected to the 1st to complete the polygon.<br />
+					 The default vertices are already filled in the input boxes. Once you have finalized the coordinates, you can click on <b>Start Experiment</b> to begin with the experiment.<br />
+					 You can also go <b>Back</b> to change the values of the frame buffer.</li>
 					 <li> Throughout the experiment, you can click on <b>Next</b> to go tothe next step of the algorithm and <b>Back</b> to go to the previous step.</li>
+					 <li>Once the experiment ends, you can again experiment with a new set of vertices of the polygon.</li>
 					 </ol>
 				</div>
 					
