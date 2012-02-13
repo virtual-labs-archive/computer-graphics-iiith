@@ -155,10 +155,10 @@ We have the following data structures to maintain data:
 	<li>From ET[scan_value] bucket, all entries are inserted in AET which satisfy the condition : y<sub>min</sub> = scan_value. This is to include the new edges which have their smaller y value equal to the present scan line.</li>
 	<li>From AET, remove the entries which satisfy the condition, y<sub>max</sub> = scan_value, i.e., remove the edges not intersecting with the next scanline</li>
 	<li>Please note that there will be one entry for edges in Fig. 1 and two for edges in Fig. 2<br />
-	<img src="image1.png"></img><br />
-		Figure 1<br />
-	<img src="image2.png"></img><br />
-		Figure 2<br /></li>
+Figure 1<br />
+	<img src="image1.png" height="100" width="100"></img><br />
+Figure 2<br /></li>
+	<img src="image2.png" height="100" width="100"></img><br />
 	<li>Sort all the entries in AET w.r.t. the x-coordinate of the intersection point of the edge with the present scan line.</li>
 	<li>Fill the pixels in the present scanline from x-values mentioned in the odd entries of AET to the x-values mentioned in the next even entry of AET.<br />
 	If there are n entries in AET (n will always even), then the following pixels will be filled :<br />
