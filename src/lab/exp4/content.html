@@ -250,8 +250,10 @@
 				<div id="experiment-article-section-6-content" 
 					 class="content">
 
+				<script type="text/javascript" src="evalute.js"></script>
+				<form name="quiz" method="post">
 					<p>
-					<b>01.</b>
+					<b>Q1.</b>
 					The point (5,2,8) after applying the following scaling matrix becomes:
 					<img src="media/quiz_matrix1.png"
 						 alt="Matrix( (2,0,0,0), (0,1.5,0,0), (0,0,0.5,0), (0,0,0,1) )"
@@ -268,7 +270,7 @@
 					</p>
 
 					<p>
-					<b>02.</b>
+					<b>Q2.</b>
 					Applying a scaling transformation of 2 on X-axis makes the unit distance: <br/>
 					<input type="radio" name="q2" id="q2" value="1"> &nbsp;&nbsp;
 					1/4 of the original unit distance. <br/>
@@ -281,7 +283,7 @@
 					</p>
 
 					<p>
-					<b>03.</b>
+					<b>Q3.</b>
 					What is the scaling vector <i>v</i> if A(5,4,1) gets scaled to (2.5,6,5) ? <br/>
 					<input type="radio" name="q3" id="q3" value="1"> &nbsp;&nbsp;
 					[0.5, 1.5, 5] <br/>
@@ -294,7 +296,7 @@
 					</p>
 
 					<p>
-					<b>04.</b>
+					<b>Q4.</b>
 					What is the scaling vector <i>v</i> if A(2,3,4) gets transformed to B(2,3,4) ? <br/>
 					<input type="radio" name="q4" id="q4" value="1"> &nbsp;&nbsp;
 					[1, 0, 0] <br/>
@@ -305,11 +307,11 @@
 					<input type="radio" name="q4" id="q4" value="4"> &nbsp;&nbsp;
 					[1, 1, 0] <br/>
 					</p>
+					<p>
+					<input type="submit" value="Evaluate" class="button" onclick="evaluate();" />
+					</p>
+				</form>
 
-					<!--              
-					<input type="submit" value="Submit Answers" 
-						class="button" />
-					-->              
 				</div>
 
 			</section>

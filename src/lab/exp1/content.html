@@ -248,6 +248,9 @@
 
 				<div id="experiment-article-section-6-content" 
 					 class="content">
+
+				<script type="text/javascript" src="evalute.js"></script>
+				<form name="quiz" method="post">
 					<img src="media/quiz.png" 
 						 alt="Quiz Points" 
 						 style="width:400px; height: 377px; background-color: #fff;" />
@@ -279,7 +282,7 @@
 					</ol>
 					</p>
 					<p>
-					<b>02.</b>
+					<b>Q2.</b>
 					What is the point whose distance from XY plane is 3, YZ plane is -4 and XZ plane is 9 ? <br/>
 					<input type="radio" name="q2" id="q2" value="1"> &nbsp;&nbsp;
 					(3, 0, -4) <br/>
@@ -291,8 +294,8 @@
 					(-4, 9, 9)
 					</p>
 					<p>
-					<b>03.</b>
-					Convert the coordinate (12, 24, 42, 6) from homogeneous form to ordinary cartesian coordinates.
+					<b>Q3.</b>
+					Convert the coordinate (12, 24, 42, 6) from homogeneous form to ordinary cartesian coordinates. <br/>
 					<input type="radio" name="q3" id="q3" value="1"> &nbsp;&nbsp;
 					(4, 2, 7) <br/>
 					<input type="radio" name="q3" id="q3" value="2"> &nbsp;&nbsp;
@@ -302,6 +305,10 @@
 					<input type="radio" name="q3" id="q3" value="4"> &nbsp;&nbsp;
 					(2, 4, 4)
 					</p>
+					<p>
+					<input type="submit" value="Evaluate" class="button" onclick="evaluate();" />
+					</p>
+				</form>
 				</div>
 
 			</section>

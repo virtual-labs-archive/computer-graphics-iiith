@@ -251,8 +251,10 @@
 				<div id="experiment-article-section-6-content" 
 					 class="content">
 
+				<script type="text/javascript" src="evalute.js"></script>
+				<form name="quiz" method="post">
 					<p>
-					<b>01.</b>
+					<b>Q1.</b>
 					When the following translation matrix is applied to point (10,10,10), it becomes <br/>
 					<img src="media/quiz_matrix1.png" 
 						 alt="Matrix( (1,0,0,5), (0,1,0,-3), (0,0,1,6), (0,0,0,1) )"
@@ -269,7 +271,7 @@
 					</p>
 
 					<p>
-					<b>02.</b>
+					<b>Q2.</b>
 					If the point (-10,14,20) is translated according to the vector (-10,2,8), it becomes <br/>
 					<input type="radio" name="q2" id="q2" value="1"> &nbsp;&nbsp;
 					(-20,16,28) <br/>
@@ -282,7 +284,7 @@
 					</p>
 
 					<p>
-					<b>03.</b>
+					<b>Q3.</b>
 					Identify the translation vector <i>v</i> which transforms point A (1,1,5) to point B (-11,13,-7). <br/>
 					<input type="radio" name="q3" id="q3" value="1"> &nbsp;&nbsp;
 					(12,-12,12) <br/>
@@ -295,7 +297,7 @@
 					</p>
 
 					<p>
-					<b>04.</b>
+					<b>Q4.</b>
 					If the Origin is at (0,0,0) then a translation of (2,5,-4) translates the origin to: <br/>
 					<input type="radio" name="q4" id="q4" value="1"> &nbsp;&nbsp;
 					(2,5,-4) <br/>
@@ -306,6 +308,11 @@
 					<input type="radio" name="q4" id="q4" value="4"> &nbsp;&nbsp;
 					(-2,-5,4)
 					</p>
+
+					<p>
+					<input type="submit" value="Evaluate" class="button" onclick="evaluate();" />
+					</p>
+				</form>
 
 				</div>
 
