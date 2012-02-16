@@ -11,6 +11,7 @@ function evaluate()
 	var a2  = "1";
 	var a3  = "3";
 
+	alert("Initialised answers');
 	/* Extract answers */
 	var q1a = form["q1_a"].value;
 	var q1b = form["q1_b"].value;
@@ -19,10 +20,14 @@ function evaluate()
 	var q1e = form["q1_e"].value;
 	var q2, q3, length;
 	
+	alert('Extracting q2 answers');
+
 	length = form["q2"].length;
 	for(i=0; i<length; i++)
 		if(form["q2"][i].checked)
 			q2 = form["q2"][i].value;
+	
+	alert('Extracting q3 answers');
 	
 	length = form["q3"].length;
 	for(i=0; i<length; i++)
@@ -32,6 +37,8 @@ function evaluate()
 	/* Evaluate answers */
 	var score = 0;
 	var result = "";
+
+	alert('Evaluating answers');
 
 	if(q1a == a1a)
 	{
@@ -78,6 +85,8 @@ function evaluate()
 		result += "<font color='green'>";
 	result += "Q1e</font>, ";
 
+	alert('Evaluating answers');
+
 	if(q2 == a2)
 	{
 		score++;
@@ -86,6 +95,8 @@ function evaluate()
 	else
 		result += "<font color='green'>";
 	result += "Q2</font>, ";
+
+	alert('Evaluating answers');
 
 	if(q3 == a3)
 	{
@@ -97,6 +108,7 @@ function evaluate()
 	result += "Q3</font>";
 
 
+	alert('Outputing');
 	/* Show result */
 	var output = "Your score is " + score + "\n";
 	output += result;
