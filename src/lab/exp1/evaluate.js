@@ -102,5 +102,5 @@ function evaluate()
 	output += result;
 	
 	alert(output);
-	return false;
+//	return false;
 }
