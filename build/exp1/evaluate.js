@@ -11,7 +11,7 @@ function evaluate()
 	var a2  = "1";
 	var a3  = "3";
 
-	alert("Initialised answers');
+	alert('Initialised answers');
 	/* Extract answers */
 	var q1a = form["q1_a"].value;
 	var q1b = form["q1_b"].value;
