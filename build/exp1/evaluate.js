@@ -1,4 +1,4 @@
-function evaluate()
+function eval()
 {
 	var form = document.forms["quiz"];
 
