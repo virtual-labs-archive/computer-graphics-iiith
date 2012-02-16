@@ -2,7 +2,7 @@ function evaluate()
 {
 	var form = document.forms["quiz"];
 
-	/* Initialise qnswers */
+	/* Initialise answers */
 	var a1 = "2"
 	var a2 = "3";
 	var a3 = "0";
@@ -27,39 +27,29 @@ function evaluate()
 
 	/* Evaluate answers */
 	var score = 0;
-	var result = "";
+	var result = "Correct answers: ";
 
 	if(q1 == a1)
 	{
 		score++;
-		result += "<font color='red'>";
+		result += "Q1, ";
 	}
-	else
-		result += "<font color='green'>";
-	result += "Q1</font>, ";
 
 	if(q2 == a2)
 	{
 		score++;
-		result += "<font color='red'>";
+		result += "Q2, ";
 	}
-	else
-		result += "<font color='green'>";
-	result += "Q2</font>, ";
 
 	if(q3 == a3)
 	{
 		score++;
-		result += "<font color='red'>";
+		result += "Q3";
 	}
-	else
-		result += "<font color='green'>";
-	result += "Q3</font>";
 
 	/* Show result */
 	var output = "Your score is " + score + "\n";
 	output += result;
 	
 	alert(output);
-	return false;
 }

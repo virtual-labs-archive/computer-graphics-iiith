@@ -2,7 +2,7 @@ function eval()
 {
 	var form = document.forms["quiz"];
 
-	/* Initialise qnswers */
+	/* Initialise answers */
 	var a1a = "(2, 2)";
 	var a1b = "(-2, 3)";
 	var a1c = "(-4, 0)";
@@ -11,7 +11,6 @@ function eval()
 	var a2  = "1";
 	var a3  = "3";
 
-	alert('Initialised answers');
 	/* Extract answers */
 	var q1a = form["q1_a"].value;
 	var q1b = form["q1_b"].value;
@@ -20,14 +19,10 @@ function eval()
 	var q1e = form["q1_e"].value;
 	var q2, q3, length;
 	
-	alert('Extracting q2 answers');
-
 	length = form["q2"].length;
 	for(i=0; i<length; i++)
 		if(form["q2"][i].checked)
 			q2 = form["q2"][i].value;
-	
-	alert('Extracting q3 answers');
 	
 	length = form["q3"].length;
 	for(i=0; i<length; i++)
@@ -36,83 +31,53 @@ function eval()
 
 	/* Evaluate answers */
 	var score = 0;
-	var result = "";
-
-	alert('Evaluating answers');
+	var result = "Correct answers: ";
 
 	if(q1a == a1a)
 	{
 		score++;
-		result += "<font color='red'>";
+		correct += "Q1a, ";
 	}
-	else
-		result += "<font color='green'>";
-	result += "Q1a</font>, ";
 
 	if(q1b == a1b)
 	{
 		score++;
-		result += "<font color='red'>";
+		result += "Q1b, ";
 	}
-	else
-		result += "<font color='green'>";
-	result += "Q1b</font>, ";
 
 	if(q1c == a1c)
 	{
 		score++;
-		result += "<font color='red'>";
+		result += "Q1c, ";
 	}
-	else
-		result += "<font color='green'>";
-	result += "Q1c</font>, ";
 
 	if(q1d == a1d)
 	{
 		score++;
-		result += "<font color='red'>";
+		result += "Q1d, ";
 	}
-	else
-		result += "<font color='green'>";
-	result += "Q1d</font>, ";
 
 	if(q1e == a1e)
 	{
 		score++;
-		result += "<font color='red'>";
+		result += "Q1e, ";
 	}
-	else
-		result += "<font color='green'>";
-	result += "Q1e</font>, ";
-
-	alert('Evaluating answers');
 
 	if(q2 == a2)
 	{
 		score++;
-		result += "<font color='red'>";
+		result += "Q2, ";
 	}
-	else
-		result += "<font color='green'>";
-	result += "Q2</font>, ";
-
-	alert('Evaluating answers');
 
 	if(q3 == a3)
 	{
 		score++;
-		result += "<font color='red'>";
+		result += "Q3";
 	}
-	else
-		result += "<font color='green'>";
-	result += "Q3</font>";
 
-
-	alert('Outputing');
 	/* Show result */
 	var output = "Your score is " + score + "\n";
 	output += result;
 	
 	alert(output);
-//	return false;
 }
