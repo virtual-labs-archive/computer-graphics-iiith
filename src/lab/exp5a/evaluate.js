@@ -57,7 +57,7 @@ function evaluate()
 	result += "Q3</font>";
 
 	/* Show result */
-	var output = "Your score is " + score "\n";
+	var output = "Your score is " + score + "\n";
 	output += result;
 	
 	alert(output);
