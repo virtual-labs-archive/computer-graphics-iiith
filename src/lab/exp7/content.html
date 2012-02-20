@@ -137,7 +137,7 @@ The codes of the vertices are computed from the below figure :
 <a href="http://www.academictutorials.com/images/graphics/cohensutherland.gif">
 <img src="code-block.png"></img></a>
 <center> Source : From Academic Tutorials</center>
-0000 represents the clip window and all other areas outside are to be clipped.
+0000 represents the clip window and all other areas outside are to be clipped.<br />
 If both codes are 0000,(bitwise OR of the codes yields 0000 ) line lies completely inside the window: pass the endpoints to the draw routine.
 If both codes have a 1 in the same bit position (bitwise AND of the codes is not 0000), the line lies outside the window. It can be trivially rejected.</li>
 <li>If a line cannot be trivially accepted or rejected, at least one of the two endpoints must lie outside the window and the line segment crosses a window edge. This line must be clipped at the window edge before being passed to the drawing routine.</li>
