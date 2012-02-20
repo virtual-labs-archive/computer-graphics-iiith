@@ -86,7 +86,7 @@
 				<div id="experiment-article-section-1-content" 
 					 class="content">	
 					<p>
-						This experiment explains the concept of rotation transformation.
+					"In geometry and linear algebra, a rotation is a transformation in a plane or in space that describes the motion of a rigid body around a fixed point. A rotation is different from a translation, which has no fixed points. A rotation and the above-mentioned transformations are isometries; they leave the distance between any two points unchanged after the transformation." <sub>Courtesy Wikipedia</sub>
 					</p>
 				</div>
 
@@ -112,35 +112,40 @@
 				<div id="experiment-article-section-2-content" 
 					 class="content">
 					<p>
-						Rotation transformation rotates points about an axis through the origin. Rotation about the co-ordinate axes X, Y and Z is a standard operation, which is used often in graphics applications.
+					Rotation transformation rotates points about an axis through the origin. Rotation about the co-ordinate axes X, Y and Z is a standard operation, which is used often in graphics applications.
 					</p>
-<!--
 					<p>
-						A transformation maps points in space to other 
-						points. Translation moves every point by a constant 
-						distance in a constant direction. This can be 
-						interpreted as the addition of a constant vector to 
-						every point. If homogeneous representation is used, 
-						translation can be conveniently represented as a 
-						matrix multiplication. The translation matrix which 
-						translates by v<sub>x</sub>, v<sub>y</sub> and 
-						v<sub>z</sub> units looks like:
+					Rotation is performed by multiplying the point with a Rotation Matrix. There are specific matrices for rotations about X, Y and Z axes.
 					</p>
-					<img src="media/translation-matrix.png" 
-						 alt="Translation Matrix" 
-						 style="width:165px; height: 97px;" />
-
+					<img src="media/rotation-matrix.png" 
+						 alt="Rotation Matrix" 
+						 style="width:243px; height: 285px; padding: 10px; background-color: #fff;" />
 					<p>
-						On multiplication with a vector, the expected result 
-						of vector addition is obtained:
+					Rotations can also be performed about an arbitrary axis. This can be done in the following manner: 
+					<ol type=1 start=1>
+						<li>
+						Rotate the arbitrary axis about one of the co-ordinate axes, say Y, to align it to one of the co-ordinate planes, say XY.
+						</li>
+						<li>
+						Rotate this axis about the Z axis to align it to the Y axis.
+						</li>
+						<li>
+						Perform the required rotation about the Y axis using RY.
+						</li>
+						<li>
+						Reverse the steps 2 and 1 to put the axis back in its original alignment.
+						</li>
+					</ol>
 					</p>
-					<img src="media/point_translation.png" 
-						 alt="Matrix representation for Point translation" 
-						 style="width:417px; height: 97px;" />
 					<p>
-						Transformations can be interpreted as the modification of a co-ordinate system, keeping the points constant, effectively changing their relative positions. Thus, a translation of (2,3) translates the co-ordinate system's origin to (-2,-3), effectively translating all points with respect to this co-ordinate system.
+					Rotation matrices rotate all points about an axis passing through the origin. In order to rotate about a particular point, the point must be translated to origin first. Once the rotation is performed, the point must be translated back to its original location. <br/>
+					Thus the matrix for rotating about a particular point <x,y,z> is: <br/>
+					M = T<sup>-1</sup>RT <br/>
+					where T translates the point to origin and R is the rotation matrix.
 					</p>
--->
+					<p>
+					It is important to know the frame of reference when considering rotations, as all rotations are described relative to a particular frame of reference. In general for any orthogonal transformation on a body in a coordinate system there is an inverse transformation which if applied to the frame of reference results in the body being at the same coordinates. For example in two dimensions rotating a body clockwise about a point keeping the axes fixed is equivalent to rotating the axes counterclockwise about the same point while the body is kept fixed. Thus, a rotation of 45&deg; about Z-axis is equivalent to rotating the coordinate system by -45&deg; about the Z-axis.
+					</p>
 				</div>
 			</section>
 
@@ -328,18 +333,22 @@
 
 				<div id="experiment-article-section-8-content" 
 					 class="content">
-				<!--	  
 					<ul>	
 					<li>
-					<a href="http://en.wikipedia.org/wiki/Simple_harmonic_motion">
-						http://en.wikipedia.org/wiki/Simple_harmonic_motion 
+					<a href="http://en.wikipedia.org/wiki/Transformation_matrix#Rotation">
+						Wikipedia: http://en.wikipedia.org/wiki/Transformation_matrix#Rotation
 					</a>
 					</li>
 					<li>
-						Dynamics of structures by Anil K chopra. 
+					<a href="http://en.wikipedia.org/wiki/Rotation_(geometry)">
+						Wikipedia: Geometry Rotation
+					</a>
 					</li>
+					<li>
+					<a href="http://en.wikipedia.org/wiki/Rotation_matrix">
+						Wikipedia: Rotation Matrix
+					</a>
 					</ul>
-				-->
 				</div>
 
 			</section>
