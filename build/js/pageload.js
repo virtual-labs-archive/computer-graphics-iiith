@@ -1,5 +1,6 @@
 function loadPage(pagename)
 {
+	var pagePrefix = "../manual/";
 	var xmlhttp;
 	if (window.XMLHttpRequest)
 	{
@@ -18,6 +19,6 @@ function loadPage(pagename)
 				document.getElementById("page").innerHTML=xmlhttp.responseText;
 			}
 		}
-	xmlhttp.open("GET", pagename, true);
+	xmlhttp.open("GET", pagePrefix+pagename, true);
 	xmlhttp.send();
 }
