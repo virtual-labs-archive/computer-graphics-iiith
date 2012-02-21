@@ -240,10 +240,20 @@ for each of the four boundaries of the clipped window<br />
 					<li> a and c</li>
 					<li> All of the above</li>
 					</ol></li>
+
 					<li> Will the output matter on the order in which we process the polygon?<br />
 					<ol type="a">
 					<li> Yes</li>
 					<li> No</li>
+					</ol></li>
+
+					<li> Let m be the slope of the line joining clip polygon point P<sub>i</sub>(x<sub>1</sub>, y<sub>1</sub>) and P<sub>i+1</sub>(x<sub>2</sub>, y<sub>2</sub>).
+					The intersection point of this line with the Left side of clip window is :
+					<ol type="a">
+					<li> x = xmin; y = (int)(y2 + ((xmin - x2)*m));</li>
+					<li> x = xmax; y = (int)(y2 + ((xmax - x2)*m));</li>
+					<li> x = x2; y = ymin;</li>
+					<li> x = (int) (x2 + ((ymax - y2)/m)); y = ymax;</li>
 					</ol></li>
 					</ol>
 					</p>
