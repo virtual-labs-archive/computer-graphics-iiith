@@ -129,17 +129,17 @@
 					<fieldset>
 					<legend><u>Steps of the Algorithm</u></legend>
 					<pre>
-for each of the four boundaries of the clipped window
-	for each edge e<sub>i</sub>in the polygon
-		P<sub>i</sub> = (x<sub>i</sub>, y<sub>i</sub>) &amp; P<sub>i+1</sub> = (x<sub>i+1</sub>, y<sub>i+1</sub>) represent the two vertices of edge e<eub>i</sub>.
-		if P<sub>i</sub> &amp; P<sub>i+1</sub> both lie outside the clipping area
-			then no point is written
-		else if P<sub>i</sub> &amp; P<sub>i+1</sub> both lie inside the clipping area
-			then P<sub>i</sub> is written into the points of clipped polygon
-		else if P<sub>i</sub> is inside and P<sub>i+1</sub> is outside
-			then P<sub>i</sub> is written into the points of clipped polygon and we calculate the intersection of e<sub>i</sub> with the concerned boundary and the point of intersection is written into the points of clipped polygon.
-		else
-			then P<sub>i+1</sub> is written into the points of clipped polygon and we calculate the intersection of e<sub>i</sub> with the concerned boundary and the point of intersection is written into the points of clipped polygon.
+for each of the four boundaries of the clipped window<br />
+	for each edge e<sub>i</sub>in the polygon<br />
+		P<sub>i</sub> = (x<sub>i</sub>, y<sub>i</sub>) &amp; P<sub>i+1</sub> = (x<sub>i+1</sub>, y<sub>i+1</sub>) represent the two vertices of edge e<eub>i</sub>.<br />
+		if P<sub>i</sub> &amp; P<sub>i+1</sub> both lie outside the clipping area<br />
+			then no point is written<br />
+		else if P<sub>i</sub> &amp; P<sub>i+1</sub> both lie inside the clipping area<br />
+			then P<sub>i</sub> is written into the points of clipped polygon<br />
+		else if P<sub>i</sub> is inside and P<sub>i+1</sub> is outside<br />
+			then P<sub>i</sub> is written into the points of clipped polygon and we calculate the intersection of e<sub>i</sub> with the concerned boundary and the point of intersection is written into the points of clipped polygon.<br />
+		else<br />
+			then P<sub>i+1</sub> is written into the points of clipped polygon and we calculate the intersection of e<sub>i</sub> with the concerned boundary and the point of intersection is written into the points of clipped polygon.<br />
 					</pre>
 					</fieldset>
 					<br />
