@@ -125,23 +125,24 @@
 					<p>
 					<h2>Sutherland Hodgeman's Polygon Clipping Algorithm</h2>
 					<h4>Pseudo Code of the algorithm</h4>
-					Input : Vertices of the polygon, (x<sub>i</sub>, y<sub>i</sub>) &forall;i = {1, 2, ..., n} for n vertices in the polygon and the coordinates of the opposite corners of the clipped window.
-					<fieldset>
-					<legend><u>Steps of the Algorithm</u></legend>
-					<pre>
-for each of the four boundaries of the clipped window
-	for each edge e<sub>i</sub>in the polygon
-		P<sub>i</sub> = (x<sub>i</sub>, y<sub>i</sub>) &amp; P<sub>i+1</sub> = (x<sub>i+1</sub>, y<sub>i+1</sub>) represent the two vertices of edge e<eub>i</sub>.
-		if P<sub>i</sub> &amp; P<sub>i+1</sub> both lie outside the clipping area
-			then no point is written
-		else if P<sub>i</sub> &amp; P<sub>i+1</sub> both lie inside the clipping area
-			then P<sub>i</sub> is written into the points of clipped polygon
-		else if P<sub>i</sub> is inside and P<sub>i+1</sub> is outside
-			then P<sub>i</sub> is written into the points of clipped polygon and we calculate the intersection of e<sub>i</sub> with the concerned boundary and the point of intersection is written into the points of clipped polygon.
-		else
-			then P<sub>i+1</sub> is written into the points of clipped polygon and we calculate the intersection of e<sub>i</sub> with the concerned boundary and the point of intersection is written into the points of clipped polygon.
-					</pre>
-					</fieldset>
+					Input : Vertices of the polygon, (x<sub>i</sub>, y<sub>i</sub>) &forall;i = {1, 2, ..., n} for n vertices in the polygon and the coordinates of the opposite corners of the clipped window.<br />
+					<!-- <fieldset>
+					<legend><u>Steps of the Algorithm</u></legend> -->
+					<u>Steps of the Algorithm</u>
+<pre>
+for each of the four boundaries of the clipped window<br />
+	for each edge e<sub>i</sub>in the polygon<br />
+		P<sub>i</sub> = (x<sub>i</sub>, y<sub>i</sub>) &amp; P<sub>i+1</sub> = (x<sub>i+1</sub>, y<sub>i+1</sub>) represent the two vertices of edge e<eub>i</sub>.<br />
+		if P<sub>i</sub> &amp; P<sub>i+1</sub> both lie outside the clipping area<br />
+			then no point is written<br />
+		else if P<sub>i</sub> &amp; P<sub>i+1</sub> both lie inside the clipping area<br />
+			then P<sub>i</sub> is written into the points of clipped polygon<br />
+		else if P<sub>i</sub> is inside and P<sub>i+1</sub> is outside<br />
+			then P<sub>i</sub> is written into the points of clipped polygon and we calculate the intersection of e<sub>i</sub> with the concerned boundary and the point of intersection is written into the points of clipped polygon.<br />
+		else<br />
+			then P<sub>i+1</sub> is written into the points of clipped polygon and we calculate the intersection of e<sub>i</sub> with the concerned boundary and the point of intersection is written into the points of clipped polygon.<br />
+</pre>
+					<!-- </fieldset> -->
 					<br />
 					</p>
 				</div>
@@ -162,7 +163,8 @@ for each of the four boundaries of the clipped window
 				<div id="experiment-article-section-3-content" 
 					 class="content">
 					<p>
-					<!-- Objective to be put here -->
+					Objective of this experiment is to understand the steps of a Polygon Clipping Algorithm, i.e., how a polygon is clipped so as to render only the part which a user can view.
+					As an example, we have demonstrated the steps of Sutherland Hodgeman Algorithm.
 					</p>
 				</div>
 
@@ -202,7 +204,12 @@ for each of the four boundaries of the clipped window
 
 				<div id="experiment-article-section-5-content" 
 					 class="content">
-					 <!-- Manual to be put here -->
+					 <ol>
+					 <li>The experiment contains a clipping window which represents the screen to which the graphics primitives (polygon in this case) are clipped to.</li>
+					 <li>The experiment allows the user to change the size of the clipping window.</li>
+					 <li> The experiment allows the user to choose the vertices of the polygon. In this experiment we can fill different kinds of polygon like convex and concave polygons in the rectangular (convex) clipping windows.</li>
+					 <li>At each step of the algorithm, the important computations that took place in that step are also given for better understanding of the algorithm.</li>
+					 </ol>
 				</div>
 
 			</section>
@@ -223,16 +230,32 @@ for each of the four boundaries of the clipped window
 					 class="content">
 
 					<p>
-					<!--              
-						<b>Q1.</b> 
-							Time taken for one complete oscillation is called Time Period of the oscillator. <br> 
-							<input type="radio" name="q1" id="q1" value="1"> 
-							<font color="green"> True </font> <br> 
-							<input type="radio" name="q1" id="q1" value="0">
-							<font color="red"> False </font> <br/><br/> 
-							<input type="submit" value="Submit Answers" 
-								class="button" />
-					-->              
+					<ol>
+					<li>The Sutherland Hodgeman works for the following cases :<br />
+					<ol type="a">
+					<li> Convex Polygon with convex clip window</li>
+					<li> Concave polygon with convex clip window</li>
+					<li> Convex polygon with concave clip window</li>
+					<li> a and b</li>
+					<li> a and c</li>
+					<li> All of the above</li>
+					</ol></li>
+
+					<li> Will the output matter on the order in which we process the polygon?<br />
+					<ol type="a">
+					<li> Yes</li>
+					<li> No</li>
+					</ol></li>
+
+					<li> Let m be the slope of the line joining clip polygon point P<sub>i</sub>(x<sub>1</sub>, y<sub>1</sub>) and P<sub>i+1</sub>(x<sub>2</sub>, y<sub>2</sub>).
+					The intersection point of this line with the Left side of clip window is :
+					<ol type="a">
+					<li> x = xmin; y = (int)(y2 + ((xmin - x2)*m));</li>
+					<li> x = xmax; y = (int)(y2 + ((xmax - x2)*m));</li>
+					<li> x = x2; y = ymin;</li>
+					<li> x = (int) (x2 + ((ymax - y2)/m)); y = ymax;</li>
+					</ol></li>
+					</ol>
 					</p>
 
 				</div>
@@ -253,7 +276,16 @@ for each of the four boundaries of the clipped window
 
 				<div id="experiment-article-section-7-content" 
 					 class="content">
-					 <!-- Procedure to be put here -->
+					 <ol>
+					 <li> Fix the clipping window (the default parameters are already filled in the input boxes) and then click on <b>Enter</b>.<br />
+					 You can also proceed directly to the experiment using the default parameters of the clipping window and the vertices of a polygon, by clicking on <b>Start Experiment with Default Values</b>.</li>
+					 <li> Enter the vertices of the polygon in the input box.<br />
+					 Let, (x<sub>1</sub>, y<sub>1</sub>), (x<sub>2</sub>, y<sub>2</sub>), (x<sub>3</sub>, y<sub>3</sub>), (x<sub>4</sub>, y<sub>4</sub>), (x<sub>5</sub>, y<sub>5</sub>)<br /> represent the vertices of the polygon in order, i.e., the 1<sup>st</sup> vertex is connected to the 2<sup>nd</sup> and 2<sup>nd</sup> to the 3<sup>rd</sup> and so on. The last vertex is connected to the 1st to complete the polygon.<br />
+					 The default vertices are already filled in the input boxes. Once you have finalized the coordinates, you can click on <b>Start Experiment</b> to begin with the experiment.<br />
+					 You can also go <b>Back</b> to change the values of the frame buffer.</li>
+					 <li> Throughout the experiment, you can click on <b>Next Iteration</b> to go to the next step of the algorithm.</li>
+					 <li>Once the experiment ends, you can again experiment with a new set of vertices of the polygon.</li>
+					 </ol>
 				</div>
 					
 			</section>
@@ -272,18 +304,12 @@ for each of the four boundaries of the clipped window
 
 				<div id="experiment-article-section-8-content" 
 					 class="content">
-				<!--	  
-					<ul>	
-					<li>
-					<a href="http://en.wikipedia.org/wiki/Simple_harmonic_motion">
-						http://en.wikipedia.org/wiki/Simple_harmonic_motion 
-					</a>
-					</li>
-					<li>
-						Dynamics of structures by Anil K chopra. 
-					</li>
-					</ul>
-				-->
+					 <ol>
+					 <li> http://en.wikipedia.org/wiki/Sutherland-Hodgman_algorithm</li>
+					 <li> James D. Foley. Computer graphics: Principles and Practice. Addison-Wesley Professional. </li>
+					 <li> Computer Graphics, C Version by Donald Hearn and M. Pauline Baker</li>
+					 <li> https://www.cs.drexel.edu/~david/Classes/CS430/Lectures/L-05_Polygons.6.pdf</li>
+					 </ol>
 				</div>
 
 			</section>

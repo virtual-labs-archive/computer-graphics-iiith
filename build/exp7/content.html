@@ -133,12 +133,16 @@
 <ol>
 <li>P<sub>0</sub> = (x<sub>0</sub>, y<sub>0</sub>) &amp; P<sub>1</sub>(x<sub>1</sub>, y<sub>1</sub>).</li>
 <li>Compute the 4-bit codes for each endpoint.
+The codes of the vertices are computed from the below figure :
+<a href="http://www.academictutorials.com/images/graphics/cohensutherland.gif">
+<img src="code-block.png"></img></a>
+<center> Source : From Academic Tutorials</center>
+0000 represents the clip window and all other areas outside are to be clipped.<br />
 If both codes are 0000,(bitwise OR of the codes yields 0000 ) line lies completely inside the window: pass the endpoints to the draw routine.
 If both codes have a 1 in the same bit position (bitwise AND of the codes is not 0000), the line lies outside the window. It can be trivially rejected.</li>
 <li>If a line cannot be trivially accepted or rejected, at least one of the two endpoints must lie outside the window and the line segment crosses a window edge. This line must be clipped at the window edge before being passed to the drawing routine.</li>
 <li>Examine one of the endpoints, say P<sub>0</sub> and read  P<sub>0</sub>'s 4-bit code in order: Left-to-Right, Bottom-to-Top.</li>
 <li>When a set bit (1) is found, compute the intersection I of the corresponding window edge with the line from P<sub>0</sub> to P<sub>1</sub>. Replace P<sub>0</sub> with I and repeat the algorithm.</li>
-&Delta;x = x<sub>1</sub> - x<sub>0</sub>
 </pre>
 					</fieldset>
 					<br />
@@ -161,7 +165,8 @@ If both codes have a 1 in the same bit position (bitwise AND of the codes is not
 				<div id="experiment-article-section-3-content" 
 					 class="content">
 					<p>
-					<!-- Objective to be put here -->
+					Objective of this experiment is to understand the steps of a Line Clipping Algorithm, i.e., how a geometric line is clipped so as to render only the part which a user can view.
+					As an example, we have demonstrated the steps of Cohen Sutherland Algorithm.
 					</p>
 				</div>
 
@@ -201,7 +206,13 @@ If both codes have a 1 in the same bit position (bitwise AND of the codes is not
 
 				<div id="experiment-article-section-5-content" 
 					 class="content">
-					 <!-- Manual to be put here -->
+					 <ol>
+					 <li>The experiment contains a clipping window which represents the screen to which the graphics primitives (line in this case) are rendered to.</li>
+					 <li>The experiment allows the user to change the size of the clipping window.</li>
+					 <li>The experiment allows the user to choose the starting and ending coordinates of his own choice.</li>
+					 <li>The user can move forward and backward through the steps of the experiment.</li>
+					 <li>At each step of the algorithm, the important computations that took place in that step are also given for better understanding of the algorithm.</li>
+					 </ol>
 				</div>
 
 			</section>
@@ -222,16 +233,29 @@ If both codes have a 1 in the same bit position (bitwise AND of the codes is not
 					 class="content">
 
 					<p>
-					<!--              
-						<b>Q1.</b> 
-							Time taken for one complete oscillation is called Time Period of the oscillator. <br> 
-							<input type="radio" name="q1" id="q1" value="1"> 
-							<font color="green"> True </font> <br> 
-							<input type="radio" name="q1" id="q1" value="0">
-							<font color="red"> False </font> <br/><br/> 
-							<input type="submit" value="Submit Answers" 
-								class="button" />
-					-->              
+					<ol>
+					<li>Which of the following conditions should hold for a line to completely be inside the clip window (code for end point 1 is c1 and for end point 2 is c2) :<br />
+					<ol type="a">
+					<li> c1 OR c2 = 0</li>
+					<li> c1 AND c2 = 0</li>
+					<li> c1 EXOR c2 = 1</li>
+					<li> c1 OR c2 = 1</li>
+					</ol></li>
+					
+					<li> Which of the following conditions should hold for a line to be trivially rejected (code for end point 1 is c1 and for end point 2 is c2) :<br />
+					<ol type="a">
+					<li> c1 AND c2 = 0</li>
+					<li> c1 AND c2 != 0</li>
+					<li> c1 OR c2 != 1</li>
+					<li> c1 AND c2 = 1</li>
+					</ol></li>
+					
+					<li> Do you think the same algorithm will work if the clip window is concave?
+					<ol type ="a">
+					<li> Yes</li>
+					<li> No</li>
+					</ol></li>
+					</ol>
 					</p>
 
 				</div>
@@ -252,7 +276,24 @@ If both codes have a 1 in the same bit position (bitwise AND of the codes is not
 
 				<div id="experiment-article-section-7-content" 
 					 class="content">
-					 <!-- Procedure to be put here -->
+					<ol>
+					<li> Fix the size of the clipping window (the default parameters are already filled in the input boxes) and then click on <b>Enter</b>.<br />
+					You can also proceed directly to the experiment using the default parameters of the clipping window and the starting and ending coordinates, by clicking on <b>Start Experiment with Default values</b>.</li>
+					<li> Fix the starting and ending coordinates. The default values are already filled in the input boxes. Once you have finalized the coordinates, you can click on <b>Start Experiment</b> to begin with the experiment.<br />
+					 You can also go <b>Back</b> to change the values of the frame buffer.</li>
+					<li> Throughout the experiment, you can click on <b>Next Iteration</b> to go to the next step of the algorithm and <b>Previous Iteration</b> to go to the previous step.</li>
+					<li>Once the experiment ends, you can again experiment with a new line.</li>
+					</ol>
+				</div>
+					
+			</section>
+			
+		
+			<section id="experiment-article-section-8">
+   
+				<div id="experiment-article-section-8-icon" class="icon">
+					<img src="../images/readings.jpg" />
+				</div>
 				</div>
 					
 			</section>
@@ -271,18 +312,11 @@ If both codes have a 1 in the same bit position (bitwise AND of the codes is not
 
 				<div id="experiment-article-section-8-content" 
 					 class="content">
-				<!--	  
-					<ul>	
-					<li>
-					<a href="http://en.wikipedia.org/wiki/Simple_harmonic_motion">
-						http://en.wikipedia.org/wiki/Simple_harmonic_motion 
-					</a>
-					</li>
-					<li>
-						Dynamics of structures by Anil K chopra. 
-					</li>
-					</ul>
-				-->
+					 <ol>
+					 <li> http://en.wikipedia.org/wiki/Cohen-Sutherland_algorithm</li>
+					 <li> James D. Foley. Computer graphics: Principles and Practice. Addison-Wesley Professional. </li>
+					 <li> Computer Graphics, C Version by Donald Hearn and M. Pauline Baker</li>
+					 </ol>
 				</div>
 
 			</section>
