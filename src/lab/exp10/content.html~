@@ -47,7 +47,7 @@
 		<header id="experiment-article-heading" class="heading">
 			<!-- You can add a welcome message or title of the experiment
 				 here -->
-			Clipping : Polygon
+			Rasterization : Polygon
 			<!-- Add any additional element if required with proper 
 				 enclosing -->
 		</header>
@@ -86,17 +86,18 @@
 				<div id="experiment-article-section-1-content" 
 					 class="content">	
 					<p>
-					When a 2D image is displayed onto a display screen, often the display area occupies a fraction of the amount of space that covers the entire image area.
-					Thus the unnecessary parts of the image that are located outside the display area can be removed to reduce the exorbitant amount of computations involved to render them.
-					This technique to remove such inessential parts of a scene lying outside the display area is called <b>clipping</b>.
-					The display area is also called the <b>clipped window</b>.<br /><br />
-					The technique used to cut/clip the parts of the polygon belonging in the region, outside of the clipped window, is called <b>polygon clipping</b>.<br /><br />
-					Some common algorithms to perform polygon clipping are as follows:
+					In digital display systems, everything that is displayed, is displayed in terms of a smallest unit of display, which is called a pixel.
+					This is in contrast to what we perceive the world to be as continuous.
+					The space occupied by any image in digital display system is measured in terms of pixels.
+					Thus we require to transform the continuous space in which we define he geometry of any figure to a discrete space for display in digital displays. This transformation is called <b>rasterization</b> or <b>scan conversion</b><br /><br />
+					When a polygon is transformed from a set of edges in the continous form of <i>y = mx + c</i> into a set of pixels occupied by the interior of the polygon, this transformation is called <b>polygon rasterization</b>.
+					Thus when we apply polygon rasterization technique on a polygon, we obtain the set of pixels that are required to be filled in order to fill the entire interior area bounded by the edges of the polygon in the best possible manner.
+					Some common algorithms to perform polygon rasterization are as follows:
 					<ol style="list-style-type:lower-latin">
-						<li>Sutherland-Hodgeman algorithm</li>
-						<li>Wiler-Atherton algorithm</li>
+						<li>Scan-Line Polygon Fill algorithm</li>
+						<li>Seed Fill or Boundary Fill algorithm</li>
 					</ol>
-					Here we have discussed only the Sutherland-Hodgeman Polygon Clipping algorithm.
+					Here we have discussed only the Scan-Line Polygon Fill algorithm.
 					</p>
 				</div>
 
@@ -123,27 +124,58 @@
 				<div id="experiment-article-section-2-content" 
 					 class="content">
 					<p>
-					<h2>Sutherland Hodgeman's Polygon Clipping Algorithm</h2>
-					<h4>Pseudo Code of the algorithm</h4>
-					Input : Vertices of the polygon, (x<sub>i</sub>, y<sub>i</sub>) &forall;i = {1, 2, ..., n} for n vertices in the polygon and the coordinates of the opposite corners of the clipped window.<br />
-					<!-- <fieldset>
-					<legend><u>Steps of the Algorithm</u></legend> -->
-					<u>Steps of the Algorithm</u>
+<h2>Scan Line Polygon Fill Algorithm</h2>
+<h4>Pseudo Code of the algorithm</h4>
+Input : Vertices of the polygon, (x<sub>i</sub>, y<sub>i</sub>) &forall;i = {1, 2, ..., n}, n = #vertices in the polygon.
+We have the following data structures to maintain data:
+<ul>
+	<li><u>Edge Table</u> (ET) : Contains all the edges (except horizontal edges) of the polygon sorted by their smaller y-coordinates. All the edges having equal smaller y-coordinates are kept in the same bucket, where they are sorted by the corresponding x-coordinate.<br />
+	In each cell, the following information is maintained:
+	<ol type=i>
+		<li>y_upper : last scanline to consider for this edge</li>
+		<li>x_lower : corresponding x coordinate for the smaller value y value of the edge</li>
+		<li>1/m : to compute the corresponding x coordinate of the edge for each scanline</li>
+	</ol></li>
+	<li><u>Active Edge Table</u> (AET) : Contains the edges that intersect with the current scan line. For each scan line, the edges are sorted in an increasing order of the x coordinate of the point of intersection.<br />
+	In each cell, the following information is maintained:
+	<ol type=i>
+		<li>y_upper : last scanline to consider for this edge</li>
+		<li>x_lower : x coordinate value of the edge for the present scan line</li>
+		<li>1/m : to compute the corresponding x coordinate of the edge for each scanline</li>
+	</ol></li>
+</ul>
 <pre>
-for each of the four boundaries of the clipped window<br />
-	for each edge e<sub>i</sub>in the polygon<br />
-		P<sub>i</sub> = (x<sub>i</sub>, y<sub>i</sub>) &amp; P<sub>i+1</sub> = (x<sub>i+1</sub>, y<sub>i+1</sub>) represent the two vertices of edge e<eub>i</sub>.<br />
-		if P<sub>i</sub> &amp; P<sub>i+1</sub> both lie outside the clipping area<br />
-			then no point is written<br />
-		else if P<sub>i</sub> &amp; P<sub>i+1</sub> both lie inside the clipping area<br />
-			then P<sub>i</sub> is written into the points of clipped polygon<br />
-		else if P<sub>i</sub> is inside and P<sub>i+1</sub> is outside<br />
-			then P<sub>i</sub> is written into the points of clipped polygon and we calculate the intersection of e<sub>i</sub> with the concerned boundary and the point of intersection is written into the points of clipped polygon.<br />
-		else<br />
-			then P<sub>i+1</sub> is written into the points of clipped polygon and we calculate the intersection of e<sub>i</sub> with the concerned boundary and the point of intersection is written into the points of clipped polygon.<br />
+<fieldset>
+<legend><u>Steps of the Algorithm</u></legend>
+<ol>
+<li>AET is initially empty.</li>
+<li>scan_value = Value of y-coordinate for the first nonempty bucket. This is the first scan line from where filling will start.</li>
+<li>Do
+<ul>
+	<li>From ET[scan_value] bucket, all entries are inserted in AET which satisfy the condition : y<sub>min</sub> = scan_value. This is to include the new edges which have their smaller y value equal to the present scan line.</li>
+	<li>From AET, remove the entries which satisfy the condition, y<sub>max</sub> = scan_value, i.e., remove the edges not intersecting with the next scanline</li>
+	<li>Please note that there will be one entry for edges in Fig. 1 and two entries for edges in Fig. 2<br />
+Figure 1 : <br />
+	<img src="image1.png" height="100" width="100"></img> changes to <img src="image3.png" height="100" width="100"></img>
+Figure 2 : <br /></li>
+	<img src="image2.png" height="100" width="100"></img>
+	<li>Sort all the entries in AET w.r.t. the x-coordinate of the intersection point of the edge with the present scan line.</li>
+	<li>Fill the pixels in the present scanline from x-values mentioned in the odd entries of AET to the x-values mentioned in the next even entry of AET.<br />
+	If there are n entries in AET (n will always even), then the following pixels will be filled :<br />
+	<ul>
+	    <li>1<sup>st</sup> entry to 2<sup>nd</sup> entry</li>
+	    <li>3<sup>rd</sup> entry to 4<sup>th</sup> entry</li>
+	    <li> ... </li>
+	    <li>(n-1)<sup>th</sup> entry to n<sup>th</sup> entry</li>
+	</ul>
+	<li>Increment y by 1 (to the coordinate of the next scanline).</li>
+	<li>For each nonvertical edge remaining in the AET, update x for the new y.</li>
+</ul><br />
+Until AET and ET are non empty</li>
+</ol>
+</fieldset>
 </pre>
-					<!-- </fieldset> -->
-					<br />
+<br />
 					</p>
 				</div>
 			</section>
@@ -163,8 +195,7 @@ for each of the four boundaries of the clipped window<br />
 				<div id="experiment-article-section-3-content" 
 					 class="content">
 					<p>
-					Objective of this experiment is to understand the steps of a Polygon Clipping Algorithm, i.e., how a polygon is clipped so as to render only the part which a user can view.
-					As an example, we have demonstrated the steps of Sutherland Hodgeman Algorithm.
+					Objective of this experiment is to understand the steps of <u>filling</u> a polygon in a 2D frame buffer. Given the vertices of the polygon, the experiment outputs a filled polygon. Here we have demonstrated the steps of Scan Line Poylgon Fill algorithm.
 					</p>
 				</div>
 
@@ -181,12 +212,11 @@ for each of the four boundaries of the clipped window<br />
 					 class="heading">
 					Experiment
 				</div>
-				<p><a href="../documents/java-and-icedtea-plugin.pdf">Install prerequisites to run the simulation</a></p>
 
 				<div id="experiment-article-section-4-content" 
 					 class="content">
-					<applet code='clipping.DrawClipPolygon' archive='../Vlabs.jar' width="1200" height="1000">
-					<param name="file_name" value="inputpoly">
+					<applet code='rasterization.ScanPolygonMain' archive='../Vlabs.jar' width="1200" height="1000">
+					<param name="file_name" value="polygon.txt">
 					</applet>
 				</div>
 
@@ -206,11 +236,13 @@ for each of the four boundaries of the clipped window<br />
 				<div id="experiment-article-section-5-content" 
 					 class="content">
 					 <ol>
-					 <li>The experiment contains a clipping window which represents the screen to which the graphics primitives (polygon in this case) are clipped to.</li>
-					 <li>The experiment allows the user to change the size of the clipping window.</li>
-					 <li> The experiment allows the user to choose the vertices of the polygon. In this experiment we can fill different kinds of polygon like convex and concave polygons in the rectangular (convex) clipping windows.</li>
+					 <li> The experiment contains a frame buffer which represents the screen to which the graphics primitives (polygon in this case) are rendered to.</li>
+					 <li> The experiment allows the user to change the size of the frame buffer.</li>
+					 <li> The experiment allows the user to choose the vertices of the polygon. In this experiment we can fill different kinds of polygon like convex, concave, self intersecting polygons.</li>
+					 <li> The user can move forward and backward through the steps of the experiment.</li>
 					 <li>At each step of the algorithm, the important computations that took place in that step are also given for better understanding of the algorithm.</li>
 					 </ol>
+
 				</div>
 
 			</section>
@@ -231,32 +263,6 @@ for each of the four boundaries of the clipped window<br />
 					 class="content">
 
 					<p>
-					<ol>
-					<li>The Sutherland Hodgeman works for the following cases :<br />
-					<ol type="a">
-					<li> Convex Polygon with convex clip window</li>
-					<li> Concave polygon with convex clip window</li>
-					<li> Convex polygon with concave clip window</li>
-					<li> a and b</li>
-					<li> a and c</li>
-					<li> All of the above</li>
-					</ol></li>
-
-					<li> Will the output matter on the order in which we process the polygon?<br />
-					<ol type="a">
-					<li> Yes</li>
-					<li> No</li>
-					</ol></li>
-
-					<li> Let m be the slope of the line joining clip polygon point P<sub>i</sub>(x<sub>1</sub>, y<sub>1</sub>) and P<sub>i+1</sub>(x<sub>2</sub>, y<sub>2</sub>).
-					The intersection point of this line with the Left side of clip window is :
-					<ol type="a">
-					<li> x = xmin; y = (int)(y2 + ((xmin - x2)*m));</li>
-					<li> x = xmax; y = (int)(y2 + ((xmax - x2)*m));</li>
-					<li> x = x2; y = ymin;</li>
-					<li> x = (int) (x2 + ((ymax - y2)/m)); y = ymax;</li>
-					</ol></li>
-					</ol>
 					</p>
 
 				</div>
@@ -278,13 +284,13 @@ for each of the four boundaries of the clipped window<br />
 				<div id="experiment-article-section-7-content" 
 					 class="content">
 					 <ol>
-					 <li> Fix the clipping window (the default parameters are already filled in the input boxes) and then click on <b>Enter</b>.<br />
-					 You can also proceed directly to the experiment using the default parameters of the clipping window and the vertices of a polygon, by clicking on <b>Start Experiment with Default Values</b>.</li>
+					 <li> Fix the size of the frame buffer (the default parameters are already filled in the input boxes) and then click on <b>Enter</b>.<br />
+					 You can also proceed directly to the experiment using the default parameters of the size of frame buffer and the vertices of a polygon, by clicking on <b>Start Experiment with Default Values</b>.</li>
 					 <li> Enter the vertices of the polygon in the input box.<br />
 					 Let, (x<sub>1</sub>, y<sub>1</sub>), (x<sub>2</sub>, y<sub>2</sub>), (x<sub>3</sub>, y<sub>3</sub>), (x<sub>4</sub>, y<sub>4</sub>), (x<sub>5</sub>, y<sub>5</sub>)<br /> represent the vertices of the polygon in order, i.e., the 1<sup>st</sup> vertex is connected to the 2<sup>nd</sup> and 2<sup>nd</sup> to the 3<sup>rd</sup> and so on. The last vertex is connected to the 1st to complete the polygon.<br />
 					 The default vertices are already filled in the input boxes. Once you have finalized the coordinates, you can click on <b>Start Experiment</b> to begin with the experiment.<br />
 					 You can also go <b>Back</b> to change the values of the frame buffer.</li>
-					 <li> Throughout the experiment, you can click on <b>Next Iteration</b> to go to the next step of the algorithm.</li>
+					 <li> Throughout the experiment, you can click on <b>Next Iteration</b> to go tothe next step of the algorithm and <b>Previous Ieration</b> to go to the previous step.</li>
 					 <li>Once the experiment ends, you can again experiment with a new set of vertices of the polygon.</li>
 					 </ol>
 				</div>
@@ -306,15 +312,14 @@ for each of the four boundaries of the clipped window<br />
 				<div id="experiment-article-section-8-content" 
 					 class="content">
 					 <ol>
-					 <li> http://en.wikipedia.org/wiki/Sutherland-Hodgman_algorithm</li>
-					 <li> James D. Foley. Computer graphics: Principles and Practice. Addison-Wesley Professional. </li>
-					 <li> Computer Graphics, C Version by Donald Hearn and M. Pauline Baker</li>
-					 <li> https://www.cs.drexel.edu/~david/Classes/CS430/Lectures/L-05_Polygons.6.pdf</li>
-					 </ol>
+					 	<li> http://en.wikipedia.org/wiki/Scanline_rendering</li>
+					 	<li> James D. Foley. Computer graphics: Principles and Practice. Addison-Wesley Professional. </li>
+					 	<li> Computer Graphics, C Version by Donald Hearn and M. Pauline Baker</li>
+					</ol>
 				</div>
 
 			</section>
-
+			
 			<section id="lab-article-section-6" class="default">
 				<!-- Feedback link -->
 				<div id="lab-article-section-6-icon" class="icon">

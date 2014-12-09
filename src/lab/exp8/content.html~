@@ -47,7 +47,7 @@
 		<header id="experiment-article-heading" class="heading">
 			<!-- You can add a welcome message or title of the experiment
 				 here -->
-			Hierarchical Transformations: 3D Articulated Arm
+			Clipping : Polygon
 			<!-- Add any additional element if required with proper 
 				 enclosing -->
 		</header>
@@ -86,7 +86,17 @@
 				<div id="experiment-article-section-1-content" 
 					 class="content">	
 					<p>
-						This experiment demonstrates the end effect of hierarchical transformations learnt in the previous experiment using a 3D Articulated Arm setup.
+					When a 2D image is displayed onto a display screen, often the display area occupies a fraction of the amount of space that covers the entire image area.
+					Thus the unnecessary parts of the image that are located outside the display area can be removed to reduce the exorbitant amount of computations involved to render them.
+					This technique to remove such inessential parts of a scene lying outside the display area is called <b>clipping</b>.
+					The display area is also called the <b>clipped window</b>.<br /><br />
+					The technique used to cut/clip the parts of the polygon belonging in the region, outside of the clipped window, is called <b>polygon clipping</b>.<br /><br />
+					Some common algorithms to perform polygon clipping are as follows:
+					<ol style="list-style-type:lower-latin">
+						<li>Sutherland-Hodgeman algorithm</li>
+						<li>Wiler-Atherton algorithm</li>
+					</ol>
+					Here we have discussed only the Sutherland-Hodgeman Polygon Clipping algorithm.
 					</p>
 				</div>
 
@@ -97,6 +107,7 @@
 			<section id="experiment-article-section-2">
 
 				<div id="experiment-article-section-2-icon" class="icon">
+					<!-- Enclose the icon image of your lab. -->
 					<img src="../images/theory.jpg" />
 				</div>
 
@@ -112,13 +123,27 @@
 				<div id="experiment-article-section-2-content" 
 					 class="content">
 					<p>
-						Here in this experiment we put the concepts of multiple transformations learnt in <i>experiment 5a</i> to practice with an Articulated arm experiment.
-					</p>
-					<p>
-						A hierarchy is an organization of things into levels. In a very general sense, he things higher up in a hierachy have control over the lower things. Here this applies to the matrix transformations.
-					</p>
-					<p>
-						We constructed a hierarchical articulated arm model where each node/part follows a series of transformations from the root node to its current position. The top-most object in this hierarchy is the Shoulder followed by Elbow, Forearm, Wrist and Palm. Moving the shoulder moves the rest of the parts as all others derive their transformation from the shoulder. When you move the wrist only the palm moves while the shoulder, elbow and forearm remain unchanged. This is because the wrist is lower in hierarchy than your elbow and therefore has no control on it.
+					<h2>Sutherland Hodgeman's Polygon Clipping Algorithm</h2>
+					<h4>Pseudo Code of the algorithm</h4>
+					Input : Vertices of the polygon, (x<sub>i</sub>, y<sub>i</sub>) &forall;i = {1, 2, ..., n} for n vertices in the polygon and the coordinates of the opposite corners of the clipped window.<br />
+					<!-- <fieldset>
+					<legend><u>Steps of the Algorithm</u></legend> -->
+					<u>Steps of the Algorithm</u>
+<pre>
+for each of the four boundaries of the clipped window<br />
+	for each edge e<sub>i</sub>in the polygon<br />
+		P<sub>i</sub> = (x<sub>i</sub>, y<sub>i</sub>) &amp; P<sub>i+1</sub> = (x<sub>i+1</sub>, y<sub>i+1</sub>) represent the two vertices of edge e<eub>i</sub>.<br />
+		if P<sub>i</sub> &amp; P<sub>i+1</sub> both lie outside the clipping area<br />
+			then no point is written<br />
+		else if P<sub>i</sub> &amp; P<sub>i+1</sub> both lie inside the clipping area<br />
+			then P<sub>i</sub> is written into the points of clipped polygon<br />
+		else if P<sub>i</sub> is inside and P<sub>i+1</sub> is outside<br />
+			then P<sub>i</sub> is written into the points of clipped polygon and we calculate the intersection of e<sub>i</sub> with the concerned boundary and the point of intersection is written into the points of clipped polygon.<br />
+		else<br />
+			then P<sub>i+1</sub> is written into the points of clipped polygon and we calculate the intersection of e<sub>i</sub> with the concerned boundary and the point of intersection is written into the points of clipped polygon.<br />
+</pre>
+					<!-- </fieldset> -->
+					<br />
 					</p>
 				</div>
 			</section>
@@ -138,7 +163,8 @@
 				<div id="experiment-article-section-3-content" 
 					 class="content">
 					<p>
-						Objective of this experiment is to understand the effective tranformation due to a series of transformations and how to construct a hierarchical model.
+					Objective of this experiment is to understand the steps of a Polygon Clipping Algorithm, i.e., how a polygon is clipped so as to render only the part which a user can view.
+					As an example, we have demonstrated the steps of Sutherland Hodgeman Algorithm.
 					</p>
 				</div>
 
@@ -155,52 +181,12 @@
 					 class="heading">
 					Experiment
 				</div>
-				<p><a href="../documents/java-and-icedtea-plugin.pdf">Install prerequisites to run the simulation</a></p>
+
 				<div id="experiment-article-section-4-content" 
 					 class="content">
-					<p>
-						<ol type=1 start=1>
-						<li>
-							Please download the appropriate Virtual Lab Graphics package below. <br/>
-							<b><a href="../VirtualLabGraphics.zip">Download</a></b> <br/>
-						</li>
-						<li>
-							Save the <b>VirtualLabGraphics.zip</b> file and double click it to extract.
-						</li>
-						<li>
-							Run the Start.jar in the extracted folder (VirtualLabGraphics folder) to start the experiments.
-							<ul>
-							<li>
-								Windows/MacOSX users can start the experiment by double clicking the Start.jar file.
-							</li>
-							<li>
-								Linux users should run Start.jar by executing the following command in the terminal. <br/>
-								Change to the Virtual Lab Directory. <br/>
-								<i><b>$</b> cd VirtualLabGraphics/</i> <br/>
-								Execute the experiment using the command: <br/>
-								<i><b>$</b> java -jar Start.jar</i>
-							</li>
-							</ul>
-						</li>
-						<li>
-						<b>Alternate Method:</b> If you are not able to start the experiment by the above procedures, you can try the alternate method given below.
-							<ul>
-							<li>
-								Alternatively, Linux/MacOSX users can start the experiment by as described below. <br/>
-								Change to the Virtual Lab Directory. <br/>
-								<i><b>$</b> cd VirtualLabGraphics/</i> <br/>
-								Execute the experiment using the command: <br/>
-								<i><b>$</b> ./Experiment.sh 5b</i>
-							</li>
-							<li>
-								Alternatively, Windows users can start the experiment by double clicking the Experiment5b.bat file.
-							</li>
-							</ul>
-						</li>
-						</ol>
-						<!-- Place or link to your experiment java applet or 
-							 flash file here. -->
-					</p>
+					<applet code='clipping.DrawClipPolygon' archive='../Vlabs.jar' width="1200" height="1000">
+					<param name="file_name" value="inputpoly">
+					</applet>
 				</div>
 
 			</section>
@@ -218,13 +204,12 @@
 
 				<div id="experiment-article-section-5-content" 
 					 class="content">
-					<script type="text/javascript" src="../js/pageload.js"> </script>
-					<div id="page">
-						<a href="../vlabs-manual.pdf">Download Manual</a>
-						<script type="text/javascript">
-							loadPage('index.html');
-						</script>
-					</div>
+					 <ol>
+					 <li>The experiment contains a clipping window which represents the screen to which the graphics primitives (polygon in this case) are clipped to.</li>
+					 <li>The experiment allows the user to change the size of the clipping window.</li>
+					 <li> The experiment allows the user to choose the vertices of the polygon. In this experiment we can fill different kinds of polygon like convex and concave polygons in the rectangular (convex) clipping windows.</li>
+					 <li>At each step of the algorithm, the important computations that took place in that step are also given for better understanding of the algorithm.</li>
+					 </ol>
 				</div>
 
 			</section>
@@ -245,16 +230,32 @@
 					 class="content">
 
 					<p>
-					<!--              
-						<b>Q1.</b> 
-							Time taken for one complete oscillation is called Time Period of the oscillator. <br> 
-							<input type="radio" name="q1" id="q1" value="1"> 
-							<font color="green"> True </font> <br> 
-							<input type="radio" name="q1" id="q1" value="0">
-							<font color="red"> False </font> <br/><br/> 
-							<input type="submit" value="Submit Answers" 
-								class="button" />
-					-->              
+					<ol>
+					<li>The Sutherland Hodgeman works for the following cases :<br />
+					<ol type="a">
+					<li> Convex Polygon with convex clip window</li>
+					<li> Concave polygon with convex clip window</li>
+					<li> Convex polygon with concave clip window</li>
+					<li> a and b</li>
+					<li> a and c</li>
+					<li> All of the above</li>
+					</ol></li>
+
+					<li> Will the output matter on the order in which we process the polygon?<br />
+					<ol type="a">
+					<li> Yes</li>
+					<li> No</li>
+					</ol></li>
+
+					<li> Let m be the slope of the line joining clip polygon point P<sub>i</sub>(x<sub>1</sub>, y<sub>1</sub>) and P<sub>i+1</sub>(x<sub>2</sub>, y<sub>2</sub>).
+					The intersection point of this line with the Left side of clip window is :
+					<ol type="a">
+					<li> x = xmin; y = (int)(y2 + ((xmin - x2)*m));</li>
+					<li> x = xmax; y = (int)(y2 + ((xmax - x2)*m));</li>
+					<li> x = x2; y = ymin;</li>
+					<li> x = (int) (x2 + ((ymax - y2)/m)); y = ymax;</li>
+					</ol></li>
+					</ol>
 					</p>
 
 				</div>
@@ -275,18 +276,16 @@
 
 				<div id="experiment-article-section-7-content" 
 					 class="content">
-					 <p>
-					 This experiment introduces the concept of the hierarchical transformations and a hierarchical model.
-					</p>
-					<p>
-					The hierarchical articulated arm is provided. Notice the different nodes used to construct the model. The nodes in this model follows the hierarchy: Shoulder (highest), Elbow, Forearm, Wrist and Palm. Applying transformations to a node in the hierarchy applies the same transformations to all the lower nodes in the hierarchy in addition to their own transformations. For example, a rotation has been applied to the shoulder. As you drag the slider you can notice this rotation being applied to the other nodes toother nodes.
-					</p>
-					<p>
-					Try modifying the transformations in the hierarchy and notice the effective changes on the entire model.
-					</p>
-					<p>
-					Open the transormation nodes of Forearm and Palm and notice how a Cube has been moulded to a forearm and a palm using the respective transformations.
-					</p>
+					 <ol>
+					 <li> Fix the clipping window (the default parameters are already filled in the input boxes) and then click on <b>Enter</b>.<br />
+					 You can also proceed directly to the experiment using the default parameters of the clipping window and the vertices of a polygon, by clicking on <b>Start Experiment with Default Values</b>.</li>
+					 <li> Enter the vertices of the polygon in the input box.<br />
+					 Let, (x<sub>1</sub>, y<sub>1</sub>), (x<sub>2</sub>, y<sub>2</sub>), (x<sub>3</sub>, y<sub>3</sub>), (x<sub>4</sub>, y<sub>4</sub>), (x<sub>5</sub>, y<sub>5</sub>)<br /> represent the vertices of the polygon in order, i.e., the 1<sup>st</sup> vertex is connected to the 2<sup>nd</sup> and 2<sup>nd</sup> to the 3<sup>rd</sup> and so on. The last vertex is connected to the 1st to complete the polygon.<br />
+					 The default vertices are already filled in the input boxes. Once you have finalized the coordinates, you can click on <b>Start Experiment</b> to begin with the experiment.<br />
+					 You can also go <b>Back</b> to change the values of the frame buffer.</li>
+					 <li> Throughout the experiment, you can click on <b>Next Iteration</b> to go to the next step of the algorithm.</li>
+					 <li>Once the experiment ends, you can again experiment with a new set of vertices of the polygon.</li>
+					 </ol>
 				</div>
 					
 			</section>
@@ -305,13 +304,12 @@
 
 				<div id="experiment-article-section-8-content" 
 					 class="content">
-					<ul>	
-					<li>
-					<a href="http://en.wikipedia.org/wiki/Transformation_matrix#Composing_and_inverting_transformations">
-						http://en.wikipedia.org/wiki/Transformation_matrix#Composing_and_inverting_transformations
-					</a>
-					</li>
-					</ul>
+					 <ol>
+					 <li> http://en.wikipedia.org/wiki/Sutherland-Hodgman_algorithm</li>
+					 <li> James D. Foley. Computer graphics: Principles and Practice. Addison-Wesley Professional. </li>
+					 <li> Computer Graphics, C Version by Donald Hearn and M. Pauline Baker</li>
+					 <li> https://www.cs.drexel.edu/~david/Classes/CS430/Lectures/L-05_Polygons.6.pdf</li>
+					 </ol>
 				</div>
 
 			</section>

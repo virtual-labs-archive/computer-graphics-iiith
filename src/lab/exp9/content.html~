@@ -47,7 +47,7 @@
 		<header id="experiment-article-heading" class="heading">
 			<!-- You can add a welcome message or title of the experiment
 				 here -->
-			Hierarchical Transformations: 3D Articulated Arm
+				 Rasterization : Line
 			<!-- Add any additional element if required with proper 
 				 enclosing -->
 		</header>
@@ -86,7 +86,19 @@
 				<div id="experiment-article-section-1-content" 
 					 class="content">	
 					<p>
-						This experiment demonstrates the end effect of hierarchical transformations learnt in the previous experiment using a 3D Articulated Arm setup.
+					In digital display systems, everything that is displayed, is displayed in terms of a smallest unit of display, which is called a pixel.
+					This is in contrast to what we perceive the world to be as continuous.
+					The space occupied by any image in digital display system is measured in terms of pixels.
+					Thus we require to transform the continuous space in which we define he geometry of any figure to a discrete space for display in digital displays. This transformation is called <b>rasterization</b> or <b>scan conversion</b><br /><br />
+					When a line is transformed from its continous form of <i>y = mx + c</i> into a discrete form of a set of pixels, this transformation is called <b>line rasterization</b>.
+					Thus when we apply line rasterization technique on a line, &nbsp;&nbsp;<i>y = mx + c</i>, we obtain the set of pixels that are required to be filled in order to fit the given continuous line in the best possible manner.
+					Some common algorithms to perform line rasterization are as follows:
+					<ol style="list-style-type:lower-latin">
+						<li>Bresenham's line algorithm</li>
+						<li>Digital Differential Analyzer(DDA) algorithm</li>
+						<li>Xiaolin Wu's algorithm</li>
+					</ol>
+					Here we have discussed only the Bresenham's Line Rasterization algorithm.
 					</p>
 				</div>
 
@@ -97,6 +109,7 @@
 			<section id="experiment-article-section-2">
 
 				<div id="experiment-article-section-2-icon" class="icon">
+					<!-- Enclose the icon image of your lab. -->
 					<img src="../images/theory.jpg" />
 				</div>
 
@@ -112,13 +125,33 @@
 				<div id="experiment-article-section-2-content" 
 					 class="content">
 					<p>
-						Here in this experiment we put the concepts of multiple transformations learnt in <i>experiment 5a</i> to practice with an Articulated arm experiment.
-					</p>
-					<p>
-						A hierarchy is an organization of things into levels. In a very general sense, he things higher up in a hierachy have control over the lower things. Here this applies to the matrix transformations.
-					</p>
-					<p>
-						We constructed a hierarchical articulated arm model where each node/part follows a series of transformations from the root node to its current position. The top-most object in this hierarchy is the Shoulder followed by Elbow, Forearm, Wrist and Palm. Moving the shoulder moves the rest of the parts as all others derive their transformation from the shoulder. When you move the wrist only the palm moves while the shoulder, elbow and forearm remain unchanged. This is because the wrist is lower in hierarchy than your elbow and therefore has no control on it.
+					<h2>Bresenham's Line Rasterization Algorithm</h2>
+					Bresenham's algorithm is a very popular algorithm due to its simplicity and speed.
+					It helps to avoid floating point calculations, which was particulary useful in the days when floating point operations could not be handled by the computers.<br />
+					<h4>Pseudo Code of the algorithm</h4>
+					Input : Two Endpoints of the line, (x<sub>0</sub>, y<sub>0</sub>) &amp; (x<sub>1</sub>, y<sub>1</sub>)<br />
+					Assumption : For the description of the algorithm below, we have assumed the slope of the line(m) to have the constraint, 0 &lt; m &lt; 1. However the experiment works with any given line.<br />
+					<fieldset><br />
+					<legend><u>Steps of the Algorithm</u></legend>
+					<pre>
+<ol>
+<li>if x<sub>0</sub> &gt; x<sub>1</sub>
+    swap the endpoints
+<li>&Delta;y = y<sub>1</sub> - y<sub>0</sub>
+&Delta;x = x<sub>1</sub> - x<sub>0</sub>
+p<sub>0</sub> = 2*&Delta;y - &Delta;x</li>
+<li>for i = 1 to &Delta;x
+do
+    if p<sub>i-1</sub> &lt; 0
+        //the next point is (x<sub>i-1</sub> + 1, y<sub>i-1</sub>)
+	p<sub>i</sub> = p<sub>i-1</sub> + 2*&Delta;y
+    else
+        //the next point is (x<sub>i-1</sub> + 1, y<sub>i-1</sub> + 1)
+	p<sub>i</sub> = p<sub>i-1</sub> + 2*&Delta;y - 2*&Delta;x;
+done	
+</pre>
+					</fieldset>
+					<br />
 					</p>
 				</div>
 			</section>
@@ -138,7 +171,7 @@
 				<div id="experiment-article-section-3-content" 
 					 class="content">
 					<p>
-						Objective of this experiment is to understand the effective tranformation due to a series of transformations and how to construct a hierarchical model.
+					Objective of this experiment is to understand the steps of a Line Rasterization Algorithm, i.e., how a geometric line is converted to pixels in a 2D frame buffer. As an example, we have demonstrated the steps of Bresenham's Line Rasterization algorithm here.
 					</p>
 				</div>
 
@@ -155,52 +188,11 @@
 					 class="heading">
 					Experiment
 				</div>
-				<p><a href="../documents/java-and-icedtea-plugin.pdf">Install prerequisites to run the simulation</a></p>
+
 				<div id="experiment-article-section-4-content" 
 					 class="content">
-					<p>
-						<ol type=1 start=1>
-						<li>
-							Please download the appropriate Virtual Lab Graphics package below. <br/>
-							<b><a href="../VirtualLabGraphics.zip">Download</a></b> <br/>
-						</li>
-						<li>
-							Save the <b>VirtualLabGraphics.zip</b> file and double click it to extract.
-						</li>
-						<li>
-							Run the Start.jar in the extracted folder (VirtualLabGraphics folder) to start the experiments.
-							<ul>
-							<li>
-								Windows/MacOSX users can start the experiment by double clicking the Start.jar file.
-							</li>
-							<li>
-								Linux users should run Start.jar by executing the following command in the terminal. <br/>
-								Change to the Virtual Lab Directory. <br/>
-								<i><b>$</b> cd VirtualLabGraphics/</i> <br/>
-								Execute the experiment using the command: <br/>
-								<i><b>$</b> java -jar Start.jar</i>
-							</li>
-							</ul>
-						</li>
-						<li>
-						<b>Alternate Method:</b> If you are not able to start the experiment by the above procedures, you can try the alternate method given below.
-							<ul>
-							<li>
-								Alternatively, Linux/MacOSX users can start the experiment by as described below. <br/>
-								Change to the Virtual Lab Directory. <br/>
-								<i><b>$</b> cd VirtualLabGraphics/</i> <br/>
-								Execute the experiment using the command: <br/>
-								<i><b>$</b> ./Experiment.sh 5b</i>
-							</li>
-							<li>
-								Alternatively, Windows users can start the experiment by double clicking the Experiment5b.bat file.
-							</li>
-							</ul>
-						</li>
-						</ol>
-						<!-- Place or link to your experiment java applet or 
-							 flash file here. -->
-					</p>
+					<applet code='rasterization.ScanLineMain' archive='../Vlabs.jar' width="1200" height="1000">
+					</applet>
 				</div>
 
 			</section>
@@ -218,13 +210,13 @@
 
 				<div id="experiment-article-section-5-content" 
 					 class="content">
-					<script type="text/javascript" src="../js/pageload.js"> </script>
-					<div id="page">
-						<a href="../vlabs-manual.pdf">Download Manual</a>
-						<script type="text/javascript">
-							loadPage('index.html');
-						</script>
-					</div>
+					 <ol>
+					 <li>The experiment contains a frame buffer which represents the screen to which the graphics primitives (line in this case) are rendered to.</li>
+					 <li>The experiment allows the user to change the size of the frame buffer.</li>
+					 <li>The experiment allows the user to choose the starting and ending coordinates of his own choice.</li>
+					 <li>The user can move forward and backward through the steps of the experiment.</li>
+					 <li>At each step of the algorithm, the important computations that took place in that step are also given for better understanding of the algorithm.</li>
+					 </ol>
 				</div>
 
 			</section>
@@ -245,16 +237,6 @@
 					 class="content">
 
 					<p>
-					<!--              
-						<b>Q1.</b> 
-							Time taken for one complete oscillation is called Time Period of the oscillator. <br> 
-							<input type="radio" name="q1" id="q1" value="1"> 
-							<font color="green"> True </font> <br> 
-							<input type="radio" name="q1" id="q1" value="0">
-							<font color="red"> False </font> <br/><br/> 
-							<input type="submit" value="Submit Answers" 
-								class="button" />
-					-->              
 					</p>
 
 				</div>
@@ -275,18 +257,14 @@
 
 				<div id="experiment-article-section-7-content" 
 					 class="content">
-					 <p>
-					 This experiment introduces the concept of the hierarchical transformations and a hierarchical model.
-					</p>
-					<p>
-					The hierarchical articulated arm is provided. Notice the different nodes used to construct the model. The nodes in this model follows the hierarchy: Shoulder (highest), Elbow, Forearm, Wrist and Palm. Applying transformations to a node in the hierarchy applies the same transformations to all the lower nodes in the hierarchy in addition to their own transformations. For example, a rotation has been applied to the shoulder. As you drag the slider you can notice this rotation being applied to the other nodes toother nodes.
-					</p>
-					<p>
-					Try modifying the transformations in the hierarchy and notice the effective changes on the entire model.
-					</p>
-					<p>
-					Open the transormation nodes of Forearm and Palm and notice how a Cube has been moulded to a forearm and a palm using the respective transformations.
-					</p>
+					<ol>
+					<li> Fix the size of the frame buffer (the default parameters are already filled in the input boxes) and then click on <b>Enter</b>.<br />
+					You can also proceed directly to the experiment using the default parameters of the size of frame buffer and the starting and ending coordinates, by clicking on <b>Start Experiment with Default values</b>.</li>
+					<li> Fix the starting and ending coordinates. The default values are already filled in the input boxes. Once you have finalized the coordinates, you can click on <b>Start Experiment</b> to begin with the experiment.<br />
+					 You can also go <b>Back</b> to change the values of the frame buffer.</li>
+					<li> Throughout the experiment, you can click on <b>Next Iteration</b> to go to the next step of the algorithm and <b>Previous Iteration</b> to go to the previous step.</li>
+					<li>Once the experiment ends, you can again experiment with a new line.</li>
+					</ol>
 				</div>
 					
 			</section>
@@ -305,13 +283,11 @@
 
 				<div id="experiment-article-section-8-content" 
 					 class="content">
-					<ul>	
-					<li>
-					<a href="http://en.wikipedia.org/wiki/Transformation_matrix#Composing_and_inverting_transformations">
-						http://en.wikipedia.org/wiki/Transformation_matrix#Composing_and_inverting_transformations
-					</a>
-					</li>
-					</ul>
+					 <ol>
+					 <li> http://en.wikipedia.org/wiki/Bresenham's_line_algorithm</li>
+					 <li> James D. Foley. Computer graphics: Principles and Practice. Addison-Wesley Professional. </li>
+					 <li> Computer Graphics, C Version by Donald Hearn and M. Pauline Baker</li>
+					 </ol>
 				</div>
 
 			</section>

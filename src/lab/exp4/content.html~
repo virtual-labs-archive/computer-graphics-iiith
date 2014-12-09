@@ -47,7 +47,7 @@
 		<header id="experiment-article-heading" class="heading">
 			<!-- You can add a welcome message or title of the experiment
 				 here -->
-			Hierarchical Transformations: 3D Articulated Arm
+			Transformations: Scaling
 			<!-- Add any additional element if required with proper 
 				 enclosing -->
 		</header>
@@ -86,7 +86,7 @@
 				<div id="experiment-article-section-1-content" 
 					 class="content">	
 					<p>
-						This experiment demonstrates the end effect of hierarchical transformations learnt in the previous experiment using a 3D Articulated Arm setup.
+						This experiment explains the concept of scaling transformation.
 					</p>
 				</div>
 
@@ -112,13 +112,20 @@
 				<div id="experiment-article-section-2-content" 
 					 class="content">
 					<p>
-						Here in this experiment we put the concepts of multiple transformations learnt in <i>experiment 5a</i> to practice with an Articulated arm experiment.
+						Scaling multiplies the distances from the co-ordinate axes by a constant factor. The scaling matrix which scales by v<sub>x</sub>, v<sub>y</sub> and v<sub>z</sub> units looks like:
 					</p>
+					<img src="media/scaling-matrix.png" 
+						 alt="Scaling Matrix" 
+						 style="width:189px; height: 97px; padding: 10px; background-color: #fff;" />
+
 					<p>
-						A hierarchy is an organization of things into levels. In a very general sense, he things higher up in a hierachy have control over the lower things. Here this applies to the matrix transformations.
+						On multiplication with a vector, the expected result is obtained:
 					</p>
+					<img src="media/point_scaling.png" 
+						 alt="Matrix representation for Scaling a Point" 
+						 style="width:333px; height: 97px; padding: 10px; background-color: #fff;" />
 					<p>
-						We constructed a hierarchical articulated arm model where each node/part follows a series of transformations from the root node to its current position. The top-most object in this hierarchy is the Shoulder followed by Elbow, Forearm, Wrist and Palm. Moving the shoulder moves the rest of the parts as all others derive their transformation from the shoulder. When you move the wrist only the palm moves while the shoulder, elbow and forearm remain unchanged. This is because the wrist is lower in hierarchy than your elbow and therefore has no control on it.
+						A scaling transformation can also be interpreted as resizing the co-ordinate axes while keeping the points constant. Thus, a scaling by (2,3) will require redrawing each unit on the X-axis as 2 units and each unit on the Y-axis as 3.
 					</p>
 				</div>
 			</section>
@@ -138,7 +145,7 @@
 				<div id="experiment-article-section-3-content" 
 					 class="content">
 					<p>
-						Objective of this experiment is to understand the effective tranformation due to a series of transformations and how to construct a hierarchical model.
+						Objective of this experiment is to understand the effect of scaling on Points along any axis in 2D/3D space. We also learn the matrix representation for the scaling transformation and how to use it to compute the scaled point.
 					</p>
 				</div>
 
@@ -155,7 +162,7 @@
 					 class="heading">
 					Experiment
 				</div>
-				<p><a href="../documents/java-and-icedtea-plugin.pdf">Install prerequisites to run the simulation</a></p>
+
 				<div id="experiment-article-section-4-content" 
 					 class="content">
 					<p>
@@ -190,10 +197,10 @@
 								Change to the Virtual Lab Directory. <br/>
 								<i><b>$</b> cd VirtualLabGraphics/</i> <br/>
 								Execute the experiment using the command: <br/>
-								<i><b>$</b> ./Experiment.sh 5b</i>
+								<i><b>$</b> ./Experiment.sh 4</i>
 							</li>
 							<li>
-								Alternatively, Windows users can start the experiment by double clicking the Experiment5b.bat file.
+								Alternatively, Windows users can start the experiment by double clicking the Experiment4.bat file.
 							</li>
 							</ul>
 						</li>
@@ -244,18 +251,66 @@
 				<div id="experiment-article-section-6-content" 
 					 class="content">
 
+				<script type="text/javascript" src="evaluate.js"></script>
+				<form name="quiz" method="post">
 					<p>
-					<!--              
-						<b>Q1.</b> 
-							Time taken for one complete oscillation is called Time Period of the oscillator. <br> 
-							<input type="radio" name="q1" id="q1" value="1"> 
-							<font color="green"> True </font> <br> 
-							<input type="radio" name="q1" id="q1" value="0">
-							<font color="red"> False </font> <br/><br/> 
-							<input type="submit" value="Submit Answers" 
-								class="button" />
-					-->              
+					<img src="media/quiz_matrix1.png"
+						 alt="Matrix( (2,0,0,0), (0,1.5,0,0), (0,0,0.5,0), (0,0,0,1) )"
+						 style="float: right; width:200px; height:150px;" />
+					<b>Q1.</b>
+					The point (5,2,8) after applying the following scaling matrix becomes: <br/>
+					<input type="radio" name="q1" id="q1" value="1"> &nbsp;&nbsp;
+					(10,3,40) <br/>
+					<input type="radio" name="q1" id="q1" value="2"> &nbsp;&nbsp;
+					(10,2,4) <br/>
+					<input type="radio" name="q1" id="q1" value="3"> &nbsp;&nbsp;
+					(2.5,3,4) <br/>
+					<input type="radio" name="q1" id="q1" value="4"> &nbsp;&nbsp;
+					(10,3,4)
 					</p>
+
+					<p>
+					<b>Q2.</b>
+					Applying a scaling transformation of 2 on X-axis makes the unit distance: <br/>
+					<input type="radio" name="q2" id="q2" value="1"> &nbsp;&nbsp;
+					1/4 of the original unit distance. <br/>
+					<input type="radio" name="q2" id="q2" value="1"> &nbsp;&nbsp;
+					1/2 of the original unit distance. <br/>
+					<input type="radio" name="q2" id="q2" value="1"> &nbsp;&nbsp;
+					Same as the original unit distance. <br/>
+					<input type="radio" name="q2" id="q2" value="1"> &nbsp;&nbsp;
+					Twice the original unit distance.
+					</p>
+
+					<p>
+					<b>Q3.</b>
+					What is the scaling vector <i>v</i> if A(5,4,1) gets scaled to (2.5,6,5) ? <br/>
+					<input type="radio" name="q3" id="q3" value="1"> &nbsp;&nbsp;
+					[0.5, 1.5, 5] <br/>
+					<input type="radio" name="q3" id="q3" value="2"> &nbsp;&nbsp;
+					[2, 3, 5] <br/>
+					<input type="radio" name="q3" id="q3" value="3"> &nbsp;&nbsp;
+					[2.5, 3, 5] <br/>
+					<input type="radio" name="q3" id="q3" value="4"> &nbsp;&nbsp;
+					[2.5, 1.5, 5]
+					</p>
+
+					<p>
+					<b>Q4.</b>
+					What is the scaling vector <i>v</i> if A(2,3,4) gets transformed to B(2,3,4) ? <br/>
+					<input type="radio" name="q4" id="q4" value="1"> &nbsp;&nbsp;
+					[1, 0, 0] <br/>
+					<input type="radio" name="q4" id="q4" value="2"> &nbsp;&nbsp;
+					[0, 0, 0] <br/>
+					<input type="radio" name="q4" id="q4" value="3"> &nbsp;&nbsp;
+					[1, 1, 1] <br/>
+					<input type="radio" name="q4" id="q4" value="4"> &nbsp;&nbsp;
+					[1, 1, 0] <br/>
+					</p>
+					<p>
+					<input type="button" value="Evaluate" class="button" onclick="eval();" />
+					</p>
+				</form>
 
 				</div>
 
@@ -275,17 +330,20 @@
 
 				<div id="experiment-article-section-7-content" 
 					 class="content">
-					 <p>
-					 This experiment introduces the concept of the hierarchical transformations and a hierarchical model.
+					<p>
+						This experiment introduces the concept of the scaling transformation.
 					</p>
 					<p>
-					The hierarchical articulated arm is provided. Notice the different nodes used to construct the model. The nodes in this model follows the hierarchy: Shoulder (highest), Elbow, Forearm, Wrist and Palm. Applying transformations to a node in the hierarchy applies the same transformations to all the lower nodes in the hierarchy in addition to their own transformations. For example, a rotation has been applied to the shoulder. As you drag the slider you can notice this rotation being applied to the other nodes toother nodes.
+						The point has a scaling applied to it. Move the slider at the bottom to watch the point move to its new location.
 					</p>
 					<p>
-					Try modifying the transformations in the hierarchy and notice the effective changes on the entire model.
+						The tree has a node for the transformation applied to the point. This node shows the scaling value along each axis. As the slider is moved, the transformation animates between the starting and ending points.
 					</p>
 					<p>
-					Open the transormation nodes of Forearm and Palm and notice how a Cube has been moulded to a forearm and a palm using the respective transformations.
+						The <i>scaling matrix <b>T</b></i>, being applied to the point is also shown. Edit the scale values along any axis and notice how this matrix gets changed.
+					</p>
+					<p>
+						Transformations can also be interpreted as a modification of the co-ordinate system, while keeping the point in its original place. You can switch to this behavior at any time by checking the <i>Transform co-ordinate systems</i> checkbox under the <i>Display</i> tab. Use it to compare how the transformation works in both cases.
 					</p>
 				</div>
 					
@@ -307,8 +365,13 @@
 					 class="content">
 					<ul>	
 					<li>
-					<a href="http://en.wikipedia.org/wiki/Transformation_matrix#Composing_and_inverting_transformations">
-						http://en.wikipedia.org/wiki/Transformation_matrix#Composing_and_inverting_transformations
+					<a href="http://en.wikipedia.org/wiki/Transformation_matrix#Scaling">
+						Wikipedia: http://en.wikipedia.org/wiki/Transformation_matrix#Scaling
+					</a>
+					</li>
+					<li>
+					<a href="http://en.wikipedia.org/wiki/Scaling_matrix">
+						Wikipedia: Scaling Geometry
 					</a>
 					</li>
 					</ul>

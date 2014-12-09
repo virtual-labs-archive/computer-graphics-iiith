@@ -47,7 +47,7 @@
 		<header id="experiment-article-heading" class="heading">
 			<!-- You can add a welcome message or title of the experiment
 				 here -->
-			Hierarchical Transformations: 3D Articulated Arm
+			Hierarchical Transformations: 2D Demo
 			<!-- Add any additional element if required with proper 
 				 enclosing -->
 		</header>
@@ -86,7 +86,7 @@
 				<div id="experiment-article-section-1-content" 
 					 class="content">	
 					<p>
-						This experiment demonstrates the end effect of hierarchical transformations learnt in the previous experiment using a 3D Articulated Arm setup.
+						This experiment demonstrates the result of different sequences of transformation on a simple triangle.
 					</p>
 				</div>
 
@@ -112,14 +112,28 @@
 				<div id="experiment-article-section-2-content" 
 					 class="content">
 					<p>
-						Here in this experiment we put the concepts of multiple transformations learnt in <i>experiment 5a</i> to practice with an Articulated arm experiment.
+						We have learnt about Translation matrix <i><b>T</b></i>, Rotation matrices <i><b>R</b></i> and Scaling matrices <i><b>S</b></i> in our previous experiments. A sequence of these transforms can be represented using a composite matrix, say
 					</p>
 					<p>
-						A hierarchy is an organization of things into levels. In a very general sense, he things higher up in a hierachy have control over the lower things. Here this applies to the matrix transformations.
+						<b>M = R<sub>x</sub>TR<sub>y</sub>ST</b>
 					</p>
 					<p>
-						We constructed a hierarchical articulated arm model where each node/part follows a series of transformations from the root node to its current position. The top-most object in this hierarchy is the Shoulder followed by Elbow, Forearm, Wrist and Palm. Moving the shoulder moves the rest of the parts as all others derive their transformation from the shoulder. When you move the wrist only the palm moves while the shoulder, elbow and forearm remain unchanged. This is because the wrist is lower in hierarchy than your elbow and therefore has no control on it.
+						Operations are not commutative but are associative.
 					</p>
+					<p>
+						Translations are commutative: T<sub>1</sub>T<sub>2</sub> = T<sub>2</sub>T<sub>1</sub>
+					</p>
+					<p>
+						Scaling is commutative: S<sub>1</sub>S<sub>2</sub> = S<sub>2</sub>S<sub>1</sub>
+					</p>
+					<p>
+						Rotations are NOT commutative: R<sub>1</sub>R<sub>2</sub> &ne; R<sub>2</sub>R<sub>1</sub>
+					</p>
+					<p>
+						Also RT &ne; TR. Consider the following matrix representation.
+					</p>
+					<img src="media/rt-tr.png" alt="RT vs TR Matrix" 
+						 style="width:300px; height: 234px; padding: 5px; background-color: #fff;" />
 				</div>
 			</section>
 
@@ -138,7 +152,7 @@
 				<div id="experiment-article-section-3-content" 
 					 class="content">
 					<p>
-						Objective of this experiment is to understand the effective tranformation due to a series of transformations and how to construct a hierarchical model.
+						Objective of this experiment is to understand the effective tranformation due to a series of transformations. We also learn the matrix representation for the computing the effective transformation.
 					</p>
 				</div>
 
@@ -155,7 +169,7 @@
 					 class="heading">
 					Experiment
 				</div>
-				<p><a href="../documents/java-and-icedtea-plugin.pdf">Install prerequisites to run the simulation</a></p>
+
 				<div id="experiment-article-section-4-content" 
 					 class="content">
 					<p>
@@ -190,10 +204,10 @@
 								Change to the Virtual Lab Directory. <br/>
 								<i><b>$</b> cd VirtualLabGraphics/</i> <br/>
 								Execute the experiment using the command: <br/>
-								<i><b>$</b> ./Experiment.sh 5b</i>
+								<i><b>$</b> ./Experiment.sh 5a</i>
 							</li>
 							<li>
-								Alternatively, Windows users can start the experiment by double clicking the Experiment5b.bat file.
+								Alternatively, Windows users can start the experiment by double clicking the Experiment5a.bat file.
 							</li>
 							</ul>
 						</li>
@@ -244,18 +258,52 @@
 				<div id="experiment-article-section-6-content" 
 					 class="content">
 
+				<script type="text/javascript" src="evaluate.js"></script>
+				<form name="quiz" method="post">
 					<p>
-					<!--              
-						<b>Q1.</b> 
-							Time taken for one complete oscillation is called Time Period of the oscillator. <br> 
-							<input type="radio" name="q1" id="q1" value="1"> 
-							<font color="green"> True </font> <br> 
-							<input type="radio" name="q1" id="q1" value="0">
-							<font color="red"> False </font> <br/><br/> 
-							<input type="submit" value="Submit Answers" 
-								class="button" />
-					-->              
+					<img src="media/quiz_transform1.png"
+						 alt="Rotation Transformation"
+						 style="float:right; width: 200px; height:200px;" />
+					<b>Q1.</b>
+					Which of the following describes the transformation shown on the right ? <br/>
+					<input type="radio" name="q1" id="q1" value="1"> &nbsp;&nbsp;
+					90&deg; clockwise Rotation <br/>
+					<input type="radio" name="q1" id="q1" value="2"> &nbsp;&nbsp;
+					180&deg; clockwise Rotation <br/>
+					<input type="radio" name="q1" id="q1" value="3"> &nbsp;&nbsp;
+					90&deg; counter-clockwise Rotation <br/>
+					<input type="radio" name="q1" id="q1" value="4"> &nbsp;&nbsp;
+					270&deg; counter-clockwise Rotation
 					</p>
+
+					<p>
+					<b>Q2.</b>
+					If the following operations are applied in order, then what is the composite matrix ? <br/>
+					Translation T<sub>1</sub> followed by Translation T<sub>2</sub>, followed Rotation R<sub>1</sub>, Scale S<sub>1</sub>, Scale S<sub>2</sub> and Rotation R<sub>2</sub>
+					<br/>
+					<input type="radio" name="q2" id="q2" value="1"> &nbsp;&nbsp;
+					T<sub>1</sub>T<sub>2</sub>R<sub>1</sub>S<sub>1</sub>S<sub>2</sub>R<sub>2</sub> <br/>
+					<input type="radio" name="q2" id="q2" value="2"> &nbsp;&nbsp;
+					T<sub>1</sub>R<sub>1</sub>S<sub>1</sub>R<sub>2</sub> <br/>
+					<input type="radio" name="q2" id="q2" value="3"> &nbsp;&nbsp;
+					R<sub>2</sub>S<sub>2</sub>S<sub>1</sub>R<sub>1</sub>T<sub>2</sub>T<sub>1</sub> <br/>
+					<input type="radio" name="q2" id="q2" value="4"> &nbsp;&nbsp;
+					R<sub>2</sub>S<sub>2</sub>R<sub>1</sub>T<sub>2</sub>T<sub>1</sub>
+					</p>
+
+					<p>
+					<b>Q3.</b>
+					Is S<sub>1</sub>T<sub>1</sub>S<sub>2</sub>T<sub>2</sub> = T<sub>2</sub>S<sub>2</sub>T<sub>1</sub>S<sub>1</sub> ? <br/>
+					<input type="radio" name="q3" id="q3" value="1"> &nbsp;&nbsp;
+					<font color="green">True</font> <br/> 
+					<input type="radio" name="q3" id="q3" value="0"> &nbsp;&nbsp;
+					<font color="red">False</font>
+					</p>
+
+					<p>
+					<input type="button" value="Evaluate" class="button" onclick="eval();" />
+					</p>
+				</form>
 
 				</div>
 
@@ -275,17 +323,17 @@
 
 				<div id="experiment-article-section-7-content" 
 					 class="content">
-					 <p>
-					 This experiment introduces the concept of the hierarchical transformations and a hierarchical model.
+					<p>
+					This experiment introduces the concept of the hierarchical transformations. Here we show the effect of a series of transformations applied on a triangle.
 					</p>
 					<p>
-					The hierarchical articulated arm is provided. Notice the different nodes used to construct the model. The nodes in this model follows the hierarchy: Shoulder (highest), Elbow, Forearm, Wrist and Palm. Applying transformations to a node in the hierarchy applies the same transformations to all the lower nodes in the hierarchy in addition to their own transformations. For example, a rotation has been applied to the shoulder. As you drag the slider you can notice this rotation being applied to the other nodes toother nodes.
+					We start with a scaling transformation applied to the triangle followed by a translation, rotation and another translation. All these transformations are animated. Drag the slider to animate the transformations on the triangle in order.
 					</p>
 					<p>
-					Try modifying the transformations in the hierarchy and notice the effective changes on the entire model.
+					The tree has a node <i>'Transformation 1'</i> for the transformations applied to the point. Select it and click edit to open the transformation edit panel which shows the list of transformations applied in order. Select any transformation and move it up or down with the respective buttons in the bottom and notice how the order of transformations effect the final result.
 					</p>
 					<p>
-					Open the transormation nodes of Forearm and Palm and notice how a Cube has been moulded to a forearm and a palm using the respective transformations.
+					Try adding a new transformation to the list and notice the changes on the triangle.
 					</p>
 				</div>
 					
@@ -341,7 +389,7 @@
 				</div>
 
 			</section>
-
+   
 		</div>
 
 
