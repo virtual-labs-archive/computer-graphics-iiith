@@ -1,0 +1,7 @@
+Manifest-Version: 1.0
+Rsrc-Class-Path: ./ newt.all.jar gluegen-rt.jar nativewindow.all.jar j
+ ogl.all.jar
+Class-Path: .
+Rsrc-Main-Class: experiments.experiment1.Experiment1
+Main-Class: org.eclipse.jdt.internal.jarinjarloader.JarRsrcLoader
+
