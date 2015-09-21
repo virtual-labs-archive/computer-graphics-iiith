@@ -1,14 +1,13 @@
-JCC = javac
-JFLAGS = -g
-sources = $(lab*.java)
+JAVAC=javac
+sources = $(EXP_1sep2010 *.java)
 classes = $(sources: .java=.class)
+
 all: $(classes)
-%.class* : %.java*
+
+clean :
+	rm -rf *.class
+%.class : %.java
 	$(JAVAC) $<
-
-clean:
-	$(RM) *.class
-
 
 build-dir=../build
 lib-dir=lib
