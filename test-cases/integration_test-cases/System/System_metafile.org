@@ -1,0 +1,8 @@
+S.no		Test case link
+1. 	[[https://github.com/Virtual-Labs/computer-graphics-iiith/blob/master/test-cases/integration_test-cases/System/Computer%20Graphics_01_Usability_smk.org][Computer Graphics_01_Usability_smk.org]]
+2. 	[[https://github.com/Virtual-Labs/computer-graphics-iiith/blob/master/test-cases/integration_test-cases/System/Computer%20Graphics_02_Introduction_smk.org][Computer Graphics_02_Introduction_smk.org]]
+3. 	[[https://github.com/Virtual-Labs/computer-graphics-iiith/blob/master/test-cases/integration_test-cases/System/Computer%20Graphics_03_List%20of%20Experiments_smk.org][Computer Graphics_03_List of Experiments_smk.org]]
+4. 	[[https://github.com/Virtual-Labs/computer-graphics-iiith/blob/master/test-cases/integration_test-cases/System/Computer%20Graphics_04_Target%20Audience_smk.org][Computer Graphics_04_Target Audience_smk.org]]
+5. 	[[https://github.com/Virtual-Labs/computer-graphics-iiith/blob/master/test-cases/integration_test-cases/System/Computer%20Graphics_05_Courses%20Alligned_smk.org][Computer Graphics_05_Courses Alligned_smk.org]]
+6. 	[[https://github.com/Virtual-Labs/computer-graphics-iiith/blob/master/test-cases/integration_test-cases/System/Computer%20Graphics_06_Prerequisites_smk.org][Computer Graphics_06_Prerequisites_smk.org]]
+7. 	[[https://github.com/Virtual-Labs/computer-graphics-iiith/blob/master/test-cases/integration_test-cases/System/Computer%20Graphics_07_Feedback_smk.org][Computer Graphics_07_Feedback_smk.org]]

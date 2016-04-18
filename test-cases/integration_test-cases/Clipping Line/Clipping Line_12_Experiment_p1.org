@@ -1,0 +1,35 @@
+* Author: Suman
+* Date Created: 15 Apr 2016
+* Environment
+  - OS: Windows 7, Linux
+  - Browsers: Firefox,Chrome
+  - Bandwidth : 100Mbps
+  - Hardware Configuration:8GBRAM , 
+  - Processor:i5
+  - Data: 100,300,500
+
+* Objective
+  - To view the Experiment of the Clipping :Line experiment
+
+* Pre conditions
+  - Refer to first test case [[https://github.com/Virtual-Labs/computer-graphics-iiith/blob/master/test-cases/integration_test-cases/Clipping Line/Clipping Line_01_Usability_smk.org][Clipping Line_01_Usability_smk.org]]
+
+* Post conditions
+  - Nil
+* Test Steps
+  1. Click on the Experiment link 
+  2. Check if there are any distortions and junk characters in the Experiment page  
+  3. Click on start expriment with default values button
+  4. Click on the next iteration button and click on the previous iteration button
+
+* Expected result
+  1. Experiment page should be opened
+  2. Content should be present with no distortions and Junk characters
+  3. The next simulation page should be displayed on the screen
+  4. The simulation process should start and the simulation result should be displayed on the screen
+  5. When we click on the next iteration button , next simulation page should be displayed obn the screen and the graph should also get changed according to the iteration values
+  6. When we click on the Previous iteration button , previous simulation page should be displayed obn the screen and the graph should also get changed according to the iteration values
+
+* Review/comments
+
+
