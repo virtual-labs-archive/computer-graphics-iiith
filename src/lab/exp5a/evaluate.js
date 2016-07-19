@@ -1,19 +1,23 @@
-function evaluate()
+function eval()
 {
 	var form = document.forms["quiz"];
 
 	/* Initialise answers */
-	var a1 = "2"
-	var a2 = "3";
-	var a3 = "0";
+	var a1a = "(2, 2)";
+	var a1b = "(-2, 3)";
+	var a1c = "(-4, 0)";
+	var a1d = "(-3, -3)";
+	var a1e = "(4, -3)";
+	var a2  = "1";
+	var a3  = "3";
 
 	/* Extract answers */
-	var q1, q2, q3, length;
-	
-	length = form["q1"].length;
-	for(i=0; i<length; i++)
-		if(form["q1"][i].checked)
-			q1 = form["q1"][i].value;
+	var q1a = form["q1_a"].value;
+	var q1b = form["q1_b"].value;
+	var q1c = form["q1_c"].value;
+	var q1d = form["q1_d"].value;
+	var q1e = form["q1_e"].value;
+	var q2, q3, length;
 	
 	length = form["q2"].length;
 	for(i=0; i<length; i++)
@@ -29,10 +33,34 @@ function evaluate()
 	var score = 0;
 	var result = "Correct answers: ";
 
-	if(q1 == a1)
+	if(q1a == a1a)
 	{
 		score++;
-		result += "Q1, ";
+		correct += "Q1a, ";
+	}
+
+	if(q1b == a1b)
+	{
+		score++;
+		result += "Q1b, ";
+	}
+
+	if(q1c == a1c)
+	{
+		score++;
+		result += "Q1c, ";
+	}
+
+	if(q1d == a1d)
+	{
+		score++;
+		result += "Q1d, ";
+	}
+
+	if(q1e == a1e)
+	{
+		score++;
+		result += "Q1e, ";
 	}
 
 	if(q2 == a2)
