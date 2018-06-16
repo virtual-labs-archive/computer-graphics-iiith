@@ -1,0 +1,22 @@
+<b>Hierarchical Transformations</b><br/>
+<i>The Set-up: Articulated Arm</i>
+<br/><a href="1.html">Previous</a>
+<p>
+This experiment shows the effect of transformations in a hierarchical model.
+</p>
+<p>
+We constructed a hierarchical articulated arm model where each node/part follows a series of transformations from the root node to its current position. The top-most object in this hierarchy is the Shoulder followed by Elbow, Forearm, Wrist and Palm.
+</p>
+<p>
+We applied a rotation transformation to the wrist where only the wrist and palm moves. The coordinate system of the wrist is set at <i>(6,0,0)</i> wrt the elbow's frame of reference.
+This is followed by a rotation applied to elbow which moves the forearm, wrist and palm. The coordinate system of the elbow is set at <i>(1,-4,0)</i> wrt the shoulder's frame of reference.
+And finally a rotation at the shoulder which is at the top-most level of the hierarchy moves all nodes/parts. The coordinate system of the shoulder is coincided with the Global fixed coordinate system by setting the origin at <i>(0,0,0)</i>
+Each node in this heirarchical model has a Shape and a child node.
+</p>
+<p style="background-color: #EEEEEE">
+Drag the slider at the bottom to go forwards or backwards in the animation.
+</p>
+<p style="background-color: #EEEEEE">
+The transformations at each level of hierarchy can be edited by double clicking on the <code>Transformation</code> node of the corresponding level. 
+</p>
+<br/><a href="1.html">Previous</a>

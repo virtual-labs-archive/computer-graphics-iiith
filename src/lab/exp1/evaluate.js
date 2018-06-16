@@ -1,13 +1,19 @@
 function eval()
 {
 	var form = document.forms["quiz"];
+        var win = window.open("","win","width=500,height=500,scrollbars");
+	win.focus();
+	win.document.open();
+	win.document.write('<title>Solution</title>');
+	win.document.write('<body bgcolor="#FFFFFF">');
+        win.document.write('<center><h3>Score</h3></center>');
 
 	/* Initialise answers */
-	var a1a = "(2, 2)";
-	var a1b = "(-2, 3)";
-	var a1c = "(-4, 0)";
-	var a1d = "(-3, -3)";
-	var a1e = "(4, -3)";
+	var a1a = "(2,2)";
+	var a1b = "(-2,3)";
+	var a1c = "(-4,0)";
+	var a1d = "(-3,-3)";
+	var a1e = "(4,-3)";
 	var a2  = "1";
 	var a3  = "3";
 
@@ -76,8 +82,11 @@ function eval()
 	}
 
 	/* Show result */
-	var output = "Your score is " + score + "\n";
+	var output = "Your score is " + score + "<br>";
 	output += result;
 	
-	alert(output);
+	win.document.write(output+"<br>");
+        win.document.write('<center><h3>Solution to Quiz</h3></center>');
+	//alert(output);
+	win.document.write('Ans 1)Point A:(2,2)'+"<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"+'Point B : (-2,3)'+"<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"+'Point C : (-4,0)'+"<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"+'Point D : (-3,-3)'+"<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"+'Point E : (4,-3)'+"<br>"+'Ans 2)(3,0,-4)'+"<br>"+'Ans 3)(2,4,7)');
 }
