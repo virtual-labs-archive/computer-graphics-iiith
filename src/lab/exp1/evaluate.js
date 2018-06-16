@@ -88,5 +88,5 @@ function eval()
 	win.document.write(output+"<br>");
         win.document.write('<center><h3>Solution to Quiz</h3></center>');
 	//alert(output);
-	win.document.write('Ans 1)Point A:(2,2)'+"<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"+'Point B : (-2,3)'+"<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"+'Point C : (-4,0)'+"<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"+'Point D : (-3,-3)'+"<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"+'Point E : (4,-3)'+"<br>"+'Ans 2)(3,0,-4)'+"<br>"+'Ans 3)(2,4,7)');
+	win.document.write('Ans 1)Point A:(2, 2)'+"<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"+'Point B : (-2, 3)'+"<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"+'Point C : (-4, 0)'+"<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"+'Point D : (-3, -3)'+"<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"+'Point E : (4, -3)'+"<br>"+'Ans 2)(3,0,-4)'+"<br>"+'Ans 3)(2,4,7)');
 }
