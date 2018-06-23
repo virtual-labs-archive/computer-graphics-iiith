@@ -99,9 +99,50 @@
 						<div class="col-md-10 lab-list-col-10">
 							
 							<!--edit -->
-<h1 class="text-h2-lightblue">Rasterization : Polygon</h1><div class="content" id="experiment-article-section-6-content">Quiz will be updated soon! 
+<h1 class="text-h2-lightblue">Rasterization : Polygon</h1><div class="content" id="experiment-article-section-6-content">
+<script src="evaluate.js" type="text/javascript"></script>
+<form method="post" name="quiz">
+<!--Quiz will be updated soon! 
 <p>
+</p>-->
+<p>
+<b>Q1.</b>
+					When a polygon is transformed from a set of edges in the continuous form of y=mx+c into a set of pixels occupied by the interior of the polygon , this transformation is called polygon rasterization .  <br/>
+<input id="q1" name="q1" type="radio" value="1">   
+					True <br/>
+<input id="q1" name="q1" type="radio" value="2">   
+					False<br/>
+</input></input></p>
+<p>
+<b>Q2.</b>
+					Boundary Fill algorithm cannot be used to perform polygon rasterization. <br/>
+<input id="q2" name="q2" type="radio" value="1">   
+					True<br/>
+<input id="q2" name="q2" type="radio" value="2">   
+					False<br/>
+</input></input></p>
+<p>
+<b>Q3.</b>
+					Edge table contains horizontal edges of the polygon sorted by their smaller y-coordinates . <br/>
+<input id="q3" name="q3" type="radio" value="1">   
+					True <br/>
+<input id="q3" name="q3" type="radio" value="2">   
+					False <br/>
+</input></input></p>
+<p>
+<b>Q4.</b>
+					Active edge table contains the edges that intersect with the current scan line. <br/>
+<input id="q4" name="q4" type="radio" value="1">   
+					True <br/>
+<input id="q4" name="q4" type="radio" value="2">   
+					False <br/>
+</input></input></p>
+<p>
+<input class="button" onclick="eval();" type="submit" value="Evaluate"/>
+<input class="button" onclick="document.quiz.reset();" type="button" value="Reset"/>
+
 </p>
+</form>
 </div>						</div>
 					</div>
 			</div>
