@@ -1,9 +1,15 @@
 function eval()
 {
 	var form = document.forms["quiz"];
+	var win = window.open("","win","width=500,height=500,scrollbars");
+	win.focus();
+	win.document.open();
+	win.document.write('<title>Solution</title>');
+	win.document.write('<body bgcolor="#FFFFFF">');
+        win.document.write('<center><h3>Score</h3></center>');
 
 	/* Initialise answers */
-	var a1 = "2"
+	var a1 = "2";
 	var a2 = "1";
 	var a3 = "3";
 	var a4 = "4";
@@ -29,7 +35,7 @@ function eval()
 	length = form["q4"].length;
 	for(i=0; i<length; i++)
 		if(form["q4"][i].checked)
-			q2 = form["q4"][i].value;
+			q4 = form["q4"][i].value;
 	
 	/* Evaluate answers */
 	var score = 0;
@@ -60,8 +66,11 @@ function eval()
 	}
 
 	/* Show result */
-	var output = "Your score is " + score + "\n";
+	var output = "Your score is " + score + "<br>";
 	output += result;
 	
-	alert(output);
+	//alert(output);
+	win.document.write(output+"<br>");
+        win.document.write('<center><h3>Solution to Quiz</h3></center>');
+        win.document.write("Ans 1)Option 2"+"<br>"+"Ans 2)Option 1"+"<br>"+"Ans 3)Option 3"+"<br>"+"Ans 4)Option 4");
 }

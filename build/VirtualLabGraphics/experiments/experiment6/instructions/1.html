@@ -1,0 +1,28 @@
+<b>Projections and Cameras</b><br/>
+<i>The Set-up: Bunny through a Camera</i>
+<br/><a href="2.html">Next</a>
+<p>
+This experiment is designed to teach the orthographic and perspective projections using cameras and a bunny.
+</p>
+<p>
+The world represented as a tree is shown below.
+Each node is an instance. Each instance has 3 sections: Coodinate system, shape/instance, Transformation.
+Coordinate system is the local coordinate system of the instance.
+Shape/Instance is the geometry or a child instance of the cuurent instance. Multiple shapes and child instances can be added where the child instance is again a node.
+Transformation is the set of transformations applied to the shape or instance w.r.t the local coordinate system.
+</p>
+<p>
+A Camera node is similar to an instance.
+It has a <code>Coordinate system</code> which is a local coordinate system coordinate system wrt the Global fixed coordinate system. The camera is always placed at the origin of this <code>Coordinate system</code> looking towards -ve Z-axis.
+The <code>Transformation</code> section is the same as the other nodes.
+Camera node doesnt have a Shape/Instance section and hence no children can be added.
+The rest of the parameters define the camera.
+</p>
+<p style="background-color: #EEEEEE">
+All the values being shown can be edited by clicking on them.
+Any changes to the tree are reflected on the display and vice-versa.
+</p>
+<p>
+These instructions are in a series of steps. Use the <u>Next</u> and <u>Previous</u> buttons to navigate.
+</p>
+<br/><a href="2.html">Next</a>

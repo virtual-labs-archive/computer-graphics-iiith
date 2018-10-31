@@ -98,8 +98,10 @@
 						<div class="col-md-10 lab-list-col-10">
 							
 							<!--edit -->
-<h1 class="text-h2-lightblue">Hierarchical Transformations: 3D Articulated Arm</h1><div class="content" id="experiment-article-section-6-content">Quiz will be updated soon! 
-<p>
+<h1 class="text-h2-lightblue">Hierarchical Transformations: 3D Articulated Arm</h1><div class="content" id="experiment-article-section-6-content">
+<script src="evaluate.js" type="text/javascript"></script>
+<form method="post" name="quiz">
+<!--Quiz will be updated soon!-->
 <!--              
 						<b>Q1.</b> 
 							Time taken for one complete oscillation is called Time Period of the oscillator. <br> 
@@ -110,7 +112,44 @@
 							<input type="submit" value="Submit Answers" 
 								class="button" />
 					-->
+<p>
+<b>Q1.</b>
+					In Hierarchical transforms , Object dependency preservation using tree structure contains only Base , Lower arm and Upper aram. <br/>
+<input id="q1" name="q1" type="radio" value="1">   
+					True <br/>
+<input id="q1" name="q1" type="radio" value="2">   
+					False <br/>
+</input></input></p>
+<p>
+<b>Q2.</b>
+					Hierarchical representation is known as Scene Graph . <br/>
+<input id="q2" name="q2" type="radio" value="1">   
+					True <br/>
+<input id="q2" name="q2" type="radio" value="2">   
+					False<br/>
+</input></input></p>
+<p>
+<b>Q3.</b>
+					In Absolute Transformation , the transformation for each object is relative to its parent. <br/>
+<input id="q3" name="q3" type="radio" value="1">   
+					True<br/>
+<input id="q3" name="q3" type="radio" value="2">   
+					False <br/>
+</input></input></p>
+<p>
+<b>Q4.</b>
+					Hierarchical modeling extends CTM to stack with multiple levels using linked list.<br/>
+<input id="q4" name="q4" type="radio" value="1">   
+					True <br/>
+<input id="q4" name="q4" type="radio" value="2">   
+					False <br/>
+</input></input></p>
+<p>
+<input class="button" onclick="eval();" type="submit" value="Evaluate"/>
+<input class="button" onclick="document.quiz.reset();" type="button" value="Reset"/>
+
 </p>
+</form>
 </div>						</div>
 					</div>
 			</div>

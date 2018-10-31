@@ -99,7 +99,7 @@
 							
 							<!--edit -->
 <h1 class="text-h2-lightblue">Clipping : Polygon</h1><div class="content" id="experiment-article-section-6-content">
-<p>
+<!--<p>
 <ol>
 <li>The Sutherland Hodgeman works for the following cases :<br/>
 <ol type="a">
@@ -124,7 +124,54 @@
 <li> x = (int) (x2 + ((ymax - y2)/m)); y = ymax;</li>
 </ol></li>
 </ol>
+</p>-->
+<script src="evaluate.js" type="text/javascript"></script>
+<form method="post" name="quiz">
+<p>
+<b>Q1.</b>
+					The Sutherland Hodgeman works for the following cases : <br/>
+<input id="q1" name="q1" type="radio" value="1">   
+					Convex Polygon with convex clip window <br/>
+<input id="q1" name="q1" type="radio" value="2">   
+					Concave polygon with convex clip window <br/>
+<input id="q1" name="q1" type="radio" value="3">   
+					Convex polygon with concave clip window<br/>
+<input id="q1" name="q1" type="radio" value="4">   
+					a and b<br/>
+<input id="q1" name="q1" type="radio" value="5">   
+					a and c<br/>
+<input id="q1" name="q1" type="radio" value="6">   
+					All of the above<br/>
+					</input></input></input></input></p>
+<p>
+<b>Q2.</b>
+					Will the output matter on the order in which we process the polygon?<br/>
+<input id="q2" name="q2" type="radio" value="1">   
+					Yes <br/>
+<input id="q2" name="q2" type="radio" value="2">   
+					No 
+
+					</input></input></input></input></p>
+<p>
+<b>Q3.</b>
+					 Let m be the slope of the line joining clip polygon point P<sub>i</sub>(x<sub>1</sub>, y<sub>1</sub>) and P<sub>i+1</sub>(x<sub>2</sub>, y<sub>2</sub>).
+					The intersection point of this line with the Left side of clip window is :
+				<br/>
+<input id="q3" name="q3" type="radio" value="1">   
+					 x = xmin; y = (int)(y2 + ((xmin - x2)*m)); <br/>
+<input id="q3" name="q3" type="radio" value="2">   
+					x = xmax; y = (int)(y2 + ((xmax - x2)*m)); <br/>
+<input id="q3" name="q3" type="radio" value="3">   
+					x = x2; y = ymin;<br/>
+<input id="q3" name="q3" type="radio" value="4">   
+					x = (int) (x2 + ((ymax - y2)/m)); y = ymax;
+					</input></input></input></input></p>
+<p>
+<input class="button" onclick="eval();" type="submit" value="Evaluate"/>
+<input class="button" onclick="document.quiz.reset();" type="button" value="Reset"/>
+
 </p>
+</form>
 </div>						</div>
 					</div>
 			</div>

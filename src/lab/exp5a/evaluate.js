@@ -1,6 +1,13 @@
 function eval()
 {
 	var form = document.forms["quiz"];
+	var win = window.open("","win","width=500,height=500,scrollbars");
+	win.focus();
+	win.document.open();
+	win.document.write('<title>Solution</title>');
+	win.document.write('<body bgcolor="#FFFFFF">');
+        win.document.write('<center><h3>Score</h3></center>');
+
 
 	/* Initialise answers */
 	var a1 = "2"
@@ -60,8 +67,12 @@ function eval()
 	// }
 
 	/* Show result */
-	var output = "Your score is " + score + "\n";
+	var output = "Your score is " + score + "<br>";
 	output += result;
 	
-	alert(output);
+	//alert(output);
+	win.document.write(output+"<br>");
+        win.document.write('<center><h3>Solution to Quiz</h3></center>');
+        win.document.write("Ans 1)Option 2"+"<br>"+"Ans 2)Option 1"+"<br>"+"Ans 3)Option 3");
+
 }
