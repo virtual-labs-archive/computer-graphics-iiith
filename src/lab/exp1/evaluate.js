@@ -8,7 +8,7 @@ function eval()
 	var a1c = "(-4, 0)";
 	var a1d = "(-3, -3)";
 	var a1e = "(4, -3)";
-	var a2  = "1";
+	var a2  = "3";
 	var a3  = "3";
 
 	/* Extract answers */
