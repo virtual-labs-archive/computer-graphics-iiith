@@ -29,7 +29,7 @@ function eval()
 	length = form["q4"].length;
 	for(i=0; i<length; i++)
 		if(form["q4"][i].checked)
-			q2 = form["q4"][i].value;
+			q4 = form["q4"][i].value;
 	
 	/* Evaluate answers */
 	var score = 0;
