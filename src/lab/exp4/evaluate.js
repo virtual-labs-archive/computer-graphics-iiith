@@ -3,7 +3,7 @@ function eval()
 	var form = document.forms["quiz"];
 
 	/* Initialise answers */
-	var a1 = "4"
+	var a1 = "4";
 	var a2 = "2";
 	var a3 = "1";
 	var a4 = "3";
