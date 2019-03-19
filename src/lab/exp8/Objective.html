@@ -101,8 +101,15 @@
 <h1 class="text-h2-lightblue">Clipping : Polygon</h1><div class="content" id="experiment-article-section-3-content">
 <p>
 					Objective of this experiment is to understand the steps of a Polygon Clipping Algorithm, i.e., how a polygon is clipped so as to render only the part which a user can view.
-					As an example, we have demonstrated the steps of Sutherland Hodgeman Algorithm.
+					As an example, we have demonstrated the steps of Sutherland Hodgeman Algorithm, which is described as follows :-
+</p>
+<p>
+The algorithm begins with an input list of all vertices in the subject polygon. Next, one side of the clip polygon is extended infinitely in both directions, and the path of the subject polygon is traversed. Vertices from the input list are inserted into an output list if they lie on the visible side of the extended clip polygon line, and new vertices are added to the output list where the subject polygon path crosses the extended clip polygon line.
+
+This process is repeated iteratively for each clip polygon side, using the output list from one stage as the input list for the next. Once all sides of the clip polygon have been processed, the final generated list of vertices defines a new single polygon that is entirely visible. Note that if the subject polygon was concave at vertices outside the clipping polygon, the new polygon may have coincident (i.e., overlapping) edges – this is acceptable for rendering, but not for other applications such as computing shadows.
 					</p>
+					<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Sutherland-Hodgman_clipping_sample.svg/505px-Sutherland-Hodgman_clipping_sample.svg.png">
+					<p>Source:<a href="https://en.wikipedia.org/wiki/Sutherland%E2%80%93Hodgman_algorithm">Wikipedia:Sutherland-Hodgman-algorithm</a></p>
 </div>						</div>
 					</div>
 			</div>
