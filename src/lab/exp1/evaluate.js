@@ -36,7 +36,7 @@ function eval()
 	if(q1a == a1a)
 	{
 		score++;
-		correct += "Q1a, ";
+		result += "Q1a, ";
 	}
 
 	if(q1b == a1b)
