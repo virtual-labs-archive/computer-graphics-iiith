@@ -103,6 +103,39 @@
 <p>
 					Objective of this experiment is to understand the steps of a Line Rasterization Algorithm, i.e., how a geometric line is converted to pixels in a 2D frame buffer. As an example, we have demonstrated the steps of Bresenham's Line Rasterization algorithm here.
 					</p>
+                                        <p>
+ The idea of Bresenham’s algorithm is to avoid floating point multiplication and addition to compute mx + c, and then computing round value of (mx + c) in every step. In Bresenham’s algorithm, we move across the x-axis in unit intervals.
+                                        </p>
+                                        <p>
+                                        1.We always increase x by 1, and we choose about next y, whether we need to go to y+1 or remain on y. In other words, from any position (Xk, Yk) we need to choose between (Xk + 1, Yk) and (Xk + 1, Yk + 1).
+                                        </p>
+                                        <p>
+                                        2.We would like to pick the y value (among Yk + 1 and Yk) corresponding to a point that is closer to the original line.
+                                        </p>
+					<img src="https://cdncontribute.geeksforgeeks.org/wp-content/uploads/BresenhamLine.png">
+                                        <p>
+                                        We need to a decision parameter to decide whether to pick Yk + 1 or Yk as next point. The idea is to keep track of slope error from previous increment to y. If the slope error becomes greater than 0.5, we know that the line has moved upwards one pixel, and that we must increment our y coordinate and readjust the error to represent the distance from the top of the new pixel – which is done by subtracting one from error.
+                                        </p>
+                                        <h4>
+                                        How to avoid floating point arithmetic ?
+					</h4>
+					<p>
+The above algorithm still includes floating point arithmetic. To avoid floating point arithmetic, consider the value below value m.
+                                        </p>
+                                        <p>
+                                        m = (y2 – y1)/(x2 – x1)
+
+We multiply both sides by (x2 – x1)
+
+We also change slope_error to slope_error * (x2 – x1). To avoid comparison with 0.5, we further change it to slope_error * (x2 – x1) * 2.
+
+Also, it is generally preferred to compare with 0 than 1.
+                                        </p>
+                                        <p>
+                                        The initial value of slope_error_new is 2*(y2 – y1) – (x2 – x1).
+                                        </p>
+					<p>Source: <a href="https://www.geeksforgeeks.org/bresenhams-line-generation-algorithm/">GeeksforGeeks</a></p>
+
 </div>						</div>
 					</div>
 			</div>

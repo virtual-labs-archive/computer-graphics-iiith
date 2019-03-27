@@ -101,8 +101,43 @@
 <h1 class="text-h2-lightblue">Clipping : Line</h1><div class="content" id="experiment-article-section-3-content">
 <p>
 					Objective of this experiment is to understand the steps of a Line Clipping Algorithm, i.e., how a geometric line is clipped so as to render only the part which a user can view.
-					As an example, we have demonstrated the steps of Cohen Sutherland Algorithm.
+					As an example, we have demonstrated the steps of Cohen Sutherland Algorithm, as shown below:-
+</p>
+					<p>Nine regions are created, eight "outside" regions and one
+"inside" region.
 					</p>
+					<p>For a given line extreme point (x, y), we can quickly
+find its region's four bit code. Four bit code can
+be computed by comparing x and y with four values
+(x_min, x_max, y_min and y_max).
+					</p>
+					<p>
+If x is less than x_min then bit number 1 is set.
+					</p>
+					<p>
+If x is greater than x_max then bit number 2 is set.
+					</p>
+					<p>
+If y is less than y_min then bit number 3 is set.
+					</p>
+					<p>
+If y is greater than y_max then bit number 4 is set.
+					</p>
+					<img src="https://cdncontribute.geeksforgeeks.org/wp-content/uploads/LineClipping1.png">
+					<p>
+					There are three possible cases for any given line.
+					</p>
+					<p>
+					1.Completely inside the given rectangle : Bitwise OR of region of two end points of line is 0 (Both points are inside the rectangle)
+					</p>
+					<p>
+					2.Completely outside the given rectangle : Both endpoints share at least one outside region which implies that the line does not cross the visible region. (bitwise AND of endpoints != 0).
+					</p>
+					<p>
+					3.Partially inside the window : Both endpoints are in different regions. In this case, the algorithm finds one of the two points that is outside the rectangular region. The intersection of the line from outside point and rectangular window becomes new corner point and the algorithm repeats
+					</p>
+					<img src= "https://cdncontribute.geeksforgeeks.org/wp-content/uploads/LineClipping2.png">
+					<p>Source :<a href="https://www.geeksforgeeks.org/line-clipping-set-1-cohen-sutherland-algorithm/"> GeeksforGeeks</a></p>
 </div>						</div>
 					</div>
 			</div>

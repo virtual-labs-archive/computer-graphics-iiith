@@ -101,8 +101,14 @@
 							<!--edit -->
 <h1 class="text-h2-lightblue">Rasterization : Polygon</h1><div class="content" id="experiment-article-section-3-content">
 <p>
-					Objective of this experiment is to understand the steps of <u>filling</u> a polygon in a 2D frame buffer. Given the vertices of the polygon, the experiment outputs a filled polygon. Here we have demonstrated the steps of Scan Line Poylgon Fill algorithm.
+					Objective of this experiment is to understand the steps of <u>filling</u> a polygon in a 2D frame buffer. Given the vertices of the polygon, the experiment outputs a filled polygon. Here we have demonstrated the steps of Scan Line Polygon Fill algorithm.
 					</p>
+					<p>
+					Scanline filling is basically filling up of polygons using horizontal lines or scanlines. The purpose of the SLPF algorithm is to fill (color) the interior pixels of a polygon given only the vertices of the figure. To understand Scanline, think of the image being drawn by a single pen starting from bottom left, continuing to the right, plotting only points where there is a point present in the image, and when the line is complete, start from the next line and continue.
+This algorithm works by intersecting scanline with polygon edges and fills the polygon between pairs of intersections.
+					</p>
+					<img src="https://cdncontribute.geeksforgeeks.org/wp-content/uploads/scanlinefilling.png">
+					<p>Source:<a href="https://www.geeksforgeeks.org/scan-line-polygon-filling-using-opengl-c/">GeeksforGeeks</a></p>
 </div>						</div>
 					</div>
 			</div>
