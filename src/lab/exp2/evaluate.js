@@ -1,5 +1,7 @@
+var number_of_attempts=0;
 function eval()
 {
+	number_of_attempts=number_of_attempts+1;
 	var form = document.forms["quiz"];
 
 	/* Initialise answers */
@@ -10,17 +12,17 @@ function eval()
 
 	/* Extract answers */
 	var q1, q2, q3, q4, length;
-	
+
 	length = form["q1"].length;
 	for(i=0; i<length; i++)
 		if(form["q1"][i].checked)
 			q1 = form["q1"][i].value;
-	
+
 	length = form["q2"].length;
 	for(i=0; i<length; i++)
 		if(form["q2"][i].checked)
 			q2 = form["q2"][i].value;
-	
+
 	length = form["q3"].length;
 	for(i=0; i<length; i++)
 		if(form["q3"][i].checked)
@@ -30,10 +32,10 @@ function eval()
 	for(i=0; i<length; i++)
 		if(form["q4"][i].checked)
 			q2 = form["q4"][i].value;
-	
+
 	/* Evaluate answers */
 	var score = 0;
-	var result = "Correct answers: ";
+	var result = "Your Correct answers: ";
 
 	if(q1 == a1)
 	{
@@ -62,6 +64,30 @@ function eval()
 	/* Show result */
 	var output = "Your score is " + score + "\n";
 	output += result;
-	
+
 	alert(output);
+}
+
+function show_correct_answers()
+{
+
+		/* Initialise answers */
+		var a1 = "2"
+		var a2 = "1";
+		var a3 = "3";
+		var a4 = "4";
+	var correct="Correct answers:\n";
+	correct+="Q1. "+a1+'\n';
+	correct+="Q2. "+a2+'\n';
+	correct+="Q3. "+a3+'\n';
+	correct+="Q4. "+a4;
+	if(number_of_attempts)
+	{
+		alert(correct);
+	}
+	else
+	{
+		alert("Please attempt atleast once before checking the answers");
+	}
+
 }
