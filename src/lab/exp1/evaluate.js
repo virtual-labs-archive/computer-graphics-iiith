@@ -75,9 +75,15 @@ function eval()
 		result += "Q3";
 	}
 
+
+	/* Displaying Correct Answers */
+	anss = "The correct answers are: \n\nq1a: " + a1a "\nq1b: " + a1b + "\nq1c: " + a1c + "\nq1d: " + a1d + "\nq1e: " + a1e + "\nq2: " + a2 + "\nq3: " + a3 + "\n";
+	document.getElementById("anss").innerHTML += anss;
+
 	/* Show result */
 	var output = "Your score is " + score + "\n";
 	output += result;
 	
 	alert(output);
+
 }
