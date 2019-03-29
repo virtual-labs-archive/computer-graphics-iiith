@@ -18,12 +18,12 @@ function eval()
 	var q1d = form["q1_d"].value;
 	var q1e = form["q1_e"].value;
 	var q2, q3, length;
-	
+
 	length = form["q2"].length;
 	for(i=0; i<length; i++)
 		if(form["q2"][i].checked)
 			q2 = form["q2"][i].value;
-	
+
 	length = form["q3"].length;
 	for(i=0; i<length; i++)
 		if(form["q3"][i].checked)
@@ -78,6 +78,6 @@ function eval()
 	/* Show result */
 	var output = "Your score is " + score + "\n";
 	output += result;
-	
+
 	alert(output);
 }
