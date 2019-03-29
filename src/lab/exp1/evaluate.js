@@ -1,5 +1,7 @@
+var number_of_attempts = 0;
 function eval()
 {
+	number_of_attempts=number_of_attempts+1;
 	var form = document.forms["quiz"];
 
 	/* Initialise answers */
@@ -138,4 +140,29 @@ function eval()
 	output += result;
 
 	alert(output);
+}
+
+function show_correct_ans()
+{
+	/* Initialise answers */
+	var a1a = "(2, 2)";
+	var a1b = "(-2, 3)";
+	var a1c = "(-4, 0)";
+	var a1d = "(-3, -3)";
+	var a1e = "(4, -3)";
+	var a2  = "1";
+	var a3  = "3";
+
+	var answers="Correct Answers:\n"
+	answers=answers+"Q1. a)"+a1a+" b)"+a1b+" c)"+a1c+" d)"+a1d+" e)"+a1e+'\n';
+	answers=answers+"Q2. "+a2+'\n';
+	answers=answers+"Q3. "+a3+'\n';
+	if(number_of_attempts)
+	{
+		alert(answers);
+	}
+	else
+	{
+		alert("Please attempt the quiz atleast once before checking for the answer");
+	}
 }
