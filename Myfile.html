@@ -1,0 +1,25 @@
+<canvas id="canvas" width="500" height="500"></canvas>
+<script>
+var AB = 400;
+var BC = 500;
+var AC = 300;
+
+var A = [0, 0]; // starting coordinates
+var B = [0, AB];
+var C = [];
+
+// calculate third point
+C[1] = (AB * AB + AC * AC - BC * BC) / (2 * AB);
+C[0] = Math.sqrt(AC * AC - C[1] * C[1]);
+console.log(A, B, C);
+
+var canvas = document.getElementById('canvas');
+var ctx = canvas.getContext('2d');
+
+ctx.beginPath();
+ctx.moveTo(A[0], A[1]);
+ctx.lineTo(B[0], B[1]);
+ctx.lineTo(C[0], C[1]);
+ctx.fill();
+</script>
+
