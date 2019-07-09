@@ -1,3 +1,5 @@
+//Setup Of canvas
+
 var canvas=document.querySelector('#world');
 
 canvas.width=$("#canvas_container").width();
@@ -5,17 +7,8 @@ canvas.height=$("#canvas_container").height();
 var ctx=canvas.getContext('2d');
 var width=canvas.width;
 var height=canvas.height;
-
-
-// ctx.beginPath();
-// // ctx.strokeStyle = "red";
-// ctx.moveTo(width/2,0);
-// ctx.lineTo(width/2,height);
-// ctx.moveTo(0,height/2);
-// ctx.lineTo(width,height/2);
-// ctx.stroke();
-
-var block=25;
+// console.log(width);
+var block=0.02*width;
 function xcoor(x)
 {
     var f = width / 2 + x * block;
@@ -24,9 +17,11 @@ function xcoor(x)
 
 function ycoor(y)
 {
+    y=-y;
     var f = height / 2 + y * block;
     return f;
 }
+
 function drawGrid () {
     ctx.beginPath();
     for (var i = 1; i < 30; i = i + 1) {
@@ -52,31 +47,19 @@ function drawGrid () {
 }
 
 
-$("#world").mousemove( function (evt) {
-    var mousePos = getMousePos(canvas, evt);
-    $("#mousepos").html(mousePos.x + ',' + mousePos.y)
-});
-
-//Get Mouse Position
-function getMousePos(canvas, evt) {
-    var rect = canvas.getBoundingClientRect();
-    return {
-        x: evt.clientX - rect.left,
-        y: evt.clientY - rect.top
-    };
-}
 //for the aesthetic appeal(do later)
 // $('#add_shape').click(function () {
 //     if()
 //     $(this).fadeOut();
 //     $(this).fadeIn();
 // });
+
 function animate() {
     ctx.clearRect(0,0,width,height);
     requestAnimationFrame(animate);
     drawGrid();
 }
-animate();
+drawGrid();
 
 // var canvas;
 // var ctx;

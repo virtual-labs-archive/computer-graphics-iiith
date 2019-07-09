@@ -65,7 +65,7 @@
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary">Save changes</button>
+                <button type="button" class="btn btn-primary" id="constructSampleSquare">Save changes</button>
             </div>
         </div>
     </div>
@@ -134,32 +134,29 @@
             <div class="modal-body">
                 <p>1st Coordinate</p>
                 <form class="form-inline d-flex justify-content-between">
-                    <label class="sr-only" for="rtopleftx">Top Left X-coordinate</label>
                     <div class="input-group" style="width: 40%;">
                         <div class="input-group-prepend">
                             <div class="input-group-text">X:</div>
                         </div>
-                        <input type="number" class="form-control" id="rtopleftx" placeholder="X-coordinate">
+                        <input type="number" class="form-control" id="tptx1" placeholder="X-coordinate">
                     </div>
                     &nbsp;&nbsp;
-                    <label class="sr-only" for="rtoplefty">Top Left Y-coordinate</label>
                     <div class="input-group" style="width: 40%;">
                         <div class="input-group-prepend">
                             <div class="input-group-text">Y:</div>
                         </div>
-                        <input type="number" class="form-control" id="rtoplefty" placeholder="Y-coordinate">
+                        <input type="number" class="form-control" id="tpty1" placeholder="Y-coordinate">
                     </div>
                     <br>
                 </form>
                 <br>
                 <p>2nd Coordinate</p>
                 <form class="form-inline d-flex justify-content-between">
-                    <label class="sr-only" for="rtopleftx">Top Left X-coordinate</label>
                     <div class="input-group" style="width: 40%;">
                         <div class="input-group-prepend">
                             <div class="input-group-text">X:</div>
                         </div>
-                        <input type="number" class="form-control" id="rtopleftx" placeholder="X-coordinate">
+                        <input type="number" class="form-control" id="tptx2" placeholder="X-coordinate">
                     </div>
                     &nbsp;&nbsp;
                     <label class="sr-only" for="rtoplefty">Top Left Y-coordinate</label>
@@ -167,7 +164,7 @@
                         <div class="input-group-prepend">
                             <div class="input-group-text">Y:</div>
                         </div>
-                        <input type="number" class="form-control" id="rtoplefty" placeholder="Y-coordinate">
+                        <input type="number" class="form-control" id="tpty2" placeholder="Y-coordinate">
                     </div>
                     <br>
                 </form>
@@ -179,7 +176,7 @@
                         <div class="input-group-prepend">
                             <div class="input-group-text">X:</div>
                         </div>
-                        <input type="number" class="form-control" id="rtopleftx" placeholder="X-coordinate">
+                        <input type="number" class="form-control" id="tptx3" placeholder="X-coordinate">
                     </div>
                     &nbsp;&nbsp;
                     <label class="sr-only" for="rtoplefty">Top Left Y-coordinate</label>
@@ -187,7 +184,7 @@
                         <div class="input-group-prepend">
                             <div class="input-group-text">Y:</div>
                         </div>
-                        <input type="number" class="form-control" id="rtoplefty" placeholder="Y-coordinate">
+                        <input type="number" class="form-control" id="tpty3" placeholder="Y-coordinate">
                     </div>
                     <br>
                 </form>
@@ -209,7 +206,7 @@
     <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title">Sample Triangle</h5>
+                <h5 class="modal-title">Custom Shape</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
@@ -217,69 +214,66 @@
             <div class="modal-body">
                 <p>Point 1</p>
                 <form class="form-inline d-flex justify-content-between">
-                    <label class="sr-only" for="rtopleftx">Top Left X-coordinate</label>
                     <div class="input-group" style="width: 40%;">
                         <div class="input-group-prepend">
                             <div class="input-group-text">X:</div>
                         </div>
-                        <input type="number" class="form-control" id="rtopleftx" placeholder="X-coordinate">
+                        <input type="number" class="form-control" id="cptx1" placeholder="X-coordinate">
                     </div>
                     &nbsp;&nbsp;
-                    <label class="sr-only" for="rtoplefty">Top Left Y-coordinate</label>
                     <div class="input-group" style="width: 40%;">
                         <div class="input-group-prepend">
                             <div class="input-group-text">Y:</div>
                         </div>
-                        <input type="number" class="form-control" id="rtoplefty" placeholder="Y-coordinate">
+                        <input type="number" class="form-control" id="cpty1" placeholder="Y-coordinate">
                     </div>
                     <br>
                 </form>
                 <br>
                 <p>Point 2</p>
                 <form class="form-inline d-flex justify-content-between">
-                    <label class="sr-only" for="rtopleftx">Top Left X-coordinate</label>
                     <div class="input-group" style="width: 40%;">
                         <div class="input-group-prepend">
                             <div class="input-group-text">X:</div>
                         </div>
-                        <input type="number" class="form-control" id="rtopleftx" placeholder="X-coordinate">
+                        <input type="number" class="form-control" id="cptx2" placeholder="X-coordinate">
                     </div>
                     &nbsp;&nbsp;
-                    <label class="sr-only" for="rtoplefty">Top Left Y-coordinate</label>
                     <div class="input-group" style="width: 40%;">
                         <div class="input-group-prepend">
                             <div class="input-group-text">Y:</div>
                         </div>
-                        <input type="number" class="form-control" id="rtoplefty" placeholder="Y-coordinate">
+                        <input type="number" class="form-control" id="cpty2" placeholder="Y-coordinate">
                     </div>
                     <br>
                 </form>
                 <br>
                 <p>Point 3</p>
                 <form class="form-inline d-flex justify-content-between">
-                    <label class="sr-only" for="rtopleftx">Top Left X-coordinate</label>
                     <div class="input-group" style="width: 40%;">
                         <div class="input-group-prepend">
                             <div class="input-group-text">X:</div>
                         </div>
-                        <input type="number" class="form-control" id="rtopleftx" placeholder="X-coordinate">
+                        <input type="number" class="form-control" id="cptx3" placeholder="X-coordinate">
                     </div>
                     &nbsp;&nbsp;
-                    <label class="sr-only" for="rtoplefty">Top Left Y-coordinate</label>
                     <div class="input-group" style="width: 40%;">
                         <div class="input-group-prepend">
                             <div class="input-group-text">Y:</div>
                         </div>
-                        <input type="number" class="form-control" id="rtoplefty" placeholder="Y-coordinate">
+                        <input type="number" class="form-control" id="cpty3" placeholder="Y-coordinate">
                     </div>
                     <br>
                 </form>
                 <br>
-                <button type="button" class="btn btn-info float-right" >Add Point</button>
+                <div id="newpoints">
+
+                </div>
+                <button type="button" class="btn btn-info float-right" id="addNewPoint">Add Point</button>
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary">Save changes</button>
+                <button type="button" class="btn btn-primary" id="customShapeSubmit">Save changes</button>
             </div>
         </div>
     </div>
@@ -306,13 +300,13 @@
                                 New Shape
                             </div>
                             <div class="card-body" >
-                                <button class="btn btn-outline-primary" id="sample_square" data-toggle="modal" data-target="#sampleSquare">Sample Square</button>
+                                <button class="btn btn-outline-info" id="sample_square" data-toggle="modal" data-target="#sampleSquare">Sample Square</button>
                                 <br><br>
-                                <button class="btn btn-outline-primary" id="sample_rectangle" data-toggle="modal" data-target="#sampleRect">Sample Rectangle</button>
+                                <button class="btn btn-outline-info" id="sample_rectangle" data-toggle="modal" data-target="#sampleRect">Sample Rectangle</button>
                                 <br><br>
-                                <button class="btn btn-outline-primary" id="sample_triangle" data-toggle="modal" data-target="#sampleTriangle">Sample Triangle</button>
+                                <button class="btn btn-outline-info" id="sample_triangle" data-toggle="modal" data-target="#sampleTriangle">Sample Triangle</button>
                                 <br><br>
-                                <button class="btn btn-outline-primary" id="custom_shape" data-toggle="modal" data-target="#customShape">Custom Shape</button>
+                                <button class="btn btn-outline-info" id="custom_shape" data-toggle="modal" data-target="#customShape">Custom Shape</button>
                             </div>
                         </div><br>
                     </div>
@@ -345,6 +339,9 @@
 
 
     <script type="text/javascript" src="js/main.js"></script>
+    <script type="text/javascript" src="js/ui.js"></script>
+    <script type="text/javascript" src="js/misc.js"></script>
+    <script type="text/javascript" src="js/shapes.js"></script>
 
 </div>
 </body>
