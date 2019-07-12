@@ -3,11 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <title>Hierarchical Transformations: 2D Demo</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="../libraries/bootstrap.min.css">
+    <link rel="stylesheet" href="../libraries/bootstrap-grid.min.css">
+    <link rel="stylesheet" href="../libraries/bootstrap-reboot.min.css">
+    <script src="../libraries/jquery-3.4.1.min.js"></script>
+    <script src="../libraries/popper.min.js"></script>
+    <script src="../libraries/bootstrap.bundle.js"></script>
+    <script src="../libraries/bootstrap.js"></script>
+
     <style type="text/css">
         #content{
             text-align: center;
@@ -22,7 +25,6 @@
         /*    pointer-events: none;*/
         /*}*/
     </style>
-<!--    <meta http-equiv="refresh" content="1" >-->
 
 </head>
 <body class="bg-light">
@@ -287,6 +289,7 @@
     <div class="row">
         <div class="col-lg-9" id="canvas_container">
             <canvas id="world" class="border border-secondary" style="z-index: 5"></canvas>
+            <input type="range" class="custom-range" id="slider" max="1000">
         </div>
         <div class="col-lg-3 border border-secondary overflow-auto" style="height: 800px" id="settings">
             <div class="mx-auto">
@@ -300,12 +303,12 @@
                                 New Shape
                             </div>
                             <div class="card-body" >
-                                <button class="btn btn-outline-info" id="sample_square" data-toggle="modal" data-target="#sampleSquare">Sample Square</button>
-                                <br><br>
-                                <button class="btn btn-outline-info" id="sample_rectangle" data-toggle="modal" data-target="#sampleRect">Sample Rectangle</button>
-                                <br><br>
-                                <button class="btn btn-outline-info" id="sample_triangle" data-toggle="modal" data-target="#sampleTriangle">Sample Triangle</button>
-                                <br><br>
+<!--                                <button class="btn btn-outline-info" id="sample_square" data-toggle="modal" data-target="#sampleSquare">Sample Square</button>-->
+<!--                                <br><br>-->
+<!--                                <button class="btn btn-outline-info" id="sample_rectangle" data-toggle="modal" data-target="#sampleRect">Sample Rectangle</button>-->
+<!--                                <br><br>-->
+<!--                                <button class="btn btn-outline-info" id="sample_triangle" data-toggle="modal" data-target="#sampleTriangle">Sample Triangle</button>-->
+<!--                                <br><br>-->
                                 <button class="btn btn-outline-info" id="custom_shape" data-toggle="modal" data-target="#customShape">Custom Shape</button>
                             </div>
                         </div><br>
@@ -317,17 +320,20 @@
                                 New Shape
                             </div>
                             <div class="card-body" >
-                                <button class="btn btn-outline-primary" id="sample_square" data-toggle="modal" data-target="#sampleSquare">Sample Square</button>
+                                <button class="btn btn-outline-primary" id="translation" data-toggle="modal" data-target="#sampleSquare">Translation</button>
                                 <br><br>
-                                <button class="btn btn-outline-primary" id="sample_rectangle" data-toggle="modal" data-target="#sampleSquare">Sample Rectangle</button>
+                                <button class="btn btn-outline-primary" id="rotation" data-toggle="modal" data-target="#sampleSquare">Rotation</button>
                                 <br><br>
-                                <button class="btn btn-outline-primary" id="sample_triangle" data-toggle="modal" data-target="#sampleSquare">Sample Triangle</button>
+                                <button class="btn btn-outline-primary" id="scale" data-toggle="modal" data-target="#sampleSquare">Scale</button>
                                 <br><br>
-                                <button class="btn btn-outline-primary" id="custom_shape" data-toggle="modal" data-target="#sampleSquare">Custom Shape</button>
+                                <button class="btn btn-outline-primary" id="skew" data-toggle="modal" data-target="#sampleSquare">Skew</button>
+                                <br><br>
+                                <button class="btn btn-outline-primary" id="custom" data-toggle="modal" data-target="#sampleSquare">Custom</button>
                             </div>
                         </div><br>
                     </div>
                     <p id="mousepos"></p>
+                    <p id="slider_value"></p>
                     <hr>
                     <div class="mx-auto">
                         <h2>Shapes and Transformations</h2>
@@ -337,7 +343,7 @@
         </div>
     </div>
 
-
+    <script src="js/TransformationMatrix.js"></script>
     <script type="text/javascript" src="js/main.js"></script>
     <script type="text/javascript" src="js/ui.js"></script>
     <script type="text/javascript" src="js/misc.js"></script>

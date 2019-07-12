@@ -8,7 +8,7 @@ var ctx=canvas.getContext('2d');
 var width=canvas.width;
 var height=canvas.height;
 // console.log(width);
-var block=0.02*width;
+var block=Math.floor(0.02*width);
 function xcoor(x)
 {
     var f = width / 2 + x * block;
@@ -46,7 +46,9 @@ function drawGrid () {
     ctx.stroke();
 }
 
-
+$(document).on('input', '#slider', function() {
+    $('#slider_value').html( $(this).val() );
+});
 //for the aesthetic appeal(do later)
 // $('#add_shape').click(function () {
 //     if()
