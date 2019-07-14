@@ -65,12 +65,145 @@
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary" id="constructSampleSquare">Save changes</button>
+                <button type="button" class="btn btn-primary" id="addtranslation">Save changes</button>
             </div>
         </div>
     </div>
 </div>
 
+<!--ROTATION-->
+<div class="modal fade" id="rotation_modal" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Translation</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <p>Center of rotation</p>
+                <form class="form-inline d-flex justify-content-around">
+                    <div class="input-group" style="width: 40%;">
+                        <div class="input-group-prepend">
+                            <div class="input-group-text">X:</div>
+                        </div>
+                        <input type="number" class="form-control" id="rtx" placeholder="X-coordinate">
+                    </div>
+                    &nbsp;&nbsp;
+                    <div class="input-group" style="width: 40%;">
+                        <div class="input-group-prepend">
+                            <div class="input-group-text">Y:</div>
+                        </div>
+                        <input type="number" class="form-control" id="rty" placeholder="Y-coordinate">
+                    </div>
+                    <br>
+                </form>
+                <br>
+                <label for="rta">Angle in Degrees</label>
+                <div class="d-flex justify-content-around" style="width: 80%;">
+                    <input type="number" class="form-control" id="rta" placeholder="Number of frames">
+                </div>
+                <br>
+                <label for="rta">Number of frames</label>
+                <div class="d-flex justify-content-around" style="width: 80%;">
+                    <input type="number" class="form-control" id="rtf" placeholder="Number of frames">
+                </div>
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary" id="addrotation">Save changes</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--SCALE-->
+<div class="modal fade" id="scale_modal" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Translation</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <p>Scaling in the x and y directions</p>
+                <form class="form-inline d-flex justify-content-around">
+                    <div class="input-group" style="width: 40%;">
+                        <div class="input-group-prepend">
+                            <div class="input-group-text">X:</div>
+                        </div>
+                        <input type="number" class="form-control" id="scx" placeholder="X-coordinate">
+                    </div>
+                    &nbsp;&nbsp;
+                    <div class="input-group" style="width: 40%;">
+                        <div class="input-group-prepend">
+                            <div class="input-group-text">Y:</div>
+                        </div>
+                        <input type="number" class="form-control" id="scy" placeholder="Y-coordinate">
+                    </div>
+                    <br>
+                </form>
+                <br>
+                <label for="rta">Number of frames</label>
+                <div class="d-flex justify-content-around" style="width: 80%;">
+                    <input type="number" class="form-control" id="scf" placeholder="Number of frames">
+                </div>
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary" id="addscale">Save changes</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--SKEW-->
+<div class="modal fade" id="skew_modal" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Translation</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <p>Skew in the x or y directions</p>
+                <form class="form-inline d-flex justify-content-around">
+                    <div class="input-group" style="width: 40%;">
+                        <input type="number" class="form-control" id="scv" placeholder="Skew Value">
+                    </div>
+                    &nbsp;&nbsp;
+                    <br>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" name="coordinate" type="radio" id="skx" value="x">
+                        <label class="form-check-label" for="skx">x</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" name="coordinate" type="radio" id="sky" value="option2">
+                        <label class="form-check-label" for="sky">y</label>
+                    </div>
+                    <br>
+                </form>
+                <br>
+                <label for="rta">Number of frames</label>
+                <div class="d-flex justify-content-around" style="width: 80%;">
+                    <input type="number" class="form-control" id="skf" placeholder="Number of frames">
+                </div>
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary" id="addskew">Save changes</button>
+            </div>
+        </div>
+    </div>
+</div>
 
 <!--SAMPLE SQUARE-->
 <div class="modal fade" id="sampleSquare" tabindex="-1" role="dialog" aria-labelledby="sampleSquare" aria-hidden="true">
@@ -366,13 +499,13 @@
                             <div class="card-body" >
                                 <button class="btn btn-outline-primary" id="translation" data-toggle="modal" data-target="#translation_modal">Translation</button>
                                 <br><br>
-                                <button class="btn btn-outline-primary" id="rotation" data-toggle="modal" data-target="#sampleSquare">Rotation</button>
+                                <button class="btn btn-outline-primary" id="rotation" data-toggle="modal" data-target="#rotation_modal">Rotation</button>
                                 <br><br>
-                                <button class="btn btn-outline-primary" id="scale" data-toggle="modal" data-target="#sampleSquare">Scale</button>
+                                <button class="btn btn-outline-primary" id="scale" data-toggle="modal" data-target="#scale_modal">Scale</button>
                                 <br><br>
-                                <button class="btn btn-outline-primary" id="skew" data-toggle="modal" data-target="#sampleSquare">Skew</button>
+                                <button class="btn btn-outline-primary" id="skew" data-toggle="modal" data-target="#skew_modal">Skew</button>
                                 <br><br>
-                                <button class="btn btn-outline-primary" id="custom" data-toggle="modal" data-target="#sampleSquare">Custom</button>
+                                <button class="btn btn-outline-primary" id="custom" data-toggle="modal" data-target="#custom_modal">Custom</button>
                             </div>
                         </div><br>
                     </div>
@@ -390,6 +523,7 @@
     </div>
 
     <script src="js/Point.js"></script>
+    <script src="js/transformations.js"></script>
     <script src="js/TransformationMatrix.js"></script>
     <script type="text/javascript" src="js/main.js"></script>
     <script type="text/javascript" src="js/ui.js"></script>

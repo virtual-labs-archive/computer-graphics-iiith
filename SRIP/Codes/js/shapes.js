@@ -2,11 +2,9 @@ numshapes=0;
 var shapes = [];
 var tr1 = new TMatrix("rt",-3,-3,45);
 var tr2 = new TMatrix("tr", 2, 2);
-
-
-var transformations = [tr1,tr2];
-var transformations_framed = [];
-var transformedshapes = {};
+tr1.frames = 100;
+tr2.frames = 100;
+var shapescolor=[];
 
 
 function getRandomColor() {
@@ -14,28 +12,37 @@ function getRandomColor() {
     return color;
 }
 
-function drawShapes() {
-    for (var id in shapes)
+function drawShapes(arr) {
+    for (var id in arr)
     {
+        ctx.clearRect(0,0,width,height);
+        drawGrid();
         // console.log(shapes[id]);
         ctx.beginPath();
-        var x = xcoor(shapes[id][0]['x']);
-        var y = ycoor(shapes[id][0]['y']);
+        var x = xcoor(arr[id][0]['x']);
+        var y = ycoor(arr[id][0]['y']);
         ctx.moveTo(x,y);
-        for (var point in shapes[id])
+        for (var point in arr[id])
         {
             // console.log(shapes[id][point]);
-            var x = xcoor(shapes[id][point]['x']);
-            var y = ycoor(shapes[id][point]['y']);
+            var x = xcoor(arr[id][point]['x']);
+            var y = ycoor(arr[id][point]['y']);
             ctx.lineTo(x,y);
         }
-        ctx.strokeStyle=getRandomColor();
-        console.log(ctx.strokeStyle);
+        if(shapescolor[id])
+        {
+            ctx.strokeStyle = shapescolor[id];
+        }
+        else
+        {
+            ctx.strokeStyle=getRandomColor();
+            shapescolor[id]=ctx.strokeStyle;
+        }
+
         ctx.closePath();
         ctx.stroke();
         ctx.fillStyle=ctx.strokeStyle;
         ctx.fill();
-        console.log(ctx);
     }
 }
 function validatecustominput()
@@ -56,7 +63,7 @@ $("#customShapeSubmit").click(function () {
             var pt = new Point(x,y);
             shapes[shapes.length-1].push(pt);
         }
-        drawShapes();
+        drawShapes(shapes);
     }
 });
 
@@ -84,49 +91,48 @@ function drawTransformedShapes() {
         console.log(ctx);
     }
 }
-
-
-$("#transform").click(function () {
-    for(var ids in shapes)
-    {
-        transformedshapes[ids]=[];
-        // console.log(shapes[id]);
-        for (idp in shapes[ids])
-        {
-            var pt;
-            for(idt in transformations)
-            {
-                var t;
-                if(idt == 1)
-                {
-                    t = shapes[ids][idp].mat.multiply(transformations[idt].mat);
-                }
-                else
-                {
-                    t = pt.mat.multiply(transformations[idt].mat);
-                }
-
-                pt= new Point(t.mat[0][0],t.mat[0][1]);
-            }
-            transformedshapes[ids].push(pt);
-        }
-    }
-    drawTransformedShapes();
-});
+//
+//
+// $("#transform").click(function () {
+//     for(var ids in shapes)
+//     {
+//         transformedshapes[ids]=[];
+//         // console.log(shapes[id]);
+//         for (idp in shapes[ids])
+//         {
+//             var pt;
+//             for(idt in transformations)
+//             {
+//                 var t;
+//                 if(idt == 1)
+//                 {
+//                     t = shapes[ids][idp].mat.multiply(transformations[idt].mat);
+//                 }
+//                 else
+//                 {
+//                     t = pt.mat.multiply(transformations[idt].mat);
+//                 }
+//
+//                 pt= new Point(t.mat[0][0],t.mat[0][1]);
+//             }
+//             transformedshapes[ids].push(pt);
+//         }
+//     }
+//     drawTransformedShapes();
+// });
 
 $("#constructSampleSquare").click(function () {
     var x = parseInt($("#stopleftx").val());
     var y = parseInt($("#stoplefty").val());
     var len = parseInt($("#squarelength").val());
-    numshapes = numshapes+1;
-    shapes[numshapes]=[];
+    shapes.push([]);
     var pt1 = new Point(x,y);
     var pt2 = new Point(x+len ,y);
     var pt3 = new Point(x+len, y-len);
     var pt4 = new Point(x, y-len);
-    shapes[numshapes].push(pt1);
-    shapes[numshapes].push(pt2);
-    shapes[numshapes].push(pt3);
-    shapes[numshapes].push(pt4);
-    drawShapes();
+    shapes[shapes.length-1].push(pt1);
+    shapes[shapes.length-1].push(pt2);
+    shapes[shapes.length-1].push(pt3);
+    shapes[shapes.length-1].push(pt4);
+    drawShapes(shapes);
 });

@@ -40,6 +40,7 @@ function Matrix(row, column)
 
 function TMatrix(transform, x, y, deg)
 {
+    this.frames = 1;
     if(typeof transform !== "string")
     {
         throw new Error("First parameter should be a string from these options. \n\"tr\" for translation.\n\"rt\" for rotation.\n\"sk\" for skew or shear.\n\"sc\" for scaling.");
@@ -136,3 +137,5 @@ function TMatrix(transform, x, y, deg)
         throw new Error("UnExpected value in 1st parameter");
     }
 }
+
+
