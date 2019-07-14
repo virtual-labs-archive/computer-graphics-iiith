@@ -28,6 +28,50 @@
 
 </head>
 <body class="bg-light">
+<!--TRANSLATION-->
+<div class="modal fade" id="translation_modal" tabindex="-1" role="dialog" aria-labelledby="sampleSquare" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Translation</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <p>Translation in the x and y directions</p>
+                <form class="form-inline d-flex justify-content-around">
+                    <div class="input-group" style="width: 40%;">
+                        <div class="input-group-prepend">
+                            <div class="input-group-text">X:</div>
+                        </div>
+                        <input type="number" class="form-control" id="trx" placeholder="X-coordinate">
+                    </div>
+                    &nbsp;&nbsp;
+                    <div class="input-group" style="width: 40%;">
+                        <div class="input-group-prepend">
+                            <div class="input-group-text">Y:</div>
+                        </div>
+                        <input type="number" class="form-control" id="try" placeholder="Y-coordinate">
+                    </div>
+                    <br>
+                </form>
+                <br>
+                <label for="squarelength">Number of frames</label>
+                <div class="d-flex justify-content-around" style="width: 80%;">
+                    <input type="number" class="form-control" id="trf" placeholder="Number of frames">
+                </div>
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary" id="constructSampleSquare">Save changes</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
 <!--SAMPLE SQUARE-->
 <div class="modal fade" id="sampleSquare" tabindex="-1" role="dialog" aria-labelledby="sampleSquare" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered" role="document">
@@ -303,8 +347,8 @@
                                 New Shape
                             </div>
                             <div class="card-body" >
-<!--                                <button class="btn btn-outline-info" id="sample_square" data-toggle="modal" data-target="#sampleSquare">Sample Square</button>-->
-<!--                                <br><br>-->
+                                <button class="btn btn-outline-info" id="sample_square" data-toggle="modal" data-target="#sampleSquare">Sample Square</button>
+                                <br><br>
 <!--                                <button class="btn btn-outline-info" id="sample_rectangle" data-toggle="modal" data-target="#sampleRect">Sample Rectangle</button>-->
 <!--                                <br><br>-->
 <!--                                <button class="btn btn-outline-info" id="sample_triangle" data-toggle="modal" data-target="#sampleTriangle">Sample Triangle</button>-->
@@ -320,7 +364,7 @@
                                 New Shape
                             </div>
                             <div class="card-body" >
-                                <button class="btn btn-outline-primary" id="translation" data-toggle="modal" data-target="#sampleSquare">Translation</button>
+                                <button class="btn btn-outline-primary" id="translation" data-toggle="modal" data-target="#translation_modal">Translation</button>
                                 <br><br>
                                 <button class="btn btn-outline-primary" id="rotation" data-toggle="modal" data-target="#sampleSquare">Rotation</button>
                                 <br><br>
@@ -332,7 +376,9 @@
                             </div>
                         </div><br>
                     </div>
+                    <button class="btn btn-info" id="transform">Transform</button>
                     <p id="mousepos"></p>
+                    <p id="mouseposdebug"></p>
                     <p id="slider_value"></p>
                     <hr>
                     <div class="mx-auto">
@@ -343,6 +389,7 @@
         </div>
     </div>
 
+    <script src="js/Point.js"></script>
     <script src="js/TransformationMatrix.js"></script>
     <script type="text/javascript" src="js/main.js"></script>
     <script type="text/javascript" src="js/ui.js"></script>

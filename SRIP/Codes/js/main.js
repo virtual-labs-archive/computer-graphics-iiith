@@ -8,7 +8,7 @@ var ctx=canvas.getContext('2d');
 var width=canvas.width;
 var height=canvas.height;
 // console.log(width);
-var block=Math.floor(0.02*width);
+var block=Math.floor(0.03*width);
 function xcoor(x)
 {
     var f = width / 2 + x * block;

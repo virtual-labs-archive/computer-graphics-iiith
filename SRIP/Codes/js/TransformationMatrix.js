@@ -73,7 +73,7 @@ function TMatrix(transform, x, y, deg)
         var a= new Matrix(3,3);
         a.mat[0]=[1,0,0];
         a.mat[1]=[0,1,0];
-        a.mat[2]=[x,y,1];
+        a.mat[2]=[-x,-y,1];
 
         const theta = deg * Math.PI / 180;
         const costheta = Math.cos(theta);
@@ -87,7 +87,7 @@ function TMatrix(transform, x, y, deg)
         var c= new Matrix(3,3);
         c.mat[0]=[1,0,0];
         c.mat[1]=[0,1,0];
-        c.mat[2]=[-x,-y,1];
+        c.mat[2]=[x,y,1];
 
         var t1 = a.multiply(b);
         var t2 = t1.multiply(c);
@@ -113,8 +113,10 @@ function TMatrix(transform, x, y, deg)
         {
             var a= new Matrix(3,3);
             a.mat[0]=[1,0,0];
-            a.mat[1]=[-x,1,0];
+            a.mat[1]=[x,1,0];
             a.mat[2]=[0,0,1];
+
+            this.mat = a;
         }
         else{
             throw new Error("UnExpected Value in 3rd parameter");

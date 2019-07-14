@@ -26,5 +26,3 @@ $("#addNewPoint").click(function () {
 
     $("#newpoints").append(newpoint);
 })
-
-
