@@ -113,8 +113,40 @@ $("#addscale").click(function () {
     transformations.push(t);
 
 });
-//
-// #("#add")
+
+$("#addskew").click(function () {
+    var val = parseFloat($("#skv").val());
+    var axis = $('input[name=coordinate]:checked').val();
+    var f = parseInt($("#skf").val());
+
+    var t = new TMatrix("sk", val, axis);
+    t.frames = f;
+    if(transformations.length > 0)
+    {
+        var temp = transformations[transformations.length - 1];
+        var temp2 = temp.mat.multiply((t.mat));
+        t.mat = temp2;
+    }
+
+    for (var i = 1; i<=f; i=i+1)
+    {
+        var val1 = val * (i/f);
+
+        if(transformations.length == 0)
+        {
+            transformations_framed.push(new TMatrix("sk",val1,axis));
+        }
+        else
+        {
+            var temp = new TMatrix("sk",val1,axis);
+            var temp2 = transformations[transformations.length-1];
+            var temp3 = temp2.mat.multiply(temp.mat);
+            temp.mat = temp3;
+            transformations_framed.push(temp);
+        }
+    }
+    transformations.push(t);
+});
 
 $(document).on('input', '#slider', function() {
     transformedshapes = [];
