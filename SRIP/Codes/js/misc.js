@@ -1,8 +1,7 @@
 
 $("#world").mousemove( function (evt) {
     var mousePos = getMousePos(canvas, evt);
-    $("#mousepos").html(((mousePos.x - width/2)/block).toFixed(2) + ',' + -((mousePos.y - height/2)/block).toFixed(2));
-    $("#mouseposdebug").html(mousePos.x + ','+mousePos.y);
+    $("#mousepos").html("X: " + ((mousePos.x - width/2)/block).toFixed(2) + ', Y: ' + -((mousePos.y - height/2)/block).toFixed(2));
 });
 
 //Get Mouse Position

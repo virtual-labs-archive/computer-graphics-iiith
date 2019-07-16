@@ -60,11 +60,12 @@ $("#customShapeSubmit").click(function () {
             yc="cpty"+i;
             var x = parseInt($("#"+xc).val());
             var y = parseInt($("#"+yc).val());
-            var pt = new Point(x,y);
+            var pt = new Point(x,y,1);
             shapes[shapes.length-1].push(pt);
         }
         drawShapes(shapes);
     }
+    $(".modal").modal('hide');
 });
 
 function drawTransformedShapes() {
@@ -91,48 +92,43 @@ function drawTransformedShapes() {
         console.log(ctx);
     }
 }
-//
-//
-// $("#transform").click(function () {
-//     for(var ids in shapes)
-//     {
-//         transformedshapes[ids]=[];
-//         // console.log(shapes[id]);
-//         for (idp in shapes[ids])
-//         {
-//             var pt;
-//             for(idt in transformations)
-//             {
-//                 var t;
-//                 if(idt == 1)
-//                 {
-//                     t = shapes[ids][idp].mat.multiply(transformations[idt].mat);
-//                 }
-//                 else
-//                 {
-//                     t = pt.mat.multiply(transformations[idt].mat);
-//                 }
-//
-//                 pt= new Point(t.mat[0][0],t.mat[0][1]);
-//             }
-//             transformedshapes[ids].push(pt);
-//         }
-//     }
-//     drawTransformedShapes();
-// });
+
 
 $("#constructSampleSquare").click(function () {
-    var x = parseInt($("#stopleftx").val());
-    var y = parseInt($("#stoplefty").val());
-    var len = parseInt($("#squarelength").val());
+    let x = parseInt($("#stopleftx").val());
+    let y = parseInt($("#stoplefty").val());
+    let len = parseInt($("#squarelength").val());
     shapes.push([]);
-    var pt1 = new Point(x,y);
-    var pt2 = new Point(x+len ,y);
-    var pt3 = new Point(x+len, y-len);
-    var pt4 = new Point(x, y-len);
+    let pt1 = new Point(x,y,1);
+    let pt2 = new Point(x+len ,y,1);
+    let pt3 = new Point(x+len, y-len,1);
+    let pt4 = new Point(x, y-len,1);
     shapes[shapes.length-1].push(pt1);
     shapes[shapes.length-1].push(pt2);
     shapes[shapes.length-1].push(pt3);
     shapes[shapes.length-1].push(pt4);
     drawShapes(shapes);
+    $(".modal").modal('hide');
+});
+
+$("#constructSampleRect").click(function () {
+    let x = parseFloat($("#rtopleftx").val());
+    let y = parseFloat($("#rtoplefty").val());
+    let len = parseFloat($("#rectlength").val());
+    let br = parseFloat($("#rectbreadth").val());
+
+    shapes.push([]);
+    let pt1 = new Point(x,y,1);
+    let pt2 = new Point(x+len ,y,1);
+    let pt3 = new Point(x+len, y-br,1);
+    let pt4 = new Point(x, y-br,1);
+
+    shapes[shapes.length-1].push(pt1);
+    shapes[shapes.length-1].push(pt2);
+    shapes[shapes.length-1].push(pt3);
+    shapes[shapes.length-1].push(pt4);
+
+    drawShapes(shapes);
+    $(".modal").modal('hide');
+
 });

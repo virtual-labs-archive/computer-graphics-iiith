@@ -1,6 +1,10 @@
-function Point(x,y) {
-    this.x=x;
-    this.y=y;
+function Point(x,y,d) {
+    if(d==0)
+    {
+        throw new Error("d cannot be zero");
+    }
+    this.x=x/d;
+    this.y=y/d;
     this.mat = new Matrix(1,3);
-    this.mat.mat[0] = [x,y,1];
+    this.mat.mat[0] = [this.x,this.y,1];
 }

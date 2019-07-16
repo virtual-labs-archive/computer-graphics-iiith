@@ -1,14 +1,17 @@
 //Setup Of canvas
-
 var canvas=document.querySelector('#world');
+var canvas_container = $("#canvas_container");
 
-canvas.width=$("#canvas_container").width();
-canvas.height=$("#canvas_container").height();
+var width = canvas_container.width();
+canvas.width = width;
+
+canvas.height= $("#settings").height();
+height = canvas.height;
+
 var ctx=canvas.getContext('2d');
-var width=canvas.width;
 var height=canvas.height;
 // console.log(width);
-var block=Math.floor(0.03*width);
+var block=Math.floor(0.025*width);
 function xcoor(x)
 {
     var f = width / 2 + x * block;
@@ -24,7 +27,7 @@ function ycoor(y)
 
 function drawGrid () {
     ctx.beginPath();
-    for (var i = 1; i < 30; i = i + 1) {
+    for (let i = 1; i < 30; i = i + 1) {
         ctx.strokeStyle = "#D3D3D3";
         ctx.moveTo(0, ycoor(i));
         ctx.lineTo(width, ycoor(i));
@@ -55,13 +58,21 @@ $(document).on('input', '#slider', function() {
 //     $(this).fadeOut();
 //     $(this).fadeIn();
 // });
-
-function animate() {
-    ctx.clearRect(0,0,width,height);
-    requestAnimationFrame(animate);
+function init() {
     drawGrid();
+    $("#slider").val(0);
+
+    $("#stopleftx").val(-1);
+    $("#stoplefty").val(1);
+    $("#squarelength").val(2);
+
+
+    $("#rtopleftx").val(-2);
+    $("#rtoplefty").val(1);
+    $("#rectlength").val(4);
+    $("#rectbreadth").val(2);
 }
-drawGrid();
+init();
 
 // var canvas;
 // var ctx;

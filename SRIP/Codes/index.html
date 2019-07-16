@@ -24,10 +24,36 @@
         /*.unclickable{*/
         /*    pointer-events: none;*/
         /*}*/
+        html,body{
+            min-height: 100vh;
+        }
     </style>
 
 </head>
 <body class="bg-light">
+<!--MANUAL-->
+<div class="modal fade" id="manual" tabindex="-1" role="dialog" aria-labelledby="manual" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Modal title</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <p class="lead">
+
+                </p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
 <!--TRANSLATION-->
 <div class="modal fade" id="translation_modal" tabindex="-1" role="dialog" aria-labelledby="sampleSquare" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered" role="document">
@@ -65,7 +91,7 @@
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary" id="addtranslation">Save changes</button>
+                <button type="button" class="btn btn-primary" id="addtranslation">ADD</button>
             </div>
         </div>
     </div>
@@ -109,11 +135,10 @@
                 <div class="d-flex justify-content-around" style="width: 80%;">
                     <input type="number" class="form-control" id="rtf" placeholder="Number of frames">
                 </div>
-
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary" id="addrotation">Save changes</button>
+                <button type="button" class="btn btn-primary" id="addrotation">ADD</button>
             </div>
         </div>
     </div>
@@ -156,7 +181,7 @@
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary" id="addscale">Save changes</button>
+                <button type="button" class="btn btn-primary" id="addscale">ADD</button>
             </div>
         </div>
     </div>
@@ -199,11 +224,65 @@
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary" id="addskew">Save changes</button>
+                <button type="button" class="btn btn-primary" id="addskew">ADD</button>
             </div>
         </div>
     </div>
 </div>
+
+<!--CUSTOM-->
+
+<div class="modal fade" id="custom_modal" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Translation</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <p>Custom Matrix</p>
+                <div class="container-fluid">
+                    <div class="row" style="width: 80%;">
+                        <div class="btn-group d-flex justify-content-around">
+                            <input type="number" class="form-control col-md-2" id="ct1">
+                            <input type="number" class="form-control col-md-2" id="ct2">
+                            <input type="number" class="form-control col-md-2" id="ct3">
+                        </div>
+                    </div>
+                    <br>
+                    <div class="row" style="width: 80%;">
+                        <div class=" btn-group d-flex justify-content-around">
+                            <input type="number" class="form-control col-md-2" id="ct4">
+                            <input type="number" class="form-control col-md-2" id="ct5">
+                            <input type="number" class="form-control col-md-2" id="ct6">
+                        </div>
+                    </div>
+                    <br>
+                    <div class="row" style="width: 80%;">
+                        <div class=" btn-group d-flex justify-content-around">
+                            <input type="number" class="form-control col-md-2" id="ct7">
+                            <input type="number" class="form-control col-md-2" id="ct8">
+                            <input type="number" class="form-control col-md-2" id="ct9">
+                        </div>
+                    </div>
+                </div>
+                <br>
+                <label for="rta">Number of frames</label>
+                <div class="d-flex justify-content-around" style="width: 80%;">
+                    <input type="number" class="form-control" id="customf" placeholder="Number of frames">
+                </div>
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary" id="addcustom">ADD</button>
+            </div>
+        </div>
+    </div>
+</div>
+
 
 <!--SAMPLE SQUARE-->
 <div class="modal fade" id="sampleSquare" tabindex="-1" role="dialog" aria-labelledby="sampleSquare" aria-hidden="true">
@@ -244,7 +323,7 @@
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary" id="constructSampleSquare">Save changes</button>
+                <button type="button" class="btn btn-primary" id="constructSampleSquare">ADD</button>
             </div>
         </div>
     </div>
@@ -294,7 +373,7 @@
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary">Save changes</button>
+                <button type="button" class="btn btn-primary" id="constructSampleRect">ADD</button>
             </div>
         </div>
     </div>
@@ -373,7 +452,7 @@
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary">Save changes</button>
+                <button type="button" class="btn btn-primary">ADD</button>
             </div>
         </div>
     </div>
@@ -452,23 +531,22 @@
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary" id="customShapeSubmit">Save changes</button>
+                <button type="button" class="btn btn-primary" id="customShapeSubmit">ADD</button>
             </div>
         </div>
     </div>
 </div>
 
 
-<div id="content" class="container ">
-    <h1>Hierarchical Transformations: 2D Demo</h1>
-<!--    <h3>Simulate a 2-1 Multiplexer, and then a 4-1 Multiplexer using the 2 bit multiplexer.(<a href="help.html" data-toggle="modal" data-target="#instructions">Click Here to see the instructions</a>)</h3>-->
+<div id="content" class="container" style="height: 100vh">
+    <h1>Hierarchical Transformations: 2D Demo (<a href="#manual" data-toggle="modal" data-target="#manualTitle">Click for Manual</a>)</h1>
     <hr>
-    <div class="row">
+    <div class="row" style="height: 85%">
         <div class="col-lg-9" id="canvas_container">
             <canvas id="world" class="border border-secondary" style="z-index: 5"></canvas>
             <input type="range" class="custom-range" id="slider" max="1000">
         </div>
-        <div class="col-lg-3 border border-secondary overflow-auto" style="height: 800px" id="settings">
+        <div class="col-lg-3 border border-secondary overflow-auto" id="settings" style="height: 100%">
             <div class="mx-auto">
                 <br>
                 <h2>Settings</h2>
@@ -482,8 +560,8 @@
                             <div class="card-body" >
                                 <button class="btn btn-outline-info" id="sample_square" data-toggle="modal" data-target="#sampleSquare">Sample Square</button>
                                 <br><br>
-<!--                                <button class="btn btn-outline-info" id="sample_rectangle" data-toggle="modal" data-target="#sampleRect">Sample Rectangle</button>-->
-<!--                                <br><br>-->
+                                <button class="btn btn-outline-info" id="sample_rectangle" data-toggle="modal" data-target="#sampleRect">Sample Rectangle</button>
+                                <br><br>
 <!--                                <button class="btn btn-outline-info" id="sample_triangle" data-toggle="modal" data-target="#sampleTriangle">Sample Triangle</button>-->
 <!--                                <br><br>-->
                                 <button class="btn btn-outline-info" id="custom_shape" data-toggle="modal" data-target="#customShape">Custom Shape</button>
@@ -505,14 +583,14 @@
                                 <br><br>
                                 <button class="btn btn-outline-primary" id="skew" data-toggle="modal" data-target="#skew_modal">Skew</button>
                                 <br><br>
-<!--                                <button class="btn btn-outline-primary" id="custom" data-toggle="modal" data-target="#custom_modal">Custom</button>-->
+                                <button class="btn btn-outline-primary" id="custom" data-toggle="modal" data-target="#custom_modal">Custom</button>
                             </div>
                         </div><br>
                     </div>
 <!--                    <button class="btn btn-info" id="transform">Transform</button>-->
+                    <p>Your Mouse Cursor Coordinates</p>
                     <p id="mousepos"></p>
-                    <p id="mouseposdebug"></p>
-                    <p id="slider_value"></p>
+<!--                    <p id="mouseposdebug"></p>-->
                     <hr>
                     <div class="mx-auto">
                         <h2>Shapes and Transformations</h2>
@@ -522,10 +600,10 @@
         </div>
     </div>
 
+    <script type="text/javascript" src="js/main.js"></script>
     <script src="js/Point.js"></script>
     <script src="js/transformations.js"></script>
     <script src="js/TransformationMatrix.js"></script>
-    <script type="text/javascript" src="js/main.js"></script>
     <script type="text/javascript" src="js/ui.js"></script>
     <script type="text/javascript" src="js/misc.js"></script>
     <script type="text/javascript" src="js/shapes.js"></script>

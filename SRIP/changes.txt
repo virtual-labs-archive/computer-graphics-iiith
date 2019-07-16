@@ -1,0 +1,17 @@
+add verification to all fields.
+show the shapes/transformations (optional: allow editing there too);
+add sample shapes(circle if possible);
+custom transformation
+add axis labels
+add point coordinates on canvas
+adjust slider values according to user.
+make slider start at zero.
+fade out add new shape
+
+By mentor:
+Make responsive
+close popup(done);
+values(done);
+silder(done);
+manual
+fit in page without scrolling(done);
