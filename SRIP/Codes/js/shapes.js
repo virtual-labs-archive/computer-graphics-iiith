@@ -68,32 +68,6 @@ $("#customShapeSubmit").click(function () {
     $(".modal").modal('hide');
 });
 
-function drawTransformedShapes() {
-    ctx.clearRect(0,0,width,height);
-    drawGrid();
-    for (var id in transformedshapes)
-    {
-        ctx.beginPath();
-        var t1 = xcoor(transformedshapes[id][0]['x']);
-        var t2 = ycoor(transformedshapes[id][0]['y']);
-        ctx.moveTo(t1,t2);
-        for (var point in transformedshapes[id])
-        {
-            var t3 = xcoor(transformedshapes[id][point]['x']);
-            var t4 = ycoor(transformedshapes[id][point]['y']);
-            ctx.lineTo(t3, t4);
-        }
-        ctx.strokeStyle=getRandomColor();
-        console.log(ctx.strokeStyle);
-        ctx.closePath();
-        ctx.stroke();
-        ctx.fillStyle=ctx.strokeStyle;
-        ctx.fill();
-        console.log(ctx);
-    }
-}
-
-
 $("#constructSampleSquare").click(function () {
     let x = parseInt($("#stopleftx").val());
     let y = parseInt($("#stoplefty").val());
@@ -127,6 +101,30 @@ $("#constructSampleRect").click(function () {
     shapes[shapes.length-1].push(pt2);
     shapes[shapes.length-1].push(pt3);
     shapes[shapes.length-1].push(pt4);
+
+    drawShapes(shapes);
+    $(".modal").modal('hide');
+
+});
+
+$("#constructSampleTriangle").click(function () {
+
+    shapes.push([]);
+
+    let x1 = $("#tptx1").val();
+    let x2 = $("#tptx2").val();
+    let x3 = $("#tptx3").val();
+    let y1 = $("#tpty1").val();
+    let y2 = $("#tpty2").val();
+    let y3 = $("#tpty3").val();
+
+    let pt1 = new Point(x1,y1,1);
+    let pt2 = new Point(x2,y2,1);
+    let pt3 = new Point(x3,y3,1);
+
+    shapes[shapes.length-1].push(pt1);
+    shapes[shapes.length-1].push(pt2);
+    shapes[shapes.length-1].push(pt3);
 
     drawShapes(shapes);
     $(".modal").modal('hide');

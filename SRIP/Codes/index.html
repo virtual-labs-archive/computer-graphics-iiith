@@ -3,13 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <title>Hierarchical Transformations: 2D Demo</title>
-    <link rel="stylesheet" href="../libraries/bootstrap.min.css">
-    <link rel="stylesheet" href="../libraries/bootstrap-grid.min.css">
-    <link rel="stylesheet" href="../libraries/bootstrap-reboot.min.css">
-    <script src="../libraries/jquery-3.4.1.min.js"></script>
+    <link rel="stylesheet" href="../libraries/bootstrap/css/bootstrap.css">
+    <link rel="stylesheet" href="../libraries/bootstrap/css/bootstrap-grid.css">
+    <link rel="stylesheet" href="../libraries/bootstrap/css/bootstrap-reboot.css">
+    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <link href="http://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css">
     <script src="../libraries/popper.min.js"></script>
-    <script src="../libraries/bootstrap.bundle.js"></script>
-    <script src="../libraries/bootstrap.js"></script>
+    <script src="../libraries/jquery-3.4.1.min.js"></script>
+    <script src="../libraries/bootstrap/js/bootstrap.bundle.js"></script>
+    <script src="../libraries/bootstrap/js/bootstrap.js"></script>
 
     <style type="text/css">
         #content{
@@ -24,27 +26,53 @@
         /*.unclickable{*/
         /*    pointer-events: none;*/
         /*}*/
-        html,body{
-            min-height: 100vh;
-        }
+
     </style>
+
+
 
 </head>
 <body class="bg-light">
 <!--MANUAL-->
-<div class="modal fade" id="manual" tabindex="-1" role="dialog" aria-labelledby="manual" aria-hidden="true">
-    <div class="modal-dialog" role="document">
+<div class="modal fade bd-example-modal-xl" id="manual" tabindex="-1" role="dialog" aria-labelledby="ManualTitle" aria-hidden="true">
+    <div class="modal-dialog modal-xl" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title">Modal title</h5>
+                <h5 class="modal-title" id="ManualTitle">Manual</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
             <div class="modal-body">
                 <p class="lead">
-
+                    This lab allows you to create any 2d object and apply transformations to it and see how the transformation happens frame by frame.
                 </p>
+                <hr>
+                <p>The simulation consists of mainly two panels: Left Panel, Right Panel.</p>
+                <ul>
+                    <li>
+                        <p><strong>Left Panel:</strong> This is your coordinate system, where you will see your shapes and transformations.</p>
+                        <div class="alert alert-info" role="alert">
+                            This panel also contains a slider at the bottom. This slider is used to see the transformations in real-time.
+                        </div>
+                    </li>
+                    <li>
+                        <p><strong>Right Panel:</strong> This panel allows you to add shapes and transformations</p>
+                        <ol>
+                            <li>
+                                <p>Use the Add Shape / Add Transformation button to add a variety of shapes / transformations to the canvas.</p>
+                                <div class="alert alert-info" role="alert">
+                                    You can also add custom shapes to the canvas by specifying the points. The ordering of the entered points is important.
+                                    The lines would be drawn according to the order of your points.
+                                </div>
+                            </li>
+                            <li>
+                                <p>The frames input field allows you to specify the number of frames(animation) you would like to see of the current transformation.</p>
+                            </li>
+
+                        </ol>
+                    </li>
+                </ul>
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
@@ -452,7 +480,7 @@
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary">ADD</button>
+                <button type="button" class="btn btn-primary" id="constructSampleTriangle">ADD</button>
             </div>
         </div>
     </div>
@@ -539,7 +567,7 @@
 
 
 <div id="content" class="container" style="height: 100vh">
-    <h1>Hierarchical Transformations: 2D Demo (<a href="#manual" data-toggle="modal" data-target="#manualTitle">Click for Manual</a>)</h1>
+    <h1>Hierarchical Transformations: 2D Demo (<a href="#manual" data-toggle="modal" data-target="#manual">Click for Manual</a>)</h1>
     <hr>
     <div class="row" style="height: 85%">
         <div class="col-lg-9" id="canvas_container">
@@ -562,8 +590,8 @@
                                 <br><br>
                                 <button class="btn btn-outline-info" id="sample_rectangle" data-toggle="modal" data-target="#sampleRect">Sample Rectangle</button>
                                 <br><br>
-<!--                                <button class="btn btn-outline-info" id="sample_triangle" data-toggle="modal" data-target="#sampleTriangle">Sample Triangle</button>-->
-<!--                                <br><br>-->
+                                <button class="btn btn-outline-info" id="sample_triangle" data-toggle="modal" data-target="#sampleTriangle">Sample Triangle</button>
+                                <br><br>
                                 <button class="btn btn-outline-info" id="custom_shape" data-toggle="modal" data-target="#customShape">Custom Shape</button>
                             </div>
                         </div><br>

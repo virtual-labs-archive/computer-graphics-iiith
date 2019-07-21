@@ -7,11 +7,13 @@ add point coordinates on canvas
 adjust slider values according to user.
 make slider start at zero.
 fade out add new shape
+make all values to zero after submit
+reduce custom points to 3 again after submit.
 
 By mentor:
 Make responsive
 close popup(done);
 values(done);
-silder(done);
-manual
+slider(done);
+manual(done)
 fit in page without scrolling(done);
