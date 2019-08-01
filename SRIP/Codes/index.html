@@ -4,28 +4,33 @@
     <meta charset="UTF-8">
     <title>Hierarchical Transformations: 2D Demo</title>
     <link rel="stylesheet" href="../libraries/bootstrap/css/bootstrap.css">
+    <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="../libraries/bootstrap/css/bootstrap-grid.css">
     <link rel="stylesheet" href="../libraries/bootstrap/css/bootstrap-reboot.css">
     <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
-    <link href="http://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css">
     <script src="../libraries/popper.min.js"></script>
     <script src="../libraries/jquery-3.4.1.min.js"></script>
     <script src="../libraries/bootstrap/js/bootstrap.bundle.js"></script>
     <script src="../libraries/bootstrap/js/bootstrap.js"></script>
+    <script src="https://kit.fontawesome.com/00a0cb47f6.js"></script>
+
 
     <style type="text/css">
-        #content{
+        #content {
             text-align: center;
         }
-        .container{
+
+        .container {
             max-width: 90%;
         }
+
         .btn:focus, .btn:active {
             box-shadow: none !important;
         }
-        /*.unclickable{*/
-        /*    pointer-events: none;*/
-        /*}*/
+
+        .unclickable{
+            pointer-events: none;
+        }
 
     </style>
 
@@ -45,29 +50,35 @@
             </div>
             <div class="modal-body">
                 <p class="lead">
-                    This lab allows you to create any 2d object and apply transformations to it and see how the transformation happens frame by frame.
+                    This lab allows you to create any 2d object and apply transformations to it and see how the
+                    transformation happens frame by frame.
                 </p>
                 <hr>
                 <p>The simulation consists of mainly two panels: Left Panel, Right Panel.</p>
                 <ul>
                     <li>
-                        <p><strong>Left Panel:</strong> This is your coordinate system, where you will see your shapes and transformations.</p>
+                        <p><strong>Left Panel:</strong> This is your coordinate system, where you will see your shapes
+                            and transformations.</p>
                         <div class="alert alert-info" role="alert">
-                            This panel also contains a slider at the bottom. This slider is used to see the transformations in real-time.
+                            This panel also contains a slider at the bottom. This slider is used to see the
+                            transformations in real-time.
                         </div>
                     </li>
                     <li>
                         <p><strong>Right Panel:</strong> This panel allows you to add shapes and transformations</p>
                         <ol>
                             <li>
-                                <p>Use the Add Shape / Add Transformation button to add a variety of shapes / transformations to the canvas.</p>
+                                <p>Use the Add Shape / Add Transformation button to add a variety of shapes /
+                                    transformations to the canvas.</p>
                                 <div class="alert alert-info" role="alert">
-                                    You can also add custom shapes to the canvas by specifying the points. The ordering of the entered points is important.
+                                    You can also add custom shapes to the canvas by specifying the points. The ordering
+                                    of the entered points is important.
                                     The lines would be drawn according to the order of your points.
                                 </div>
                             </li>
                             <li>
-                                <p>The frames input field allows you to specify the number of frames(animation) you would like to see of the current transformation.</p>
+                                <p>The frames input field allows you to specify the number of frames(animation) you
+                                    would like to see of the current transformation.</p>
                             </li>
 
                         </ol>
@@ -83,7 +94,8 @@
 
 
 <!--TRANSLATION-->
-<div class="modal fade" id="translation_modal" tabindex="-1" role="dialog" aria-labelledby="sampleSquare" aria-hidden="true">
+<div class="modal fade" id="translation_modal" tabindex="-1" role="dialog" aria-labelledby="sampleSquare"
+     aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content">
             <div class="modal-header">
@@ -111,9 +123,9 @@
                     <br>
                 </form>
                 <br>
-                <label for="squarelength">Number of frames</label>
+                <label for="trf">Number of frames</label>
                 <div class="d-flex justify-content-around" style="width: 80%;">
-                    <input type="number" class="form-control" id="trf" placeholder="Number of frames">
+                    <input type="number" class="form-control" id="trf" placeholder="Number of frames" value="100">
                 </div>
 
             </div>
@@ -156,12 +168,12 @@
                 <br>
                 <label for="rta">Angle in Degrees</label>
                 <div class="d-flex justify-content-around" style="width: 80%;">
-                    <input type="number" class="form-control" id="rta" placeholder="Number of frames">
+                    <input type="number" class="form-control" id="rta" placeholder="Angle">
                 </div>
                 <br>
                 <label for="rta">Number of frames</label>
                 <div class="d-flex justify-content-around" style="width: 80%;">
-                    <input type="number" class="form-control" id="rtf" placeholder="Number of frames">
+                    <input type="number" class="form-control" id="rtf" placeholder="Number of frames" value="100">
                 </div>
             </div>
             <div class="modal-footer">
@@ -203,7 +215,7 @@
                 <br>
                 <label for="rta">Number of frames</label>
                 <div class="d-flex justify-content-around" style="width: 80%;">
-                    <input type="number" class="form-control" id="scf" placeholder="Number of frames">
+                    <input type="number" class="form-control" id="scf" placeholder="Number of frames" value="100">
                 </div>
 
             </div>
@@ -246,7 +258,7 @@
                 <br>
                 <label for="rta">Number of frames</label>
                 <div class="d-flex justify-content-around" style="width: 80%;">
-                    <input type="number" class="form-control" id="skf" placeholder="Number of frames">
+                    <input type="number" class="form-control" id="skf" placeholder="Number of frames" value="100">
                 </div>
 
             </div>
@@ -299,7 +311,7 @@
                 <br>
                 <label for="rta">Number of frames</label>
                 <div class="d-flex justify-content-around" style="width: 80%;">
-                    <input type="number" class="form-control" id="customf" placeholder="Number of frames">
+                    <input type="number" class="form-control" id="customf" placeholder="Number of frames" value="100">
                 </div>
 
             </div>
@@ -358,7 +370,8 @@
 </div>
 
 <!--SAMPLE RECT-->
-<div class="modal fade" id="sampleRect" tabindex="-1" role="dialog" aria-labelledby="sampleRectangle" aria-hidden="true">
+<div class="modal fade" id="sampleRect" tabindex="-1" role="dialog" aria-labelledby="sampleRectangle"
+     aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content">
             <div class="modal-header">
@@ -408,7 +421,8 @@
 </div>
 
 <!--SAMPLE TRIANGLE-->
-<div class="modal fade" id="sampleTriangle" tabindex="-1" role="dialog" aria-labelledby="sampleTriangle" aria-hidden="true">
+<div class="modal fade" id="sampleTriangle" tabindex="-1" role="dialog" aria-labelledby="sampleTriangle"
+     aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content">
             <div class="modal-header">
@@ -567,61 +581,88 @@
 
 
 <div id="content" class="container" style="height: 100vh">
-    <h1>Hierarchical Transformations: 2D Demo (<a href="#manual" data-toggle="modal" data-target="#manual">Click for Manual</a>)</h1>
+    <h1>Hierarchical Transformations: 2D Demo (<a href="#manual" data-toggle="modal" data-target="#manual">Click for
+        Manual</a>)</h1>
     <hr>
     <div class="row" style="height: 85%">
         <div class="col-lg-9" id="canvas_container">
             <canvas id="world" class="border border-secondary" style="z-index: 5"></canvas>
-            <input type="range" class="custom-range" id="slider" max="1000">
+            <input type="range" class="custom-range" id="slider" min="0" max="0">
         </div>
         <div class="col-lg-3 border border-secondary overflow-auto" id="settings" style="height: 100%">
             <div class="mx-auto">
                 <br>
                 <h2>Settings</h2>
                 <div id="accordion">
-                    <a class="btn  btn-outline-info" id="add_shape" data-toggle="collapse" href="#addNewShape" role="button" aria-expanded="false">Add new Shape</a><br><br>
+                    <a class="btn  btn-outline-info" id="add_shape" data-toggle="collapse" href="#addNewShape"
+                       role="button" aria-expanded="false">Add new Shape</a><br><br>
                     <div class="collapse" id="addNewShape" data-parent="#accordion">
                         <div class="card" style="text-align: left;">
                             <div class="card-header">
                                 New Shape
                             </div>
-                            <div class="card-body" >
-                                <button class="btn btn-outline-info" id="sample_square" data-toggle="modal" data-target="#sampleSquare">Sample Square</button>
+                            <div class="card-body">
+                                <button class="btn btn-outline-info" id="sample_square" data-toggle="modal"
+                                        data-target="#sampleSquare">Sample Square
+                                </button>
                                 <br><br>
-                                <button class="btn btn-outline-info" id="sample_rectangle" data-toggle="modal" data-target="#sampleRect">Sample Rectangle</button>
+                                <button class="btn btn-outline-info" id="sample_rectangle" data-toggle="modal"
+                                        data-target="#sampleRect">Sample Rectangle
+                                </button>
                                 <br><br>
-                                <button class="btn btn-outline-info" id="sample_triangle" data-toggle="modal" data-target="#sampleTriangle">Sample Triangle</button>
+                                <button class="btn btn-outline-info" id="sample_triangle" data-toggle="modal"
+                                        data-target="#sampleTriangle">Sample Triangle
+                                </button>
                                 <br><br>
-                                <button class="btn btn-outline-info" id="custom_shape" data-toggle="modal" data-target="#customShape">Custom Shape</button>
+                                <button class="btn btn-outline-info" id="custom_shape" data-toggle="modal"
+                                        data-target="#customShape">Custom Shape
+                                </button>
                             </div>
-                        </div><br>
+                        </div>
+                        <br>
                     </div>
-                    <a class="btn  btn-outline-info" id="add_transformation" data-toggle="collapse" href="#addNewTransformation" role="button" aria-expanded="false">Add new Transformation</a><br><br>
-                    <div class="collapse" id="addNewTransformation" data-parent="#accordion"    >
+                    <a class="btn  btn-outline-info" id="add_transformation" data-toggle="collapse"
+                       href="#addNewTransformation" role="button" aria-expanded="false">Add new
+                        Transformation</a><br><br>
+                    <div class="collapse" id="addNewTransformation" data-parent="#accordion">
                         <div class="card" style="text-align: left;">
                             <div class="card-header">
                                 New Shape
                             </div>
-                            <div class="card-body" >
-                                <button class="btn btn-outline-primary" id="translation" data-toggle="modal" data-target="#translation_modal">Translation</button>
+                            <div class="card-body">
+                                <button class="btn btn-outline-info" id="translation" data-toggle="modal"
+                                        data-target="#translation_modal">Translation
+                                </button>
                                 <br><br>
-                                <button class="btn btn-outline-primary" id="rotation" data-toggle="modal" data-target="#rotation_modal">Rotation</button>
+                                <button class="btn btn-outline-info" id="rotation" data-toggle="modal"
+                                        data-target="#rotation_modal">Rotation
+                                </button>
                                 <br><br>
-                                <button class="btn btn-outline-primary" id="scale" data-toggle="modal" data-target="#scale_modal">Scale</button>
+                                <button class="btn btn-outline-info" id="scale" data-toggle="modal"
+                                        data-target="#scale_modal">Scale
+                                </button>
                                 <br><br>
-                                <button class="btn btn-outline-primary" id="skew" data-toggle="modal" data-target="#skew_modal">Skew</button>
+                                <button class="btn btn-outline-info" id="skew" data-toggle="modal"
+                                        data-target="#skew_modal">Skew
+                                </button>
                                 <br><br>
-                                <button class="btn btn-outline-primary" id="custom" data-toggle="modal" data-target="#custom_modal">Custom</button>
+                                <button class="btn btn-outline-info" id="custom" data-toggle="modal"
+                                        data-target="#custom_modal">Custom
+                                </button>
                             </div>
-                        </div><br>
+                        </div>
+                        <br>
                     </div>
-<!--                    <button class="btn btn-info" id="transform">Transform</button>-->
+                    <!--                    <button class="btn btn-info" id="transform">Transform</button>-->
                     <p>Your Mouse Cursor Coordinates</p>
                     <p id="mousepos"></p>
-<!--                    <p id="mouseposdebug"></p>-->
+                    <!--                    <p id="mouseposdebug"></p>-->
                     <hr>
                     <div class="mx-auto">
-                        <h2>Shapes and Transformations</h2>
+                        <h2>Shapes</h2>
+                        <div class="accordion" id="display_shapes">
+
+                        </div>
                     </div>
                 </div>
             </div>

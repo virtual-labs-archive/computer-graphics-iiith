@@ -1,9 +1,5 @@
 numshapes=0;
 var shapes = [];
-var tr1 = new TMatrix("rt",-3,-3,45);
-var tr2 = new TMatrix("tr", 2, 2);
-tr1.frames = 100;
-tr2.frames = 100;
 var shapescolor=[];
 
 
@@ -13,10 +9,10 @@ function getRandomColor() {
 }
 
 function drawShapes(arr) {
+    ctx.clearRect(0,0,width,height);
+    drawGrid();
     for (var id in arr)
     {
-        ctx.clearRect(0,0,width,height);
-        drawGrid();
         // console.log(shapes[id]);
         ctx.beginPath();
         var x = xcoor(arr[id][0]['x']);
@@ -44,6 +40,7 @@ function drawShapes(arr) {
         ctx.fillStyle=ctx.strokeStyle;
         ctx.fill();
     }
+    displayShapesAndTransformations();
 }
 function validatecustominput()
 {
@@ -59,12 +56,15 @@ $("#customShapeSubmit").click(function () {
             xc="cptx"+i;
             yc="cpty"+i;
             var x = parseInt($("#"+xc).val());
+            $("#"+xc).val('');
             var y = parseInt($("#"+yc).val());
+            $("#"+yc).val('');
             var pt = new Point(x,y,1);
             shapes[shapes.length-1].push(pt);
         }
         drawShapes(shapes);
     }
+    $("#newpoints").empty();
     $(".modal").modal('hide');
 });
 
@@ -72,6 +72,9 @@ $("#constructSampleSquare").click(function () {
     let x = parseInt($("#stopleftx").val());
     let y = parseInt($("#stoplefty").val());
     let len = parseInt($("#squarelength").val());
+    $("#stopleftx").val('');
+    $("#stoplefty").val('');
+    $("#squarelength").val('');
     shapes.push([]);
     let pt1 = new Point(x,y,1);
     let pt2 = new Point(x+len ,y,1);
@@ -90,6 +93,10 @@ $("#constructSampleRect").click(function () {
     let y = parseFloat($("#rtoplefty").val());
     let len = parseFloat($("#rectlength").val());
     let br = parseFloat($("#rectbreadth").val());
+    $("#rtopleftx").val('');
+    $("#rtoplefty").val('');
+    $("#rectlength").val('');
+    $("#rectbreadth").val('');
 
     shapes.push([]);
     let pt1 = new Point(x,y,1);
@@ -117,6 +124,12 @@ $("#constructSampleTriangle").click(function () {
     let y1 = $("#tpty1").val();
     let y2 = $("#tpty2").val();
     let y3 = $("#tpty3").val();
+    $("#tptx1").val('');
+    $("#tptx2").val('');
+    $("#tptx3").val('');
+    $("#tpty1").val('');
+    $("#tpty2").val('');
+    $("#tpty3").val('');
 
     let pt1 = new Point(x1,y1,1);
     let pt2 = new Point(x2,y2,1);

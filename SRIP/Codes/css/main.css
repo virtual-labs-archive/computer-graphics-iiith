@@ -1,0 +1,56 @@
+
+.accordion > .card {
+    overflow: hidden;
+    margin-bottom: 2px;
+}
+
+.accordion > .card:not(:first-of-type) .card-header:first-child {
+    border-radius: 0.25rem;
+}
+
+.accordion > .card:not(:first-of-type):not(:last-of-type) {
+    border-bottom: 1px;
+    border-radius: 0.25rem;
+}
+
+.accordion > .card:first-of-type {
+    border-bottom: 1px;
+    border-radius: 0.25rem;
+}
+
+.accordion > .card:last-of-type {
+    border-radius: 0.25rem;
+}
+
+.accordion > .card .card-header {
+    margin-bottom: 0px;
+}
+
+.custom-font
+{
+    display:block;
+    padding:15px;
+    color:#555;
+    font-size:16px;
+    font-weight:bold;
+    text-transform:uppercase;
+    letter-spacing:1px;
+    word-spacing:3px;
+    text-decoration:none;
+}
+
+.custom-font:before{
+    font-family: 'FontAwesome';
+    /*normal down arrow*/
+    content: "\f078";
+    /*for filled down arrow*/
+    /*content: "\f0d7";*/
+    font-size: large;
+    float: right;
+    transition: all 0.5s;
+}
+.active.custom-font:before{
+    -webkit-transform: rotate(180deg);
+    -moz-transform: rotate(180deg);
+    transform: rotate(180deg);
+}

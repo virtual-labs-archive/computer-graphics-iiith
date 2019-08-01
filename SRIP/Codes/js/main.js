@@ -1,4 +1,32 @@
 //Setup Of canvas
+
+$(function() {
+    var Accordion = function(el, multiple) {
+        this.el = el || {};
+        this.multiple = multiple || false;
+
+        var links = this.el.find('.link');
+
+        links.on('click', {el: this.el, multiple: this.multiple}, this.dropdown)
+    }
+
+    Accordion.prototype.dropdown = function(e) {
+        var $el = e.data.el;
+        $this = $(this),
+            $next = $this.next();
+
+        $next.slideToggle();
+        $this.parent().toggleClass('open');
+
+        if (!e.data.multiple) {
+            $el.find('.submenu').not($next).slideUp().parent().removeClass('open');
+        };
+    }
+
+    var accordion = new Accordion($('#accordion'), false);
+});
+
+
 var canvas=document.querySelector('#world');
 var canvas_container = $("#canvas_container");
 
@@ -71,6 +99,13 @@ function init() {
     $("#rtoplefty").val(1);
     $("#rectlength").val(4);
     $("#rectbreadth").val(2);
+
+    $("#tptx1").val(0);
+    $("#tptx2").val(2);
+    $("#tptx3").val(4);
+    $("#tpty1").val(4);
+    $("#tpty2").val(1);
+    $("#tpty3").val(3);
 }
 init();
 

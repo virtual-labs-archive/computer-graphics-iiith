@@ -25,20 +25,20 @@ $("#addtranslation").click(function () {
         let y1 = y * (i / f);
         if(transformations.length == 0)
         {
-transformations_framed.push(new TMatrix("tr",x1,y1));
-}
-else
-{
-    let temp = new TMatrix("tr",x1,y1);
-    let temp2 = transformations[transformations.length-1];
-    let temp3 = temp2.mat.multiply(temp.mat);
-    temp.mat = temp3;
-    transformations_framed.push(temp);
-}
-
-}
-transformations.push(t);
-$(".modal").modal('hide');
+        transformations_framed.push(new TMatrix("tr",x1,y1));
+        }
+        else
+        {
+            let temp = new TMatrix("tr",x1,y1);
+            let temp2 = transformations[transformations.length-1];
+            let temp3 = temp2.mat.multiply(temp.mat);
+            temp.mat = temp3;
+            transformations_framed.push(temp);
+        }
+    }
+    transformations.push(t);
+    $("#slider").attr("max",transformations_framed.length - 1);
+    $(".modal").modal('hide');
 
 });
 
@@ -78,6 +78,7 @@ $("#addrotation").click(function () {
 
     }
     transformations.push(t);
+    $("#slider").attr("max",transformations_framed.length);
     $(".modal").modal('hide');
 });
 
@@ -117,6 +118,7 @@ $("#addscale").click(function () {
 
     }
     transformations.push(t);
+    $("#slider").attr("max",transformations_framed.length);
     $(".modal").modal('hide');
 });
 
@@ -153,6 +155,7 @@ $("#addskew").click(function () {
         }
     }
     transformations.push(t);
+    $("#slider").attr("max",transformations_framed.length);
     $(".modal").modal('hide');
 });
 
@@ -218,6 +221,7 @@ $("#addcustom").click(function() {
         }
     }
     transformations.push(t);
+    $("#slider").attr("max",transformations_framed.length);
     $(".modal").modal('hide');
 });
 
