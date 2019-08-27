@@ -71,12 +71,15 @@
 * Run makefile by the following commands inside the 'ui/src' folder to
   change the default theme :
 
-	 ` Go to Command Terminal.
-	 // Where u have extracted the ui kit
-	 ` $ cd ui_extracted_folder 
-	 ` $ cd ui/src
-         ` $ make clean all 
-	 ` $ make theme=blue-icon
+``` 
+	Go to Command Terminal
+
+	cd ui_extracted_folder   // Where u have extracted the ui kit
+	cd ui/src
+	make clean all 
+	make theme=blue-icon
+```
+	 
 
 - Now, open ui/build/index.html in the browser to test the template.
 
