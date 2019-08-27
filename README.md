@@ -27,10 +27,9 @@
 5) Go to ui/src and run  " make theme=blue-icon"     on command terminal  to change theme to blue
 
 
-We had attached change.html in folder.  You can copy the whole content and paste it in content.html .
+- We had attached change.html in folder.  You can copy the whole content and paste it in content.html .
 
-
-Below is snapshot how content.html will look like
+- Below is snapshot how content.html will look like
 <!-- Second section of the article-->
 <section id="lab-article-section-2">
 
@@ -72,11 +71,11 @@ Below is snapshot how content.html will look like
 * Run makefile by the following commands inside the 'ui/src' folder to
   change the default theme :
 
-	 `Go to Command Terminal
-	 `$ cd ui_extracted_folder // Where u have extracted the ui kit
-	 `$ cd ui/src
-         `$ make clean all 
-	 `$ make theme=blue-icon
+	 ` Go to Command Terminal
+	 ` $ cd ui_extracted_folder // Where u have extracted the ui kit
+	 ` $ cd ui/src
+         ` $ make clean all 
+	 ` $ make theme=blue-icon
 
 - Now, open ui/build/index.html in the browser to test the template.
 
