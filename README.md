@@ -71,8 +71,9 @@
 * Run makefile by the following commands inside the 'ui/src' folder to
   change the default theme :
 
-	 ` Go to Command Terminal
-	 ` $ cd ui_extracted_folder // Where u have extracted the ui kit
+	 ` Go to Command Terminal.
+	 // Where u have extracted the ui kit
+	 ` $ cd ui_extracted_folder 
 	 ` $ cd ui/src
          ` $ make clean all 
 	 ` $ make theme=blue-icon
