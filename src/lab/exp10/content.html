@@ -1,26 +1,27 @@
 <!-- Add class="default" to include any element as it is specified in 
 	 default.html. 
 	 Do not include class="default" to the elements that you want to edit
--->
-
-<!DOCTYPE html>
-<html>
-<head></head>
-<body>
+--><!DOCTYPE html>
+<html><head><!--Google Tag Manager--><script class="gtm">(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-W59SWTR');</script><!--End Google Tag Manager--></head>
+<body><!--Google Tag Manager (noscript)--><noscript class="gtm"><iframe height="0" src="https://www.googletagmanager.com/ns.html?id=GTM-W59SWTR" style="display:none;visibility:hidden" width="0"></iframe></noscript><!--End Google Tag Manager (noscript)-->
 
 <div id="experiment"> <!-- The Experiment Document Container-->
 
 	<!-- The lab Header contains the logo and the name of the lab, usually 
 		 displayed on the top of the page -->
 
-	<header id="experiment-header" class="default">
+	<header class="default" id="experiment-header">
 
-		<div id="experiment-header-logo" class="logo">
+		<div class="logo" id="experiment-header-logo">
 			<!-- Enclose the logo image of your lab or write it in text -->
-			<img src="../images/logo.jpg" />
+			<img src="../images/logo.jpg"/>
 		</div>
 
-		<div id="experiment-header-heading" class="heading">
+		<div class="heading" id="experiment-header-heading">
 			<!-- Write the name of your lab and link it to the home page of 
 				 your lab (h1 tag is preferred while writing your lab name)
 			-->
@@ -41,10 +42,10 @@
 		<!-- The lab article has an header, optional navigational menu, 
 			 number of sections, an optional sidebar and a closing footer 
 		-->
-		<div id="experiment-article-breadcrumb" class="breadcrumb">
+		<div class="breadcrumb" id="experiment-article-breadcrumb">
 		</div>
     
-		<header id="experiment-article-heading" class="heading">
+		<header class="heading" id="experiment-article-heading">
 			<!-- You can add a welcome message or title of the experiment
 				 here -->
 			Rasterization : Polygon
@@ -54,7 +55,7 @@
 
 		<!-- Navigation menu is useful to organize the view of multiple
 			 sections inside the article -->
-		<nav id="experiment-article-navigation" class="default">
+		<nav class="default" id="experiment-article-navigation">
 			<ul id="experiment-article-navigation-menu">
 				<!-- The menu can be dynamically generated to contain the
 					 headings of your sections or instead write the menu 
@@ -70,35 +71,33 @@
 			<!-- First section of the article -->
 			<section id="experiment-article-section-1">
 
-				<div id="experiment-article-section-1-icon" class="icon">
-					<img src="../images/introduction.jpg" />
+				<div class="icon" id="experiment-article-section-1-icon">
+					<img src="../images/introduction.jpg"/>
 				</div>	
 
 				<!-- The heading for the section can be enclosed in a div 
 					 tag. -->
-				<div id="experiment-article-section-1-heading" 
-					 class="heading">
+				<div class="heading" id="experiment-article-section-1-heading">
 					Introduction
 				</div>
 
 				<!-- Write the section content inside a paragraph element, 
 					 You can also include images with <img> tag -->
-				<div id="experiment-article-section-1-content" 
-					 class="content">	
+				<div class="content" id="experiment-article-section-1-content">	
 					<p>
 					In digital display systems, everything that is displayed, is displayed in terms of a smallest unit of display, which is called a pixel.
 					This is in contrast to what we perceive the world to be as continuous.
 					The space occupied by any image in digital display system is measured in terms of pixels.
-					Thus we require to transform the continuous space in which we define he geometry of any figure to a discrete space for display in digital displays. This transformation is called <b>rasterization</b> or <b>scan conversion</b><br /><br />
+					Thus we require to transform the continuous space in which we define he geometry of any figure to a discrete space for display in digital displays. This transformation is called <b>rasterization</b> or <b>scan conversion</b><br/><br/>
 					When a polygon is transformed from a set of edges in the continous form of <i>y = mx + c</i> into a set of pixels occupied by the interior of the polygon, this transformation is called <b>polygon rasterization</b>.
 					Thus when we apply polygon rasterization technique on a polygon, we obtain the set of pixels that are required to be filled in order to fill the entire interior area bounded by the edges of the polygon in the best possible manner.
 					Some common algorithms to perform polygon rasterization are as follows:
-					<ol style="list-style-type:lower-latin">
+					</p><ol style="list-style-type:lower-latin">
 						<li>Scan-Line Polygon Fill algorithm</li>
 						<li>Seed Fill or Boundary Fill algorithm</li>
 					</ol>
 					Here we have discussed only the Scan-Line Polygon Fill algorithm.
-					</p>
+					<p></p>
 				</div>
 
 			</section>
@@ -107,45 +106,42 @@
 			<!-- Second section of the article-->
 			<section id="experiment-article-section-2">
 
-				<div id="experiment-article-section-2-icon" class="icon">
+				<div class="icon" id="experiment-article-section-2-icon">
 					<!-- Enclose the icon image of your lab. -->
-					<img src="../images/theory.jpg" />
+					<img src="../images/theory.jpg"/>
 				</div>
 
 				<!-- The heading for the section can be enclosed in a div 
 					 tag. -->
-				<div id="experiment-article-section-2-heading" 
-					 class="heading">
+				<div class="heading" id="experiment-article-section-2-heading">
 					Theory
 				</div>
 
 				<!-- Write the section content inside a paragraph element, 
 					 we can also include images with <img> tag -->
-				<div id="experiment-article-section-2-content" 
-					 class="content">
+				<div class="content" id="experiment-article-section-2-content">
 					<p>
-<h2>Scan Line Polygon Fill Algorithm</h2>
+</p><h2>Scan Line Polygon Fill Algorithm</h2>
 <h4>Pseudo Code of the algorithm</h4>
-Input : Vertices of the polygon, (x<sub>i</sub>, y<sub>i</sub>) &forall;i = {1, 2, ..., n}, n = #vertices in the polygon.
+Input : Vertices of the polygon, (x<sub>i</sub>, y<sub>i</sub>) âi = {1, 2, ..., n}, n = #vertices in the polygon.
 We have the following data structures to maintain data:
 <ul>
-	<li><u>Edge Table</u> (ET) : Contains all the edges (except horizontal edges) of the polygon sorted by their smaller y-coordinates. All the edges having equal smaller y-coordinates are kept in the same bucket, where they are sorted by the corresponding x-coordinate.<br />
+	<li><u>Edge Table</u> (ET) : Contains all the edges (except horizontal edges) of the polygon sorted by their smaller y-coordinates. All the edges having equal smaller y-coordinates are kept in the same bucket, where they are sorted by the corresponding x-coordinate.<br/>
 	In each cell, the following information is maintained:
-	<ol type=i>
+	<ol type="i">
 		<li>y_upper : last scanline to consider for this edge</li>
 		<li>x_lower : corresponding x coordinate for the smaller value y value of the edge</li>
 		<li>1/m : to compute the corresponding x coordinate of the edge for each scanline</li>
 	</ol></li>
-	<li><u>Active Edge Table</u> (AET) : Contains the edges that intersect with the current scan line. For each scan line, the edges are sorted in an increasing order of the x coordinate of the point of intersection.<br />
+	<li><u>Active Edge Table</u> (AET) : Contains the edges that intersect with the current scan line. For each scan line, the edges are sorted in an increasing order of the x coordinate of the point of intersection.<br/>
 	In each cell, the following information is maintained:
-	<ol type=i>
+	<ol type="i">
 		<li>y_upper : last scanline to consider for this edge</li>
 		<li>x_lower : x coordinate value of the edge for the present scan line</li>
 		<li>1/m : to compute the corresponding x coordinate of the edge for each scanline</li>
 	</ol></li>
 </ul>
-<pre>
-<fieldset>
+<pre><fieldset>
 <legend><u>Steps of the Algorithm</u></legend>
 <ol>
 <li>AET is initially empty.</li>
@@ -154,46 +150,44 @@ We have the following data structures to maintain data:
 <ul>
 	<li>From ET[scan_value] bucket, all entries are inserted in AET which satisfy the condition : y<sub>min</sub> = scan_value. This is to include the new edges which have their smaller y value equal to the present scan line.</li>
 	<li>From AET, remove the entries which satisfy the condition, y<sub>max</sub> = scan_value, i.e., remove the edges not intersecting with the next scanline</li>
-	<li>Please note that there will be one entry for edges in Fig. 1 and two entries for edges in Fig. 2<br />
-Figure 1 : <br />
-	<img src="image1.png" height="100" width="100"></img> changes to <img src="image3.png" height="100" width="100"></img>
-Figure 2 : <br /></li>
-	<img src="image2.png" height="100" width="100"></img>
+	<li>Please note that there will be one entry for edges in Fig. 1 and two entries for edges in Fig. 2<br/>
+Figure 1 : <br/>
+	<img height="100" src="image1.png" width="100"/> changes to <img height="100" src="image3.png" width="100"/>
+Figure 2 : <br/></li>
+	<img height="100" src="image2.png" width="100"/>
 	<li>Sort all the entries in AET w.r.t. the x-coordinate of the intersection point of the edge with the present scan line.</li>
-	<li>Fill the pixels in the present scanline from x-values mentioned in the odd entries of AET to the x-values mentioned in the next even entry of AET.<br />
-	If there are n entries in AET (n will always even), then the following pixels will be filled :<br />
+	<li>Fill the pixels in the present scanline from x-values mentioned in the odd entries of AET to the x-values mentioned in the next even entry of AET.<br/>
+	If there are n entries in AET (n will always even), then the following pixels will be filled :<br/>
 	<ul>
 	    <li>1<sup>st</sup> entry to 2<sup>nd</sup> entry</li>
 	    <li>3<sup>rd</sup> entry to 4<sup>th</sup> entry</li>
 	    <li> ... </li>
 	    <li>(n-1)<sup>th</sup> entry to n<sup>th</sup> entry</li>
 	</ul>
-	<li>Increment y by 1 (to the coordinate of the next scanline).</li>
+	</li><li>Increment y by 1 (to the coordinate of the next scanline).</li>
 	<li>For each nonvertical edge remaining in the AET, update x for the new y.</li>
-</ul><br />
+</ul><br/>
 Until AET and ET are non empty</li>
 </ol>
 </fieldset>
 </pre>
-<br />
-					</p>
+<br/>
+					<p></p>
 				</div>
 			</section>
 
 
 			<section id="experiment-article-section-3">
         
-				<div id="experiment-article-section-3-icon" class="icon">
-					<img src="../images/objective.jpg" />
+				<div class="icon" id="experiment-article-section-3-icon">
+					<img src="../images/objective.jpg"/>
 				</div>
 
-				<div id="experiment-article-section-3-heading" 
-					 class="heading">
+				<div class="heading" id="experiment-article-section-3-heading">
 					Objective
 				</div>
 
-				<div id="experiment-article-section-3-content" 
-					 class="content">
+				<div class="content" id="experiment-article-section-3-content">
 					<p>
 					Objective of this experiment is to understand the steps of <u>filling</u> a polygon in a 2D frame buffer. Given the vertices of the polygon, the experiment outputs a filled polygon. Here we have demonstrated the steps of Scan Line Poylgon Fill algorithm.
 					</p>
@@ -204,20 +198,18 @@ Until AET and ET are non empty</li>
 
 			<section id="experiment-article-section-4">
 
-				<div id="experiment-article-section-4-icon" class="icon">
-					<img src="../images/simulation.jpg" />
+				<div class="icon" id="experiment-article-section-4-icon">
+					<img src="../images/simulation.jpg"/>
 				</div>
 
-				<div id="experiment-article-section-4-heading" 
-					 class="heading">
+				<div class="heading" id="experiment-article-section-4-heading">
 					Experiment
 				</div>
 				<p><a href="../documents/java-and-icedtea-plugin.pdf">Install prerequisites to run the simulation</a></p>
 
-				<div id="experiment-article-section-4-content" 
-					 class="content">
-					<applet code='rasterization.ScanPolygonMain' archive='../Vlabs.jar' width="1200" height="1000">
-					<param name="file_name" value="polygon.txt">
+				<div class="content" id="experiment-article-section-4-content">
+					<applet archive="../Vlabs.jar" code="rasterization.ScanPolygonMain" height="1000" width="1200">
+					<param name="file_name" value="polygon.txt"></param>
 					</applet>
 				</div>
 
@@ -225,17 +217,15 @@ Until AET and ET are non empty</li>
 
 			<section id="experiment-article-section-5">
    
-				<div id="experiment-article-section-5-icon" class="icon">
-					<img src="../images/manual.jpg" />
+				<div class="icon" id="experiment-article-section-5-icon">
+					<img src="../images/manual.jpg"/>
 				</div>
 
-				<div id="experiment-article-section-5-heading" 
-					 class="heading">
+				<div class="heading" id="experiment-article-section-5-heading">
 					Manual
 				</div>
 
-				<div id="experiment-article-section-5-content" 
-					 class="content">
+				<div class="content" id="experiment-article-section-5-content">
 					 <ol>
 					 <li> The experiment contains a frame buffer which represents the screen to which the graphics primitives (polygon in this case) are rendered to.</li>
 					 <li> The experiment allows the user to change the size of the frame buffer.</li>
@@ -251,17 +241,15 @@ Until AET and ET are non empty</li>
 
 			<section id="experiment-article-section-6">
 
-				<div id="experiment-article-section-6-icon" class="icon">
-					<img src="../images/quizzes.jpg" />
+				<div class="icon" id="experiment-article-section-6-icon">
+					<img src="../images/quizzes.jpg"/>
 				</div>
 
-				<div id="experiment-article-section-6-heading" 
-					 class="heading">
+				<div class="heading" id="experiment-article-section-6-heading">
 					Quizzes
 				</div>
 
-				<div id="experiment-article-section-6-content" 
-					 class="content">
+				<div class="content" id="experiment-article-section-6-content">
 
 					<p>
 					</p>
@@ -273,23 +261,21 @@ Until AET and ET are non empty</li>
 
 			<section id="experiment-article-section-7">
 
-				<div id="experiment-article-section-7-icon" class="icon">
-					<img src="../images/procedure.jpg" />
+				<div class="icon" id="experiment-article-section-7-icon">
+					<img src="../images/procedure.jpg"/>
 				</div>
 
-				<div id="experiment-article-section-7-heading" 
-					 class="heading">
+				<div class="heading" id="experiment-article-section-7-heading">
 					Procedure
 				</div>
 
-				<div id="experiment-article-section-7-content" 
-					 class="content">
+				<div class="content" id="experiment-article-section-7-content">
 					 <ol>
-					 <li> Fix the size of the frame buffer (the default parameters are already filled in the input boxes) and then click on <b>Enter</b>.<br />
+					 <li> Fix the size of the frame buffer (the default parameters are already filled in the input boxes) and then click on <b>Enter</b>.<br/>
 					 You can also proceed directly to the experiment using the default parameters of the size of frame buffer and the vertices of a polygon, by clicking on <b>Start Experiment with Default Values</b>.</li>
-					 <li> Enter the vertices of the polygon in the input box.<br />
-					 Let, (x<sub>1</sub>, y<sub>1</sub>), (x<sub>2</sub>, y<sub>2</sub>), (x<sub>3</sub>, y<sub>3</sub>), (x<sub>4</sub>, y<sub>4</sub>), (x<sub>5</sub>, y<sub>5</sub>)<br /> represent the vertices of the polygon in order, i.e., the 1<sup>st</sup> vertex is connected to the 2<sup>nd</sup> and 2<sup>nd</sup> to the 3<sup>rd</sup> and so on. The last vertex is connected to the 1st to complete the polygon.<br />
-					 The default vertices are already filled in the input boxes. Once you have finalized the coordinates, you can click on <b>Start Experiment</b> to begin with the experiment.<br />
+					 <li> Enter the vertices of the polygon in the input box.<br/>
+					 Let, (x<sub>1</sub>, y<sub>1</sub>), (x<sub>2</sub>, y<sub>2</sub>), (x<sub>3</sub>, y<sub>3</sub>), (x<sub>4</sub>, y<sub>4</sub>), (x<sub>5</sub>, y<sub>5</sub>)<br/> represent the vertices of the polygon in order, i.e., the 1<sup>st</sup> vertex is connected to the 2<sup>nd</sup> and 2<sup>nd</sup> to the 3<sup>rd</sup> and so on. The last vertex is connected to the 1st to complete the polygon.<br/>
+					 The default vertices are already filled in the input boxes. Once you have finalized the coordinates, you can click on <b>Start Experiment</b> to begin with the experiment.<br/>
 					 You can also go <b>Back</b> to change the values of the frame buffer.</li>
 					 <li> Throughout the experiment, you can click on <b>Next Iteration</b> to go tothe next step of the algorithm and <b>Previous Ieration</b> to go to the previous step.</li>
 					 <li>Once the experiment ends, you can again experiment with a new set of vertices of the polygon.</li>
@@ -301,17 +287,15 @@ Until AET and ET are non empty</li>
 		
 			<section id="experiment-article-section-8">
    
-				<div id="experiment-article-section-8-icon" class="icon">
-					<img src="../images/readings.jpg" />
+				<div class="icon" id="experiment-article-section-8-icon">
+					<img src="../images/readings.jpg"/>
 				</div>
 
-				<div id="experiment-article-section-8-heading" 
-					 class="heading">
+				<div class="heading" id="experiment-article-section-8-heading">
 					Further Readings
 				</div>
 
-				<div id="experiment-article-section-8-content" 
-					 class="content">
+				<div class="content" id="experiment-article-section-8-content">
 					 <ol>
 					 	<li> http://en.wikipedia.org/wiki/Scanline_rendering</li>
 					 	<li> James D. Foley. Computer graphics: Principles and Practice. Addison-Wesley Professional. </li>
@@ -321,28 +305,28 @@ Until AET and ET are non empty</li>
 
 			</section>
 			
-			<section id="lab-article-section-6" class="default">
+			<section class="default" id="lab-article-section-6">
 				<!-- Feedback link -->
-				<div id="lab-article-section-6-icon" class="icon">
+				<div class="icon" id="lab-article-section-6-icon">
 					<!-- Enclose the icon image for the section -->
-					<img src="../images/manual.jpg" />
+					<img src="../images/manual.jpg"/>
 				</div>
 
 				<!-- The heading for the section can be enclosed in a div 
 				tag and shown with a <h2> tag -->
 
-				<div id="lab-article-section-6-heading" class="heading">
+				<div class="heading" id="lab-article-section-6-heading">
 					Feedback
 				</div>
 
 				<!-- Write the section content inside a paragraph element.
 				You can also include images with <img> tag -->
-				<div id="lab-article-section-6-content" class="content">
+				<div class="content" id="lab-article-section-6-content">
 					<p>
-					<ul>
+					</p><ul>
 						<li><a href="http://virtual-labs.ac.in/feedback/?lab=cse18?lab=cse18">Feedback</a></li>
 					</ul>
-					</p>
+					<p></p>
 				</div>
 
 			</section>
@@ -353,26 +337,65 @@ Until AET and ET are non empty</li>
 		<!-- An article can have a sidebar that contain related links and 
 			 additional material (however it is kept optional at this 
 			 moment) -->
-		<aside id="lab-article-sidebar" class="default">
+		<aside class="default" id="lab-article-sidebar">
 			<!-- put the content that you want to appear in the sidebar -->	
 		</aside>
 
 
 		<!-- Article footer can display related content and additional links 
 		-->						
-		<footer id="lab-article-footer" class="default">
-			<!-- Put the content that you want to appear here -->
-		</footer>
+		<footer class="default" id="footer"><div class="footer-top" id="contact">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-4 col-md-6">
+        <h4>Community Links</h4>
+        <p>
+	  <a href="http://www.sakshat.ac.in/">Sakshat Portal</a>
+	</p>
+        <p>
+	  <a href="http://outreach.vlabs.ac.in/">Outreach Portal</a>
+	</p>
+        <p>
+	  <a href="http://vlab.co.in/faq">FAQ : Virtual Labs</a>
+	</p>
+      </div>
+      <div class="col-lg-4 col-md-6">
+        <h4>Contact Us</h4>
+	<p> <strong>Phone:</strong> General Information : 011-26582050 </p>
+	<p> <strong>Email:</strong> support@vlab.co.in </p>
+      </div>
+      <div class="col-lg-4 col-md-6">
+	<h4>Follow Us</h4>
+	<div class="social-links">
+	  <a class="twitter" href="https://twitter.com/TheVirtualLabs" style="background: #55acee;">
+	    <i class="fa fa-twitter"></i>
+	  </a>
+	  <a class="facebook" href="https://www.facebook.com/Virtual-Labs-IIT-Delhi-301510159983871/" style="background: #3b5998;">
+	    <i class="fa fa-facebook"></i>
+	  </a>
+	  <a class="google-plus" href="https://www.youtube.com/watch?v=asxRaOgk6a0" style="background: #e52d27;">
+	    <i class="fa fa-youtube"></i>
+	  </a>
+	  <a class="linkedin" href="https://in.linkedin.com/in/virtual-labs-008ba9136" style="background: #2867B2;">
+	    <i class="fa fa-linkedin"></i>
+	  </a>
+	</div>
+      </div>
+    </div>
+  </div>
+</div>
+</footer>
 
 	</article>
 
 
 	<!-- Links to other labs, about us page can be kept the lab footer -->
-	<footer id="lab-footer" class="default footer">
+	<footer class="default footer" id="lab-footer">
 		<!-- Put the content here-->
 	</footer>
 
 </div>		
 
-</body>
-</html>
+
+
+</body></html>

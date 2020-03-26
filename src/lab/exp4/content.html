@@ -1,26 +1,27 @@
 <!-- Add class="default" to include any element as it is specified in 
 	 default.html. 
 	 Do not include class="default" to the elements that you want to edit
--->
-
-<!DOCTYPE html>
-<html>
-<head></head>
-<body>
+--><!DOCTYPE html>
+<html><head><!--Google Tag Manager--><script class="gtm">(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-W59SWTR');</script><!--End Google Tag Manager--></head>
+<body><!--Google Tag Manager (noscript)--><noscript class="gtm"><iframe height="0" src="https://www.googletagmanager.com/ns.html?id=GTM-W59SWTR" style="display:none;visibility:hidden" width="0"></iframe></noscript><!--End Google Tag Manager (noscript)-->
 
 <div id="experiment"> <!-- The Experiment Document Container-->
 
 	<!-- The lab Header contains the logo and the name of the lab, usually 
 		 displayed on the top of the page -->
 
-	<header id="experiment-header" class="default">
+	<header class="default" id="experiment-header">
 
-		<div id="experiment-header-logo" class="logo">
+		<div class="logo" id="experiment-header-logo">
 			<!-- Enclose the logo image of your lab or write it in text -->
-			<img src="../images/logo.jpg" />
+			<img src="../images/logo.jpg"/>
 		</div>
 
-		<div id="experiment-header-heading" class="heading">
+		<div class="heading" id="experiment-header-heading">
 			<!-- Write the name of your lab and link it to the home page of 
 				 your lab (h1 tag is preferred while writing your lab name)
 			-->
@@ -41,10 +42,10 @@
 		<!-- The lab article has an header, optional navigational menu, 
 			 number of sections, an optional sidebar and a closing footer 
 		-->
-		<div id="experiment-article-breadcrumb" class="breadcrumb">
+		<div class="breadcrumb" id="experiment-article-breadcrumb">
 		</div>
     
-		<header id="experiment-article-heading" class="heading">
+		<header class="heading" id="experiment-article-heading">
 			<!-- You can add a welcome message or title of the experiment
 				 here -->
 			Transformations: Scaling
@@ -54,7 +55,7 @@
 
 		<!-- Navigation menu is useful to organize the view of multiple
 			 sections inside the article -->
-		<nav id="experiment-article-navigation" class="default">
+		<nav class="default" id="experiment-article-navigation">
 			<ul id="experiment-article-navigation-menu">
 				<!-- The menu can be dynamically generated to contain the
 					 headings of your sections or instead write the menu 
@@ -70,21 +71,19 @@
 			<!-- First section of the article -->
 			<section id="experiment-article-section-1">
 
-				<div id="experiment-article-section-1-icon" class="icon">
-					<img src="../images/introduction.jpg" />
+				<div class="icon" id="experiment-article-section-1-icon">
+					<img src="../images/introduction.jpg"/>
 				</div>	
 
 				<!-- The heading for the section can be enclosed in a div 
 					 tag. -->
-				<div id="experiment-article-section-1-heading" 
-					 class="heading">
+				<div class="heading" id="experiment-article-section-1-heading">
 					Introduction
 				</div>
 
 				<!-- Write the section content inside a paragraph element, 
 					 You can also include images with <img> tag -->
-				<div id="experiment-article-section-1-content" 
-					 class="content">	
+				<div class="content" id="experiment-article-section-1-content">	
 					<p>
 						This experiment explains the concept of scaling transformation.
 					</p>
@@ -96,34 +95,28 @@
 			<!-- Second section of the article-->
 			<section id="experiment-article-section-2">
 
-				<div id="experiment-article-section-2-icon" class="icon">
-					<img src="../images/theory.jpg" />
+				<div class="icon" id="experiment-article-section-2-icon">
+					<img src="../images/theory.jpg"/>
 				</div>
 
 				<!-- The heading for the section can be enclosed in a div 
 					 tag. -->
-				<div id="experiment-article-section-2-heading" 
-					 class="heading">
+				<div class="heading" id="experiment-article-section-2-heading">
 					Theory
 				</div>
 
 				<!-- Write the section content inside a paragraph element, 
 					 we can also include images with <img> tag -->
-				<div id="experiment-article-section-2-content" 
-					 class="content">
+				<div class="content" id="experiment-article-section-2-content">
 					<p>
 						Scaling multiplies the distances from the co-ordinate axes by a constant factor. The scaling matrix which scales by v<sub>x</sub>, v<sub>y</sub> and v<sub>z</sub> units looks like:
 					</p>
-					<img src="media/scaling-matrix.png" 
-						 alt="Scaling Matrix" 
-						 style="width:189px; height: 97px; padding: 10px; background-color: #fff;" />
+					<img alt="Scaling Matrix" src="media/scaling-matrix.png" style="width:189px; height: 97px; padding: 10px; background-color: #fff;"/>
 
 					<p>
 						On multiplication with a vector, the expected result is obtained:
 					</p>
-					<img src="media/point_scaling.png" 
-						 alt="Matrix representation for Scaling a Point" 
-						 style="width:333px; height: 97px; padding: 10px; background-color: #fff;" />
+					<img alt="Matrix representation for Scaling a Point" src="media/point_scaling.png" style="width:333px; height: 97px; padding: 10px; background-color: #fff;"/>
 					<p>
 						A scaling transformation can also be interpreted as resizing the co-ordinate axes while keeping the points constant. Thus, a scaling by (2,3) will require redrawing each unit on the X-axis as 2 units and each unit on the Y-axis as 3.
 					</p>
@@ -133,17 +126,15 @@
 
 			<section id="experiment-article-section-3">
         
-				<div id="experiment-article-section-3-icon" class="icon">
-					<img src="../images/objective.jpg" />
+				<div class="icon" id="experiment-article-section-3-icon">
+					<img src="../images/objective.jpg"/>
 				</div>
 
-				<div id="experiment-article-section-3-heading" 
-					 class="heading">
+				<div class="heading" id="experiment-article-section-3-heading">
 					Objective
 				</div>
 
-				<div id="experiment-article-section-3-content" 
-					 class="content">
+				<div class="content" id="experiment-article-section-3-content">
 					<p>
 						Objective of this experiment is to understand the effect of scaling on Points along any axis in 2D/3D space. We also learn the matrix representation for the scaling transformation and how to use it to compute the scaled point.
 					</p>
@@ -154,20 +145,18 @@
 
 			<section id="experiment-article-section-4">
 
-				<div id="experiment-article-section-4-icon" class="icon">
-					<img src="../images/simulation.jpg" />
+				<div class="icon" id="experiment-article-section-4-icon">
+					<img src="../images/simulation.jpg"/>
 				</div>
 
-				<div id="experiment-article-section-4-heading" 
-					 class="heading">
+				<div class="heading" id="experiment-article-section-4-heading">
 					Experiment
 				</div>
 				<p><a href="../documents/java-and-icedtea-plugin.pdf">Install prerequisites to run the simulation</a></p>
 
-				<div id="experiment-article-section-4-content" 
-					 class="content">
+				<div class="content" id="experiment-article-section-4-content">
 					<p>
-						<ol type=1 start=1>
+						</p><ol start="1" type="1">
 						<li>
 							Please download the appropriate Virtual Lab Graphics package below. <br/>
 							<b><a href="../VirtualLabGraphics.zip">Download</a></b> <br/>
@@ -208,25 +197,23 @@
 						</ol>
 						<!-- Place or link to your experiment java applet or 
 							 flash file here. -->
-					</p>
+					<p></p>
 				</div>
 
 			</section>
 
 			<section id="experiment-article-section-5">
    
-				<div id="experiment-article-section-5-icon" class="icon">
-					<img src="../images/manual.jpg" />
+				<div class="icon" id="experiment-article-section-5-icon">
+					<img src="../images/manual.jpg"/>
 				</div>
 
-				<div id="experiment-article-section-5-heading" 
-					 class="heading">
+				<div class="heading" id="experiment-article-section-5-heading">
 					Manual
 				</div>
 
-				<div id="experiment-article-section-5-content" 
-					 class="content">
-					<script type="text/javascript" src="../js/pageload.js"> </script>
+				<div class="content" id="experiment-article-section-5-content">
+					<script src="../js/pageload.js" type="text/javascript"> </script>
 					<div id="page">
 						<a href="../vlabs-manual.pdf">Download Manual</a>
 						<script type="text/javascript">
@@ -240,76 +227,72 @@
 
 			<section id="experiment-article-section-6">
 
-				<div id="experiment-article-section-6-icon" class="icon">
-					<img src="../images/quizzes.jpg" />
+				<div class="icon" id="experiment-article-section-6-icon">
+					<img src="../images/quizzes.jpg"/>
 				</div>
 
-				<div id="experiment-article-section-6-heading" 
-					 class="heading">
+				<div class="heading" id="experiment-article-section-6-heading">
 					Quizzes
 				</div>
 
-				<div id="experiment-article-section-6-content" 
-					 class="content">
+				<div class="content" id="experiment-article-section-6-content">
 
-				<script type="text/javascript" src="evaluate.js"></script>
-				<form name="quiz" method="post">
+				<script src="evaluate.js" type="text/javascript"></script>
+				<form method="post" name="quiz">
 					<p>
-					<img src="media/quiz_matrix1.png"
-						 alt="Matrix( (2,0,0,0), (0,1.5,0,0), (0,0,0.5,0), (0,0,0,1) )"
-						 style="float: right; width:200px; height:150px;" />
+					<img alt="Matrix( (2,0,0,0), (0,1.5,0,0), (0,0,0.5,0), (0,0,0,1) )" src="media/quiz_matrix1.png" style="float: right; width:200px; height:150px;"/>
 					<b>Q1.</b>
 					The point (5,2,8) after applying the following scaling matrix becomes: <br/>
-					<input type="radio" name="q1" id="q1" value="1"> &nbsp;&nbsp;
+					<input id="q1" name="q1" type="radio" value="1"/>   
 					(10,3,40) <br/>
-					<input type="radio" name="q1" id="q1" value="2"> &nbsp;&nbsp;
+					<input id="q1" name="q1" type="radio" value="2"/>   
 					(10,2,4) <br/>
-					<input type="radio" name="q1" id="q1" value="3"> &nbsp;&nbsp;
+					<input id="q1" name="q1" type="radio" value="3"/>   
 					(2.5,3,4) <br/>
-					<input type="radio" name="q1" id="q1" value="4"> &nbsp;&nbsp;
+					<input id="q1" name="q1" type="radio" value="4"/>   
 					(10,3,4)
 					</p>
 
 					<p>
 					<b>Q2.</b>
 					Applying a scaling transformation of 2 on X-axis makes the unit distance: <br/>
-					<input type="radio" name="q2" id="q2" value="1"> &nbsp;&nbsp;
+					<input id="q2" name="q2" type="radio" value="1"/>   
 					1/4 of the original unit distance. <br/>
-					<input type="radio" name="q2" id="q2" value="1"> &nbsp;&nbsp;
+					<input id="q2" name="q2" type="radio" value="1"/>   
 					1/2 of the original unit distance. <br/>
-					<input type="radio" name="q2" id="q2" value="1"> &nbsp;&nbsp;
+					<input id="q2" name="q2" type="radio" value="1"/>   
 					Same as the original unit distance. <br/>
-					<input type="radio" name="q2" id="q2" value="1"> &nbsp;&nbsp;
+					<input id="q2" name="q2" type="radio" value="1"/>   
 					Twice the original unit distance.
 					</p>
 
 					<p>
 					<b>Q3.</b>
 					What is the scaling vector <i>v</i> if A(5,4,1) gets scaled to (2.5,6,5) ? <br/>
-					<input type="radio" name="q3" id="q3" value="1"> &nbsp;&nbsp;
+					<input id="q3" name="q3" type="radio" value="1"/>   
 					[0.5, 1.5, 5] <br/>
-					<input type="radio" name="q3" id="q3" value="2"> &nbsp;&nbsp;
+					<input id="q3" name="q3" type="radio" value="2"/>   
 					[2, 3, 5] <br/>
-					<input type="radio" name="q3" id="q3" value="3"> &nbsp;&nbsp;
+					<input id="q3" name="q3" type="radio" value="3"/>   
 					[2.5, 3, 5] <br/>
-					<input type="radio" name="q3" id="q3" value="4"> &nbsp;&nbsp;
+					<input id="q3" name="q3" type="radio" value="4"/>   
 					[2.5, 1.5, 5]
 					</p>
 
 					<p>
 					<b>Q4.</b>
 					What is the scaling vector <i>v</i> if A(2,3,4) gets transformed to B(2,3,4) ? <br/>
-					<input type="radio" name="q4" id="q4" value="1"> &nbsp;&nbsp;
+					<input id="q4" name="q4" type="radio" value="1"/>   
 					[1, 0, 0] <br/>
-					<input type="radio" name="q4" id="q4" value="2"> &nbsp;&nbsp;
+					<input id="q4" name="q4" type="radio" value="2"/>   
 					[0, 0, 0] <br/>
-					<input type="radio" name="q4" id="q4" value="3"> &nbsp;&nbsp;
+					<input id="q4" name="q4" type="radio" value="3"/>   
 					[1, 1, 1] <br/>
-					<input type="radio" name="q4" id="q4" value="4"> &nbsp;&nbsp;
+					<input id="q4" name="q4" type="radio" value="4"/>   
 					[1, 1, 0] <br/>
 					</p>
 					<p>
-					<input type="button" value="Evaluate" class="button" onclick="eval();" />
+					<input class="button" onclick="eval();" type="button" value="Evaluate"/>
 					</p>
 				</form>
 
@@ -320,17 +303,15 @@
 
 			<section id="experiment-article-section-7">
 
-				<div id="experiment-article-section-7-icon" class="icon">
-					<img src="../images/procedure.jpg" />
+				<div class="icon" id="experiment-article-section-7-icon">
+					<img src="../images/procedure.jpg"/>
 				</div>
 
-				<div id="experiment-article-section-7-heading" 
-					 class="heading">
+				<div class="heading" id="experiment-article-section-7-heading">
 					Procedure
 				</div>
 
-				<div id="experiment-article-section-7-content" 
-					 class="content">
+				<div class="content" id="experiment-article-section-7-content">
 					<p>
 						This experiment introduces the concept of the scaling transformation.
 					</p>
@@ -353,17 +334,15 @@
 		
 			<section id="experiment-article-section-8">
    
-				<div id="experiment-article-section-8-icon" class="icon">
-					<img src="../images/readings.jpg" />
+				<div class="icon" id="experiment-article-section-8-icon">
+					<img src="../images/readings.jpg"/>
 				</div>
 
-				<div id="experiment-article-section-8-heading" 
-					 class="heading">
+				<div class="heading" id="experiment-article-section-8-heading">
 					Further Readings
 				</div>
 
-				<div id="experiment-article-section-8-content" 
-					 class="content">
+				<div class="content" id="experiment-article-section-8-content">
 					<ul>	
 					<li>
 					<a href="http://en.wikipedia.org/wiki/Transformation_matrix#Scaling">
@@ -380,28 +359,28 @@
 
 			</section>
 
-			<section id="lab-article-section-6" class="default">
+			<section class="default" id="lab-article-section-6">
 				<!-- Feedback link -->
-				<div id="lab-article-section-6-icon" class="icon">
+				<div class="icon" id="lab-article-section-6-icon">
 					<!-- Enclose the icon image for the section -->
-					<img src="../images/manual.jpg" />
+					<img src="../images/manual.jpg"/>
 				</div>
 
 				<!-- The heading for the section can be enclosed in a div 
 				tag and shown with a <h2> tag -->
 
-				<div id="lab-article-section-6-heading" class="heading">
+				<div class="heading" id="lab-article-section-6-heading">
 					Feedback
 				</div>
 
 				<!-- Write the section content inside a paragraph element.
 				You can also include images with <img> tag -->
-				<div id="lab-article-section-6-content" class="content">
+				<div class="content" id="lab-article-section-6-content">
 					<p>
-					<ul>
+					</p><ul>
 						<li><a href="http://virtual-labs.ac.in/feedback/?lab=cse18?lab=cse18">Feedback</a></li>
 					</ul>
-					</p>
+					<p></p>
 				</div>
 
 			</section>
@@ -412,26 +391,65 @@
 		<!-- An article can have a sidebar that contain related links and 
 			 additional material (however it is kept optional at this 
 			 moment) -->
-		<aside id="lab-article-sidebar" class="default">
+		<aside class="default" id="lab-article-sidebar">
 			<!-- put the content that you want to appear in the sidebar -->	
 		</aside>
 
 
 		<!-- Article footer can display related content and additional links 
 		-->						
-		<footer id="lab-article-footer" class="default">
-			<!-- Put the content that you want to appear here -->
-		</footer>
+		<footer class="default" id="footer"><div class="footer-top" id="contact">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-4 col-md-6">
+        <h4>Community Links</h4>
+        <p>
+	  <a href="http://www.sakshat.ac.in/">Sakshat Portal</a>
+	</p>
+        <p>
+	  <a href="http://outreach.vlabs.ac.in/">Outreach Portal</a>
+	</p>
+        <p>
+	  <a href="http://vlab.co.in/faq">FAQ : Virtual Labs</a>
+	</p>
+      </div>
+      <div class="col-lg-4 col-md-6">
+        <h4>Contact Us</h4>
+	<p> <strong>Phone:</strong> General Information : 011-26582050 </p>
+	<p> <strong>Email:</strong> support@vlab.co.in </p>
+      </div>
+      <div class="col-lg-4 col-md-6">
+	<h4>Follow Us</h4>
+	<div class="social-links">
+	  <a class="twitter" href="https://twitter.com/TheVirtualLabs" style="background: #55acee;">
+	    <i class="fa fa-twitter"></i>
+	  </a>
+	  <a class="facebook" href="https://www.facebook.com/Virtual-Labs-IIT-Delhi-301510159983871/" style="background: #3b5998;">
+	    <i class="fa fa-facebook"></i>
+	  </a>
+	  <a class="google-plus" href="https://www.youtube.com/watch?v=asxRaOgk6a0" style="background: #e52d27;">
+	    <i class="fa fa-youtube"></i>
+	  </a>
+	  <a class="linkedin" href="https://in.linkedin.com/in/virtual-labs-008ba9136" style="background: #2867B2;">
+	    <i class="fa fa-linkedin"></i>
+	  </a>
+	</div>
+      </div>
+    </div>
+  </div>
+</div>
+</footer>
 
 	</article>
 
 
 	<!-- Links to other labs, about us page can be kept the lab footer -->
-	<footer id="lab-footer" class="default footer">
+	<footer class="default footer" id="lab-footer">
 		<!-- Put the content here-->
 	</footer>
 
 </div>		
 
-</body>
-</html>
+
+
+</body></html>
