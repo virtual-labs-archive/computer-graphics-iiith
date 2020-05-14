@@ -87,7 +87,7 @@
             <!-- container-fluid end for slider -->
             <!-- =================================================================================================================================== -->
             <div class="container-fluid" style="margin-left: 35px; margin-right: 35px;">
-               <h2 class="text-h2-lightblue" style=" margin-bottom: 20px; margin-top: 10px; "><a class="sidebar-a" href="http://vlabs.ac.in/computer-science-and-engineering-labs.html">Computer Science &amp; Engineering</a> →<a class="sidebar-a" href="../Introduction.html">Computer Graphics</a> →<a class="sidebar-a" href="../List of experiments.html">Experiments</a><br/></h2>
+               <h2 class="text-h2-lightblue" style=" margin-bottom: 20px; margin-top: 10px; "><a class="sidebar-a" href="http://vlabs.ac.in/computer-science-and-engineering-labs.html">Computer Science &amp; Engineering</a> <i aria-hidden="true" class="fa fa-angle-right" style="font-size: 30px;padding-right: 4px;"></i> <a class="sidebar-a" href="../Introduction.html">Computer Graphics</a> <i aria-hidden="true" class="fa fa-angle-right" style="font-size: 30px;padding-right: 4px;"></i> <a class="sidebar-a" href="../List of experiments.html">Experiments</a><br/></h2>
                <div class="row">
                   <div class="col-md-2 sidebar-col-2">
                      <a class="sidebar-a" href="Introduction.html?domain=Computer Science&amp;lab=Computer Graphics">
@@ -128,10 +128,12 @@
                            <li>
                               Which of the following conditions should hold for a line to completely be inside the clip window (code for end point 1 is c1 and for end point 2 is c2) :<br/>
                               <ol type="a">
-                                 <li> c1 OR c2 = 0</li>
-                                 <li> c1 AND c2 = 0</li>
-                                 <li> c1 EXOR c2 = 1</li>
-                                 <li> c1 OR c2 = 1</li>
+                              	<input type="radio" name="q1" id="q1" value="0">
+
+                                 <li type="radio" > c1 OR c2 = 0</li>
+                                 <li type="radio"> c1 AND c2 = 0</li>
+                                 <li type="radio"> c1 EXOR c2 = 1</li>
+                                 <li type="radio"> c1 OR c2 = 1</li>
                               </ol>
                            </li>
                            <li>
