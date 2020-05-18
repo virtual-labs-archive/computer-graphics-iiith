@@ -101,33 +101,34 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 						<div class="col-md-10 lab-list-col-10">
 							
 							<!--edit -->
-<h1 class="text-h1-lightblue">Clipping : Polygon</h1><div class="content" id="experiment-article-section-6-content">
-<p>
-</p><ol>
-<li>The Sutherland Hodgeman works for the following cases :<br/>
-<ol type="a">
-<li> Convex Polygon with convex clip window</li>
-<li> Concave polygon with convex clip window</li>
-<li> Convex polygon with concave clip window</li>
-<li> a and b</li>
-<li> a and c</li>
-<li> All of the above</li>
-</ol></li>
-<li> Will the output matter on the order in which we process the polygon?<br/>
-<ol type="a">
-<li> Yes</li>
-<li> No</li>
-</ol></li>
-<li> Let m be the slope of the line joining clip polygon point P<sub>i</sub>(x<sub>1</sub>, y<sub>1</sub>) and P<sub>i+1</sub>(x<sub>2</sub>, y<sub>2</sub>).
-					The intersection point of this line with the Left side of clip window is :
-					<ol type="a">
-<li> x = xmin; y = (int)(y2 + ((xmin - x2)*m));</li>
-<li> x = xmax; y = (int)(y2 + ((xmax - x2)*m));</li>
-<li> x = x2; y = ymin;</li>
-<li> x = (int) (x2 + ((ymax - y2)/m)); y = ymax;</li>
-</ol></li>
-</ol>
-<p></p>
+							<h1 class="text-h1-lightblue">Clipping : Polygon</h1><div class="content" id="experiment-article-section-6-content">
+								<ol>
+									<li>The Sutherland Hodgeman works for the following cases :<br/>
+										<ol type="a">
+										<li> Convex Polygon with convex clip window</li>
+										<li> Concave polygon with convex clip window</li>
+										<li> Convex polygon with concave clip window</li>
+										<li> a and b</li>
+										<li> a and c</li>
+										<li> All of the above</li>
+										</ol>
+									</li>
+									<li> Will the output matter on the order in which we process the polygon?<br/>
+										<ol type="a">
+											<li> Yes</li>
+											<li> No</li>
+											</ol></li>
+									<li> Let m be the slope of the line joining clip polygon point P<sub>i</sub>(x<sub>1</sub>, y<sub>1</sub>) and P<sub>i+1</sub>(x<sub>2</sub>, y<sub>2</sub>).
+												The intersection point of this line with the Left side of clip window is :
+										<ol type="a">
+											<li> x = xmin; y = (int)(y2 + ((xmin - x2)*m));</li>
+											<li> x = xmax; y = (int)(y2 + ((xmax - x2)*m));</li>
+											<li> x = x2; y = ymin;</li>
+											<li> x = (int) (x2 + ((ymax - y2)/m)); y = ymax;</li>
+										</ol>
+									</li>
+								</ol>
+
 </div>						</div>
 					</div>
 			</div>
