@@ -80,6 +80,7 @@
          <div id="content">
             <div class="container-fluid">
                <div class="row">
+                  <div class="row" style="height: 16px !important;">
                   <hr style="background:#ff6600 !important;  height: 8px; margin-top: 0px;"/>
                </div>
                <!-- row end -->
@@ -152,7 +153,7 @@
 <li>scan_value = Value of y-coordinate for the first nonempty bucket. This is the first scan line from where filling will start.</li>
 <li>Do
 <ul>
-	<li>From ET[scan_value] bucket, all entries are inserted in AET which satisfy the condition : y<sub>min</sub> = scan_value. This is to include the new edges which have their smaller y value equal to the present scan line.</li>
+	<li>From ET[scan_value] bucket, all entries are inserted in AET which satisfy the condition : y<sub>min</sub> = scan_value. This is to include the new edges which <br> have their smaller y value equal to the present scan line.</li>
 	<li>From AET, remove the entries which satisfy the condition, y<sub>max</sub> = scan_value, i.e., remove the edges not intersecting with the next scanline</li>
 	<li>Please note that there will be one entry for edges in Fig. 1 and two entries for edges in Fig. 2<br/>
 Figure 1 : <br/>
