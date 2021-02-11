@@ -1,8 +1,5 @@
-
-
 <!DOCTYPE html>
-<html lang="en">
-   <head>
+<html lang="en"><head>
       <!--Google Tag Manager--><script class="gtm">(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
          new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
          j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
@@ -140,7 +137,7 @@ The codes of the vertices are computed from the below figure :
 0000 represents the clip window and all other areas outside are to be clipped.<br/>
 If both codes are 0000,(bitwise OR of the codes yields 0000 ) line lies completely inside the window: pass the endpoints to the draw routine.
 If both codes have a 1 in the same bit position (bitwise AND of the codes is not 0000), the line lies outside the window. It can be trivially rejected.</li>
-<li>If a line cannot be trivially accepted or rejected, at least one of the two endpoints must lie outside the window and the line segment crosses a window edge. <br> This line must be clipped at the window edge before being passed to the drawing routine.</li>
+<li>If a line cannot be trivially accepted or rejected, at least one of the two endpoints must lie outside the window and the line segment crosses a window edge. <br/> This line must be clipped at the window edge before being passed to the drawing routine.</li>
 <li>Examine one of the endpoints, say P<sub>0</sub> and read  P<sub>0</sub>'s 4-bit code in order: Left-to-Right, Bottom-to-Top.</li>
 <li>When a set bit (1) is found, compute the intersection I of the corresponding window edge with the line from P<sub>0</sub> to P<sub>1</sub>. Replace P<sub>0</sub> with I and repeat the algorithm.</li>
 </ol></pre>
@@ -198,8 +195,8 @@ If both codes have a 1 in the same bit position (bitwise AND of the codes is not
          </footer>
       </div>
       <!-- top div -->
-   </body>
-   <!-- jQuery -->
-</html>
+   
+   
 
-color: #FF6600
+
+color: #FF6600</div></body><!-- jQuery --></html>
