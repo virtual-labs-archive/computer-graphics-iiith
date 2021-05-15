@@ -1,0 +1,23 @@
+add verification to all fields.
+show the shapes/transformations (optional: allow editing there too);
+add sample shapes(circle if possible);
+//custom transformation(done)
+add axis labels
+add point coordinates on canvas
+//adjust slider values according to user(done).
+//make slider start at zero(done).
+fade out add new shape
+//make all values to zero after submit(done)
+//reduce custom points to 3 again after submit(done).
+//add predefined points for sample triangle(done).
+map the add button to enter key
+
+
+
+By mentor:
+Make responsive
+//close popup(done);
+//values(done);
+//slider(done);
+//manual(done)
+//fit in page without scrolling(done);
